@@ -2,7 +2,7 @@
   "seo": {
     "title": "Olea Digitalis | Digitalna trasabilnost maslinovog ulja",
     "description": "Platforma za digitalnu trasabilnost premium maslinovog ulja. Svaka boca dobiva svoj digitalni identifikacijski dokument i certifikat autentičnosti.",
-    "keywords": "maslinovo ulje, digitalna trasabilnost, digitalni identifikacijski dokument, OPG Dalmacija, AgroTech, certifikat autentičnosti"
+    "keywords": "maslinovo ulje, digitalna trasabilnost, digitalni identifikacijski dokument, OPG Dalmacija, Vela Luka, Korčula, AgroTech, OleaDnode"
   },
   "hero": {
     "title": "Platforma za digitalnu trasabilnost maslinovog ulja.",
@@ -11,16 +11,20 @@
   "sections": {
     "projekt": {
       "title": "Digitalna Transformacija OPG-a",
-      "description": "Razvijamo AgroTech inovacije koje omogućuju potpunu sljedivost proizvodnje. Svaka boca dobiva svoj nepromjenjivi digitalni identifikacijski dokument. Naša rješenja su 'Offline-First', prilagođena radu u dalmatinskim maslinicima bez signala."
+      "description": "Razvijamo AgroTech inovacije koje omogućuju potpunu sljedivost proizvodnje. Svaka boca dobiva svoj nepromjenjivi digitalni identifikacijski dokument. Naša rješenja su 'Offline-First', prilagođena radu u maslinicima bez signala."
     },
     "oleadbot": {
       "title": "OleaDbot: Fizički asistent",
       "description": "Robotski sustav dizajniran za pomoć u teškim fizičkim radovima. Pomaže pri nošenju tereta, prijenosu baterija za berbu te služi kao sustav za navodnjavanje na zahtjevnim terenima."
+    },
+    "oleadnode": {
+      "title": "OleaDnode: Senzorska mreža",
+      "description": "Statične senzorske stanice za precizno praćenje mikroklimatskih uvjeta u realnom vremenu. Kontinuirano očitavaju temperaturu i vlagu zraka te vlažnost tla, pružajući ključne podatke za optimizaciju uzgoja i navodnjavanja."
     }
   },
   "footer": {
     "email": "ivo@oleadigitalis.eu",
-    "location": "Dalmacija, Hrvatska",
+    "location": "Vela Luka, Korčula, Hrvatska",
     "social": {
       "bluesky": "https://bsky.app/profile/oleadigitalis.bsky.social",
       "youtube": "https://www.youtube.com/@OleaDigitalis",
