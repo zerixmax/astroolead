@@ -1,0 +1,57 @@
+---
+import { Image } from 'astro:assets';
+import { Menu, X } from '@lucide/astro';
+import logo from '../assets/images/oleadigitalis_logo264.png';
+---
+
+<header class="bg-olea-sand border-b border-olea-olive/10 py-3 px-6 lg:px-12 sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto flex justify-between items-center">
+    
+    <a href="/" class="flex-shrink-0 transition-transform hover:scale-105">
+      <Image src={logo} alt="Olea Digitalis Logo" width={110} class="h-10 w-auto" />
+    </a>
+
+    <nav class="hidden md:flex items-center gap-10 font-serif text-lg">
+      <a href="/" class="hover:text-olea-olive transition-colors">Početna</a>
+      <a href="#projekt" class="hover:text-olea-olive transition-colors">Projekt</a>
+      <a href="#oleadbot" class="hover:text-olea-olive transition-colors">OleaDbot</a>
+      <a href="#kontakt" class="bg-olea-olive text-white px-6 py-2 rounded-full hover:bg-olea-earth transition-all shadow-md">
+        Kontakt
+      </a>
+    </nav>
+
+    <button id="menu-btn" class="md:hidden text-olea-earth p-2 focus:outline-none" aria-label="Toggle Menu">
+      <Menu id="icon-menu" class="w-8 h-8" />
+      <X id="icon-close" class="w-8 h-8 hidden" />
+    </button>
+  </div>
+
+  <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-olea-sand border-b border-olea-olive/10 shadow-xl py-6 flex-col items-center gap-6 font-serif text-xl">
+    <a href="/" class="mobile-link hover:text-olea-olive">Početna</a>
+    <a href="#projekt" class="mobile-link hover:text-olea-olive">Projekt</a>
+    <a href="#oleadbot" class="mobile-link hover:text-olea-olive">OleaDbot</a>
+    <a href="#kontakt" class="mobile-link text-olea-olive font-bold">Kontakt</a>
+  </div>
+</header>
+
+<script>
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const iconMenu = document.getElementById('icon-menu');
+  const iconClose = document.getElementById('icon-close');
+  const mobileLinks = document.querySelectorAll('.mobile-link');
+
+  function toggleMenu() {
+    mobileMenu?.classList.toggle('hidden');
+    mobileMenu?.classList.toggle('flex');
+    iconMenu?.classList.toggle('hidden');
+    iconClose?.classList.toggle('hidden');
+  }
+
+  menuBtn?.addEventListener('click', toggleMenu);
+  
+  // Zatvori meni kad se klikne na link (korisno za One-Page dizajn)
+  mobileLinks.forEach(link => {
+    link.addEventListener('click', toggleMenu);
+  });
+</script>

@@ -1,43 +1,34 @@
-# Astro Starter Kit: Minimal
+# Olea Digitalis | Frontend (Astro)
 
-```sh
-npm create astro@latest -- --template minimal
+Platforma za digitalnu trasabilnost maslinovog ulja. Od stabla do boce — s digitalnim certifikatom autentičnosti.
+
+## ⚠️ Stroga pravila za developere (OBAVEZNO PROČITATI)
+Ovaj projekt izgrađen je na **Clean Slate** principu. Zabranjeno je "vibe kodiranje" i nasumično dodavanje stilova.
+1. Svi dizajn tokeni (boje, fontovi) nalaze se isključivo u `tailwind.config.mjs`.
+2. Zabranjeno je mijenjanje globalne CSS arhitekture bez odobrenja Seniora.
+3. Prije svakog pusha, obavezno je ispuniti dnevnik rada u `docs/dev-logs/`.
+
+## 🛠️ Tehnološki Stack
+* **Framework:** Astro (Static Site Generation)
+* **Styling:** Tailwind CSS
+* **Ikone:** Lucide Astro (`@lucide/astro`)
+* **Infrastruktura:** Docker (Nginx Multi-stage build)
+
+## 🚀 Pokretanje projekta (Lokalno)
+1. Instaliraj ovisnosti: `npm install`
+2. Pokreni server: `npm run dev`
+3. Projekt je dostupan na: `http://localhost:4321`
+
+## 🐳 Pokretanje (Docker)
+```bash
+docker build -t olea-digitalis-frontend .
+docker run -p 8080:80 olea-digitalis-frontend
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## 📚 Dokumentacija
 
-## 🚀 Project Structure
+Detaljna dokumentacija nalazi se u `docs/` direktoriju:
 
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+* [Arhitektura projekta](docs/architecture.md)
+* [Pravila Brendiranja i Boje](docs/branding.md)
+* [Dnevnici razvoja (Dev Logs)](docs/dev-logs/)
