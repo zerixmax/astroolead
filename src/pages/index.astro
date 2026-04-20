@@ -6,7 +6,11 @@ import Footer from '../components/Footer.astro';
 import content from '../data/content.json';
 ---
 
-<Layout title="Olea Digitalis | Digitalna Trasabilnost">
+<Layout 
+  title={content.seo.title}
+  description={content.seo.description}
+  keywords={content.seo.keywords}
+>
   <Header />
   
   <main>

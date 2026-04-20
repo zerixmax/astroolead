@@ -1,4 +1,9 @@
 {
+  "seo": {
+    "title": "Olea Digitalis | Digitalna trasabilnost maslinovog ulja",
+    "description": "Platforma za digitalnu trasabilnost premium maslinovog ulja. Svaka boca dobiva svoj digitalni identifikacijski dokument i certifikat autentičnosti.",
+    "keywords": "maslinovo ulje, digitalna trasabilnost, digitalni identifikacijski dokument, OPG Dalmacija, AgroTech, certifikat autentičnosti, maslinarstvo"
+  },
   "hero": {
     "title": "Platforma za digitalnu trasabilnost maslinovog ulja.",
     "subtitle": "Od stabla do boce — s digitalnim certifikatom autentičnosti."
@@ -6,7 +11,7 @@
   "sections": {
     "projekt": {
       "title": "Digitalna Transformacija OPG-a",
-      "description": "Razvijamo AgroTech inovacije koje omogućuju potpunu sljedivost ulja putem Algorand blockchaina. Naša rješenja su 'Offline-First', prilagođena radu u dalmatinskim maslinicima bez signala."
+      "description": "Razvijamo AgroTech inovacije koje omogućuju potpunu sljedivost proizvodnje. Svaka boca dobiva svoj nepromjenjivi digitalni identifikacijski dokument. Naša rješenja su 'Offline-First', prilagođena radu u dalmatinskim maslinicima bez signala."
     },
     "oleadbot": {
       "title": "OleaDbot: Fizički asistent",
