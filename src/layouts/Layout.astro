@@ -1,15 +1,16 @@
 ---
 interface Props {
-  title?: string;
+  title: string;
   description?: string;
   keywords?: string;
 }
 
 const { 
-  title = "Olea Digitalis", 
-  description = "Platforma za digitalnu trasabilnost maslinovog ulja.",
-  keywords = ""
+  title, 
+  description = "Digitalna trasabilnost maslinovog ulja.",
+  keywords = "maslinovo ulje, trasabilnost, OPG"
 } = Astro.props;
+
 import '../styles/global.css';
 ---
 
@@ -17,11 +18,18 @@ import '../styles/global.css';
 <html lang="hr" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    
+    <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="keywords" content={keywords} />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="author" content="Olea Digitalis" />
+    
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>{title}</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
