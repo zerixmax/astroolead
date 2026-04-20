@@ -1,9 +1,13 @@
 ---
+import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Slideshow from '../components/Slideshow.astro';
 import Footer from '../components/Footer.astro';
 import content from '../data/content.json';
+
+// Uvoz pozadine za OleaDbot sekciju
+import botBg from '../assets/images/olead-bot-plan.webp';
 ---
 
 <Layout 
@@ -42,8 +46,12 @@ import content from '../data/content.json';
       </div>
     </section>
 
-    <section id="oleadbot" class="py-32 px-6 bg-olea-sand border-t border-olea-olive/5">
-      <div class="max-w-4xl mx-auto text-center">
+    <section id="oleadbot" class="relative py-32 px-6 bg-olea-sand border-t border-olea-olive/5 overflow-hidden">
+      <div class="absolute inset-0 z-0 opacity-10 pointer-events-none">
+        <Image src={botBg} alt="" class="w-full h-full object-cover" />
+      </div>
+      
+      <div class="relative z-10 max-w-4xl mx-auto text-center">
         <h2 class="text-4xl font-serif text-olea-earth mb-8">{content.sections.oleadbot.title}</h2>
         <p class="text-xl text-olea-earth/80 leading-relaxed max-w-2xl mx-auto font-sans">
           {content.sections.oleadbot.description}
