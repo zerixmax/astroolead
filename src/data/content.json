@@ -1,0 +1,25 @@
+{
+  "hero": {
+    "title": "Platforma za digitalnu trasabilnost maslinovog ulja.",
+    "subtitle": "Od stabla do boce — s digitalnim certifikatom autentičnosti."
+  },
+  "sections": {
+    "projekt": {
+      "title": "Digitalna Transformacija OPG-a",
+      "description": "Razvijamo AgroTech inovacije koje omogućuju potpunu sljedivost ulja putem Algorand blockchaina. Naša rješenja su 'Offline-First', prilagođena radu u dalmatinskim maslinicima bez signala."
+    },
+    "oleadbot": {
+      "title": "OleaDbot: Fizički asistent",
+      "description": "Robotski sustav dizajniran za pomoć u teškim fizičkim radovima. Pomaže pri nošenju tereta, prijenosu baterija za berbu te služi kao sustav za navodnjavanje na zahtjevnim terenima."
+    }
+  },
+  "footer": {
+    "email": "ivo@oleadigitalis.eu",
+    "location": "Dalmacija, Hrvatska",
+    "social": {
+      "bluesky": "https://bsky.app/profile/oleadigitalis.bsky.social",
+      "youtube": "https://www.youtube.com/@OleaDigitalis",
+      "discord": "https://discord.com/channels/1426235736218407035/"
+    }
+  }
+}

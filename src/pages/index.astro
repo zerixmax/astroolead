@@ -3,25 +3,50 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Slideshow from '../components/Slideshow.astro';
 import Footer from '../components/Footer.astro';
+import content from '../data/content.json';
 ---
 
-<Layout title="OLEA - Digitalna trasabilnost maslinovog ulja">
-	<Header />
-	
-	<main>
-		<Slideshow />
-		
-		<section class="py-32 px-6">
-			<div class="max-w-4xl mx-auto text-center">
-				<h1 class="text-4xl md:text-6xl font-serif mb-8 leading-tight">
-					Platforma za digitalnu trasabilnost maslinovog ulja.
-				</h1>
-				<p class="text-xl md:text-2xl text-olea-olive font-medium">
-					Od stabla do boce — s digitalnim certifikatom autentičnosti.
-				</p>
-			</div>
-		</section>
-	</main>
+<Layout title="Olea Digitalis | Digitalna Trasabilnost">
+  <Header />
+  
+  <main>
+    <section class="max-w-6xl mx-auto py-12 px-6">
+      <Slideshow />
+    </section>
+    
+    <section class="py-32 px-6 border-t border-olea-olive/10">
+      <div class="max-w-4xl mx-auto text-center space-y-10">
+        <h2 class="text-4xl md:text-6xl font-serif text-olea-earth leading-tight italic">
+          {content.hero.title}
+        </h2>
+        <div class="flex flex-col items-center gap-6">
+          <div class="h-px w-24 bg-olea-olive/30"></div>
+          <p class="text-xl md:text-3xl font-sans text-olea-olive tracking-widest uppercase italic font-light">
+            {content.hero.subtitle}
+          </p>
+          <div class="h-px w-24 bg-olea-olive/30"></div>
+        </div>
+      </div>
+    </section>
 
-	<Footer />
+    <section id="projekt" class="py-24 px-6 bg-white border-t border-olea-olive/5">
+      <div class="max-w-4xl mx-auto text-center">
+        <h3 class="text-3xl font-serif text-olea-earth mb-8">{content.sections.projekt.title}</h3>
+        <p class="text-xl text-olea-earth/80 leading-relaxed max-w-2xl mx-auto font-sans">
+          {content.sections.projekt.description}
+        </p>
+      </div>
+    </section>
+
+    <section id="oleadbot" class="py-24 px-6 bg-olea-sand border-t border-olea-olive/5">
+      <div class="max-w-4xl mx-auto text-center">
+        <h3 class="text-3xl font-serif text-olea-earth mb-8">{content.sections.oleadbot.title}</h3>
+        <p class="text-xl text-olea-earth/80 leading-relaxed max-w-2xl mx-auto font-sans">
+          {content.sections.oleadbot.description}
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
 </Layout>

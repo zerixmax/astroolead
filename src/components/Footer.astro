@@ -1,8 +1,9 @@
 ---
 import { Image } from 'astro:assets';
-import { Cloud, Youtube, MessageSquare } from '@lucide/astro';
+import { Cloud, Play, MessageSquare } from '@lucide/astro';
 import logo from '../assets/images/oleadigitalis_logo264.png';
 import appData from '../data/version.json';
+import content from '../data/content.json';
 ---
 
 <footer id="kontakt" class="bg-olea-earth text-olea-sand py-16 px-6 border-t-4 border-olea-olive">
@@ -10,25 +11,25 @@ import appData from '../data/version.json';
     
     <div class="flex flex-col items-center md:items-start gap-4">
       <Image src={logo} alt="Olea Digitalis" width={160} class="h-auto brightness-0 invert opacity-90" />
-      <p class="text-sm opacity-70 italic font-serif">Platforma za digitalnu trasabilnost maslinovog ulja.</p>
+      <p class="text-sm opacity-70 italic font-serif">{content.hero.subtitle}</p>
     </div>
 
     <div class="space-y-2">
       <h4 class="font-serif text-2xl font-bold text-olea-olive mb-4">Kontakt</h4>
-      <p class="text-lg font-sans tracking-wide">ivo@oleadigitalis.eu</p>
-      <p class="opacity-60 text-sm uppercase tracking-widest mt-2">Dalmacija, Hrvatska</p>
+      <p class="text-lg font-sans tracking-wide">{content.footer.email}</p>
+      <p class="opacity-60 text-sm uppercase tracking-widest mt-2">{content.footer.location}</p>
     </div>
 
     <div class="flex flex-col items-center md:items-end gap-4">
       <h4 class="font-serif text-xl font-bold opacity-80 mb-2">Mreže</h4>
       <div class="flex gap-6">
-        <a href="https://bsky.app/profile/oleadigitalis.bsky.social" target="_blank" aria-label="BlueSky" class="hover:text-olea-olive transition-transform hover:-translate-y-1">
+        <a href={content.footer.social.bluesky} target="_blank" aria-label="BlueSky" class="hover:text-olea-olive transition-transform hover:-translate-y-1">
           <Cloud class="w-8 h-8" />
         </a>
-        <a href="https://www.youtube.com/@OleaDigitalis" target="_blank" aria-label="YouTube" class="hover:text-olea-olive transition-transform hover:-translate-y-1">
-          <Youtube class="w-8 h-8" />
+        <a href={content.footer.social.youtube} target="_blank" aria-label="YouTube" class="hover:text-olea-olive transition-transform hover:-translate-y-1">
+          <Play class="w-8 h-8" />
         </a>
-        <a href="https://discord.com/channels/1426235736218407035/" target="_blank" aria-label="Discord" class="hover:text-olea-olive transition-transform hover:-translate-y-1">
+        <a href={content.footer.social.discord} target="_blank" aria-label="Discord" class="hover:text-olea-olive transition-transform hover:-translate-y-1">
           <MessageSquare class="w-8 h-8" />
         </a>
       </div>
@@ -36,7 +37,7 @@ import appData from '../data/version.json';
   </div>
 
   <div class="max-w-7xl mx-auto mt-16 pt-8 border-t border-olea-sand/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs opacity-50 font-sans tracking-wider">
-    <p>&copy; 2026 Olea Digitalis. Sva prava pridržana.</p>
+    <p>&copy; {new Date().getFullYear()} Olea Digitalis. Sva prava pridržana.</p>
     <p>Verzija {appData.version} | {appData.codename}</p>
   </div>
 </footer>
