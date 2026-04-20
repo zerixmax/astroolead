@@ -7,7 +7,7 @@ import content from '../data/content.json';
 ---
 
 <Layout 
-  title={content.seo.title}
+  title={content.seo.title} 
   description={content.seo.description}
   keywords={content.seo.keywords}
 >
@@ -20,9 +20,9 @@ import content from '../data/content.json';
     
     <section class="py-32 px-6 border-t border-olea-olive/10">
       <div class="max-w-4xl mx-auto text-center space-y-10">
-        <h2 class="text-4xl md:text-6xl font-serif text-olea-earth leading-tight italic">
+        <h1 class="text-4xl md:text-6xl font-serif text-olea-earth leading-tight italic">
           {content.hero.title}
-        </h2>
+        </h1>
         <div class="flex flex-col items-center gap-6">
           <div class="h-px w-24 bg-olea-olive/30"></div>
           <p class="text-xl md:text-3xl font-sans text-olea-olive tracking-widest uppercase italic font-light">
@@ -33,18 +33,18 @@ import content from '../data/content.json';
       </div>
     </section>
 
-    <section id="projekt" class="py-24 px-6 bg-white border-t border-olea-olive/5">
+    <section id="projekt" class="py-32 px-6 bg-white border-t border-olea-olive/5">
       <div class="max-w-4xl mx-auto text-center">
-        <h3 class="text-3xl font-serif text-olea-earth mb-8">{content.sections.projekt.title}</h3>
+        <h2 class="text-4xl font-serif text-olea-earth mb-8">{content.sections.projekt.title}</h2>
         <p class="text-xl text-olea-earth/80 leading-relaxed max-w-2xl mx-auto font-sans">
           {content.sections.projekt.description}
         </p>
       </div>
     </section>
 
-    <section id="oleadbot" class="py-24 px-6 bg-olea-sand border-t border-olea-olive/5">
+    <section id="oleadbot" class="py-32 px-6 bg-olea-sand border-t border-olea-olive/5">
       <div class="max-w-4xl mx-auto text-center">
-        <h3 class="text-3xl font-serif text-olea-earth mb-8">{content.sections.oleadbot.title}</h3>
+        <h2 class="text-4xl font-serif text-olea-earth mb-8">{content.sections.oleadbot.title}</h2>
         <p class="text-xl text-olea-earth/80 leading-relaxed max-w-2xl mx-auto font-sans">
           {content.sections.oleadbot.description}
         </p>
