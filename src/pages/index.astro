@@ -6,7 +6,7 @@ import Slideshow from '../components/Slideshow.astro';
 import Footer from '../components/Footer.astro';
 import content from '../data/content.json';
 
-// Uvoz slika
+// Uvoz pozadinskih slika
 import heroBg from '../assets/images/olive-hero-bg.webp';
 import botBg from '../assets/images/olead-bot-plan.webp';
 import nodeBg from '../assets/images/olead-otok-mapa.webp';
@@ -24,35 +24,58 @@ import nodeBg from '../assets/images/olead-otok-mapa.webp';
       <Slideshow />
     </section>
     
-    <section class="relative py-32 px-6 bg-olea-sand overflow-hidden">
-      <div class="absolute inset-0 z-0 opacity-10 pointer-events-none">
+    <section class="relative py-56 px-6 border-t border-olea-olive/10 overflow-hidden bg-olea-sand flex items-center min-h-[60vh]">
+      <div class="absolute inset-0 z-0 opacity-20 pointer-events-none">
         <Image src={heroBg} alt="" class="w-full h-full object-cover" />
       </div>
-      <div class="relative z-10 max-w-4xl mx-auto text-center space-y-10">
-        <h1 class="text-4xl md:text-6xl font-serif text-olea-earth leading-tight italic">{content.hero.title}</h1>
-        <p class="text-xl md:text-3xl font-sans text-olea-olive tracking-widest uppercase italic">{content.hero.subtitle}</p>
+      
+      <div class="relative z-10 max-w-4xl mx-auto text-center space-y-12">
+        <h1 class="text-5xl md:text-7xl font-serif text-olea-earth leading-tight italic drop-shadow-sm">
+          {content.hero.title}
+        </h1>
+        <div class="flex flex-col items-center gap-8">
+          <div class="h-px w-32 bg-olea-olive/40"></div>
+          <p class="text-2xl md:text-4xl font-sans text-olea-olive tracking-widest uppercase italic font-light bg-olea-sand/30 backdrop-blur-[2px] px-4 py-2 rounded-lg">
+            {content.hero.subtitle}
+          </p>
+          <div class="h-px w-32 bg-olea-olive/40"></div>
+        </div>
       </div>
     </section>
 
-    <section id="oleadbot" class="relative py-64 px-6 bg-olea-sand border-t border-olea-olive/5 overflow-hidden flex items-center">
+    <section id="projekt" class="py-32 px-6 bg-white border-t border-olea-olive/5">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-4xl font-serif text-olea-earth mb-8">{content.sections.projekt.title}</h2>
+        <p class="text-xl text-olea-earth/80 leading-relaxed max-w-2xl mx-auto font-sans">
+          {content.sections.projekt.description}
+        </p>
+      </div>
+    </section>
+
+    <section id="oleadbot" class="relative py-64 px-6 bg-olea-sand border-t border-olea-olive/5 overflow-hidden min-h-[70vh] flex items-center">
       <div class="absolute inset-0 z-0 opacity-15 pointer-events-none">
         <Image src={botBg} alt="" class="w-full h-full object-cover" />
       </div>
+      
       <div class="relative z-10 max-w-4xl mx-auto text-center">
-        <h2 class="text-4xl font-serif mb-8">{content.sections.oleadbot.title}</h2>
-        <p class="text-xl md:text-2xl bg-olea-sand/60 backdrop-blur-sm p-6 rounded-lg">{content.sections.oleadbot.description}</p>
+        <h2 class="text-4xl md:text-5xl font-serif text-olea-earth mb-8">{content.sections.oleadbot.title}</h2>
+        <p class="text-xl md:text-2xl text-olea-earth leading-relaxed max-w-2xl mx-auto font-sans bg-olea-sand/60 backdrop-blur-sm p-6 rounded-lg">
+          {content.sections.oleadbot.description}
+        </p>
       </div>
     </section>
 
-    <section id="oleadnode" class="relative py-48 px-6 bg-white border-t border-olea-olive/5 overflow-hidden">
+    <section id="oleadnode" class="relative py-48 px-6 bg-white border-t border-olea-olive/5 overflow-hidden flex items-center">
       <div class="absolute inset-0 z-0 opacity-10 pointer-events-none">
         <Image src={nodeBg} alt="" class="w-full h-full object-cover" />
       </div>
+
       <div class="relative z-10 max-w-4xl mx-auto text-center text-olea-earth">
         <h2 class="text-4xl font-serif mb-8">{content.sections.oleadnode.title}</h2>
         <p class="text-xl bg-white/60 backdrop-blur-sm p-6 rounded-lg">{content.sections.oleadnode.description}</p>
       </div>
     </section>
   </main>
+
   <Footer />
 </Layout>
