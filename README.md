@@ -1,6 +1,6 @@
 # Olea Digitalis | Frontend (Astro)
 
-Platforma za digitalnu trasabilnost maslinovog ulja. Od stabla do boce — s digitalnim certifikatom autentičnosti.
+Platforma za digitalnu sljedivost maslinovog ulja. Od stabla do boce — s digitalnim certifikatom autentičnosti.
 
 ## ⚠️ Stroga pravila za developere (OBAVEZNO PROČITATI)
 Ovaj projekt izgrađen je na **Clean Slate** principu. Zabranjeno je "vibe kodiranje" i nasumično dodavanje stilova.
