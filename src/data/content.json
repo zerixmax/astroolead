@@ -13,6 +13,10 @@
       "title": "Digitalna Transformacija OPG-a",
       "description": "Razvijamo AgroTech inovacije koje omogućuju potpunu sljedivost proizvodnje. Svaka boca dobiva svoj nepromjenjivi digitalni identifikacijski dokument. Naša rješenja su 'Offline-First', prilagođena radu u dalmatinskim maslinicima bez signala."
     },
+    "dnevnik": {
+      "title": "Digitalni dnevnik uzgoja",
+      "description": "Rješenje za birokraciju koje radi i u najudaljenijem masliniku. Unosite radove bez interneta (Offline-First), dok sustav automatski povlači podatke sa senzora. Generirajte izvještaje za certifikate i poticaje u jednom kliku."
+    },
     "oleadbot": {
       "title": "OleaDbot: Fizički asistent",
       "description": "Robotski sustav dizajniran za pomoć u teškim fizičkim radovima. Pomaže pri nošenju tereta, prijenosu baterija za berbu te služi kao sustav za navodnjavanje na zahtjevnim terenima."

@@ -52,27 +52,37 @@ import nodeBg from '../assets/images/olead-otok-mapa.webp';
       </div>
     </section>
 
-    <section id="oleadbot" class="relative py-64 px-6 bg-olea-sand border-t border-olea-olive/5 overflow-hidden min-h-[70vh] flex items-center">
+    <!-- Nova sekcija: Dnevnik -->
+    <section id="dnevnik" class="py-32 px-6 bg-olea-sand border-t border-olea-olive/5">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-4xl font-serif text-olea-earth mb-8">{content.sections.dnevnik.title}</h2>
+        <p class="text-xl text-olea-earth/80 leading-relaxed max-w-2xl mx-auto font-sans">
+          {content.sections.dnevnik.description}
+        </p>
+      </div>
+    </section>
+
+    <section id="oleadbot" class="relative py-64 px-6 bg-white border-t border-olea-olive/5 overflow-hidden min-h-[70vh] flex items-center">
       <div class="absolute inset-0 z-0 opacity-15 pointer-events-none">
         <Image src={botBg} alt="" class="w-full h-full object-cover" />
       </div>
       
       <div class="relative z-10 max-w-4xl mx-auto text-center">
         <h2 class="text-4xl md:text-5xl font-serif text-olea-earth mb-8">{content.sections.oleadbot.title}</h2>
-        <p class="text-xl md:text-2xl text-olea-earth leading-relaxed max-w-2xl mx-auto font-sans bg-olea-sand/60 backdrop-blur-sm p-6 rounded-lg">
+        <p class="text-xl md:text-2xl text-olea-earth leading-relaxed max-w-2xl mx-auto font-sans bg-white/60 backdrop-blur-sm p-6 rounded-lg">
           {content.sections.oleadbot.description}
         </p>
       </div>
     </section>
 
-    <section id="oleadnode" class="relative py-48 px-6 bg-white border-t border-olea-olive/5 overflow-hidden flex items-center">
+    <section id="oleadnode" class="relative py-48 px-6 bg-olea-sand border-t border-olea-olive/5 overflow-hidden flex items-center">
       <div class="absolute inset-0 z-0 opacity-10 pointer-events-none">
         <Image src={nodeBg} alt="" class="w-full h-full object-cover" />
       </div>
 
       <div class="relative z-10 max-w-4xl mx-auto text-center text-olea-earth">
         <h2 class="text-4xl font-serif mb-8">{content.sections.oleadnode.title}</h2>
-        <p class="text-xl bg-white/60 backdrop-blur-sm p-6 rounded-lg">{content.sections.oleadnode.description}</p>
+        <p class="text-xl bg-olea-sand/60 backdrop-blur-sm p-6 rounded-lg">{content.sections.oleadnode.description}</p>
       </div>
     </section>
   </main>
