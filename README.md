@@ -1,34 +1,39 @@
-# Olea Digitalis | Frontend (Astro)
+# Olea Digitalis
 
-Platforma za digitalnu sljedivost maslinovog ulja. Od stabla do boce — s digitalnim certifikatom autentičnosti.
+Službena PR web stranica projekta **Olea Digitalis** — platforme za digitalnu sljedivost maslinovog ulja, od stabla do boce s digitalnim certifikatom autentičnosti na Algorand blockchainu.
 
-## ⚠️ Stroga pravila za developere (OBAVEZNO PROČITATI)
-Ovaj projekt izgrađen je na **Clean Slate** principu. Zabranjeno je "vibe kodiranje" i nasumično dodavanje stilova.
-1. Svi dizajn tokeni (boje, fontovi) nalaze se isključivo u `tailwind.config.mjs`.
-2. Zabranjeno je mijenjanje globalne CSS arhitekture bez odobrenja Seniora.
-3. Prije svakog pusha, obavezno je ispuniti dnevnik rada u `docs/dev-logs/`.
+🌐 [oleadigitalis.eu](https://oleadigitalis.eu)
 
-## 🛠️ Tehnološki Stack
-* **Framework:** Astro (Static Site Generation)
-* **Styling:** Tailwind CSS
-* **Ikone:** Lucide Astro (`@lucide/astro`)
-* **Infrastruktura:** Docker (Nginx Multi-stage build)
+## Tehnološki stack
 
-## 🚀 Pokretanje projekta (Lokalno)
-1. Instaliraj ovisnosti: `npm install`
-2. Pokreni server: `npm run dev`
-3. Projekt je dostupan na: `http://localhost:4321`
+- **Astro 6** — Static Site Generation, TypeScript, i18n routing
+- **Tailwind CSS v4** — utility-first styling s `@theme` design tokenima
+- **astro-icon** — Lucide ikone (self-hosted putem @iconify)
+- **@fontsource** — self-hosted fontovi (Playfair Display, Inter, JetBrains Mono)
+- **@astrojs/sitemap** — automatski XML sitemap s hreflang alternates
+- **Docker** — multi-stage build (Node build → Nginx alpine serve)
 
-## 🐳 Pokretanje (Docker)
+## Pokretanje
+
 ```bash
+# Lokalno
+npm install
+npm run dev
+
+# Docker
 docker build -t olea-digitalis-frontend .
 docker run -p 8080:80 olea-digitalis-frontend
 ```
 
-## 📚 Dokumentacija
+## Dokumentacija
 
-Detaljna dokumentacija nalazi se u `docs/` direktoriju:
+- [Arhitektura](docs/architecture.md)
+- [Brendiranje i boje](docs/branding.md)
+- [Dnevnici razvoja](docs/dev-logs/)
 
-* [Arhitektura projekta](docs/architecture.md)
-* [Pravila Brendiranja i Boje](docs/branding.md)
-* [Dnevnici razvoja (Dev Logs)](docs/dev-logs/)
+---
+
+## Pravila za developere
+
+1. Svi dizajn tokeni (boje, fontovi) definirani su u `@theme` bloku u `src/styles/global.css`.
+2. Prije svakog pusha obavezno ispuniti dnevnik rada u `docs/dev-logs/`.

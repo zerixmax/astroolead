@@ -4,27 +4,33 @@ Ova pravila osiguravaju vizualni integritet Olea projekta. **Nema improvizacije.
 
 ## 🎨 Boje (Design Tokens)
 
-Koristi isključivo ove klase. Ako boja ne postoji u Tailwind konfiguraciji, ne smiješ je koristiti.
+Boje su definirane u `@theme` bloku u `src/styles/global.css`. Ne koristi boje izvan ovog skupa.
 
 | Uloga | Boja | Hex | Tailwind Klasa |
 | :--- | :--- | :--- | :--- |
-| **Pozadina** | Olea Sand | `#F4F1EA` | `bg-olea-sand` |
-| **Primarna** | Olea Olive | `#556B2F` | `text-olea-olive` ili `bg-olea-olive` |
-| **Tekst/Tamna**| Olea Earth | `#3D2B1F` | `text-olea-earth` ili `bg-olea-earth` |
+| **Pozadina** | Olea Sand | `#F4F1EA` | `bg-olea-sand` / `text-olea-sand` |
+| **Primarna** | Olea Olive | `#556B2F` | `bg-olea-olive` / `text-olea-olive` |
+| **Tekst/Tamna**| Olea Earth | `#3D2B1F` | `bg-olea-earth` / `text-olea-earth` |
 
 ## Typography
 
-### Naslovi (Headings)
-*   **Font:** `Playfair Display`
-*   **Stil:** Serif, elegantan.
-*   **Upotreba:** h1, h2, h3 tagovi.
+Fontovi su self-hostani putem `@fontsource` paketa.
 
-### Body Tekst
-*   **Font:** `Inter`
-*   **Stil:** Sans-serif, čist.
-*   **Upotreba:** p, span, li, gumbi.
+### Naslovi (h1, h2, h3)
+*   **Font:** `Playfair Display` (serif)
+*   **Tailwind klasa:** `font-serif`
+*   **Dodatno:** `tracking-wide` (letter-spacing 0.025em)
+
+### Body tekst (p, span, li, a, button)
+*   **Font:** `Inter` (sans-serif)
+*   **Tailwind klasa:** `font-sans`
+
+### Monospace (code, kbd)
+*   **Font:** `JetBrains Mono` (monospace)
+*   **Tailwind klasa:** `font-mono`
 
 ## 📏 Elementi Sučelja
-*   **Gumbi:** Uvijek zaobljeni (`rounded-full`), s tranzicijom boje (`transition-colors`).
-*   **Razmaci:** Koristi standardne Tailwind spacing klase (npr. `py-32` za velike sekcije).
-*   **Logo:** Uvijek `110px` širine u Headeru.
+
+*   **Gumbi:** Zaobljeni (`rounded-full`), s tranzicijom (`transition-all duration-300`).
+*   **Razmaci:** Standardne Tailwind spacing klase (npr. `py-24` za sekcije).
+*   **Logo:** 110px širine u Navbaru, 160px u Footeru.
