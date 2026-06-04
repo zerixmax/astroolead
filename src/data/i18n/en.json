@@ -5,7 +5,8 @@
     "keywords": "olive growers app, digital olive grove, smart olive grove, precision agriculture, olive grove sensors, olive oil traceability, digital identification document, olive oil certificate, AgroTech Croatia, OPG Dalmatia, Vela Luka",
     "oleadbotTitle": "OleaDbot | Physical Assistant",
     "oleadnodeTitle": "OleaDnode | Sensor Network",
-    "oProjektuTitle": "About Project | Olea Digitalis"
+    "oProjektuTitle": "About Project | Olea Digitalis",
+    "dnevnikTitle": "Digital Breeding Log | Olea Digitalis"
   },
   "hero": {
     "title": "Platform for Digital Traceability of Olive Oil.",
@@ -110,5 +111,16 @@
     "potvrdjeno": "VERIFIED",
     "opis_002": "Registration of Drobnica variety olive tree, Vela Luka.",
     "info_callout": "This section will display the history of digital certificates, search options for tree metadata, and direct scanning and generation of QR codes for extra virgin olive oil bottles."
+  },
+  "dnevnik": {
+    "naslov": "Digital Breeding Log",
+    "opis": "Tracking agricultural activities has never been easier. Designed for offline-first operation directly from the olive grove.",
+    "funkcionalnosti": "Functionalities",
+    "f1_title": "Offline Entry",
+    "f1_desc": "Log pruning, fertilizing, and harvesting data regardless of signal.",
+    "f2_title": "Synchronization",
+    "f2_desc": "Automatic sync with the central system as soon as you get signal.",
+    "f3_title": "Report Generation",
+    "f3_desc": "Export logs in a format ready for relevant authorities."
   }
 }

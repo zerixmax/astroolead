@@ -9,6 +9,11 @@ import { useTranslations } from '../../i18n/ui';
 
 import botBg from '../../assets/images/olead-bot-plan.webp';
 import nodeBg from '../../assets/images/olead-otok-mapa.webp';
+import Slideshow from '../../components/Slideshow.astro';
+import img1 from '../../assets/images/olead-digitalis-astro-202603.webp';
+import img2 from '../../assets/images/olead-digitalis-astro-202604.webp';
+import img3 from '../../assets/images/olead-digitalis-astro-202602.webp';
+import img4 from '../../assets/images/olead-digitalis-astro-202601.webp';
 
 const lang = 'en';
 const t = useTranslations(lang);
@@ -33,6 +38,15 @@ const t = useTranslations(lang);
           {t('sections.projekt.description')}
         </p>
       </div>
+    </section>
+
+    <section class="py-16 px-6 bg-white">
+      <Slideshow images={[
+        { src: img1, title: 'OleaDbot Blueprint 1', description: 'Detailed view of the OleaDbot system prototype.' },
+        { src: img2, title: 'OleaDbot Blueprint 2', description: 'Sensor and control architecture.' },
+        { src: img3, title: 'OleaDbot Blueprint 3', description: 'Microcontroller interface connections.' },
+        { src: img4, title: 'OleaDbot Blueprint 4', description: 'Final design and rendering.' }
+      ]} />
     </section>
 
     <!-- Nova sekcija: Dnevnik -->

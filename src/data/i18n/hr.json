@@ -5,7 +5,8 @@
     "keywords": "aplikacija za maslinare, digitalni maslinik, pametni maslinik, precizna poljoprivreda, senzori za maslinik, sljedivost maslinovog ulja, digitalni identifikacijski dokument, certifikat maslinovo ulje, AgroTech Hrvatska, OPG Dalmacija, Vela Luka",
     "oleadbotTitle": "OleaDbot | Fizički asistent",
     "oleadnodeTitle": "OleaDnode | Senzorska mreža",
-    "oProjektuTitle": "O projektu | Olea Digitalis"
+    "oProjektuTitle": "O projektu | Olea Digitalis",
+    "dnevnikTitle": "Digitalni dnevnik uzgoja | Olea Digitalis"
   },
   "hero": {
     "title": "Platforma za digitalnu sljedivost maslinovog ulja.",
@@ -110,5 +111,16 @@
     "potvrdjeno": "POTVRĐENO",
     "opis_002": "Registracija stabla masline sorte Drobnica, Vela Luka.",
     "info_callout": "Ovdje će se prikazivati povijest digitalnih certifikata, mogućnost pretraživanja metapodataka stabala te izravno skeniranje i generiranje QR kodova za boce ekstra djevičanskog maslinovog ulja."
+  },
+  "dnevnik": {
+    "naslov": "Digitalni dnevnik uzgoja",
+    "opis": "Praćenje poljoprivrednih aktivnosti nikada nije bilo jednostavnije. Aplikacija dizajnirana za rad bez internetske veze (Offline-First) izravno iz maslinika.",
+    "funkcionalnosti": "Funkcionalnosti",
+    "f1_title": "Offline unos",
+    "f1_desc": "Unesite podatke o rezidbi, gnojidbi i berbi bez obzira na signal.",
+    "f2_title": "Sinkronizacija",
+    "f2_desc": "Automatska sinkronizacija sa sustavom čim uhvatite signal.",
+    "f3_title": "Generiranje izvještaja",
+    "f3_desc": "Izvezite dnevnik u obliku spremnom za nadležne institucije."
   }
 }

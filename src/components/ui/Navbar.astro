@@ -58,7 +58,7 @@ if (routeKey) {
       <a href={getRelativeLocaleUrl(lang, routes[lang]['o-projektu'])} class="hover:text-olea-olive transition-colors duration-200">{t('nav.oProjektu')}</a>
       <a href={getRelativeLocaleUrl(lang, 'nft')} class="hover:text-olea-olive transition-colors duration-200">{t('nav.certifikati')}</a>
       <a href={`${getRelativeLocaleUrl(lang, '')}#projekt`} class="hover:text-olea-olive transition-colors duration-200">{t('nav.projekt')}</a>
-      <a href={`${getRelativeLocaleUrl(lang, '')}#dnevnik`} class="hover:text-olea-olive transition-colors duration-200">{t('nav.dnevnik')}</a>
+      <a href={getRelativeLocaleUrl(lang, routes[lang]['dnevnik-uzgoja'])} class="hover:text-olea-olive transition-colors duration-200">{t('nav.dnevnik')}</a>
       
       <!-- Dropdown Rješenja -->
       <div class="relative group">
@@ -119,7 +119,7 @@ if (routeKey) {
     <a href={getRelativeLocaleUrl(lang, routes[lang]['o-projektu'])} class="mobile-link hover:text-olea-olive transition-colors">{t('nav.oProjektu')}</a>
     <a href={getRelativeLocaleUrl(lang, 'nft')} class="mobile-link hover:text-olea-olive transition-colors">{t('nav.certifikati')}</a>
     <a href={`${getRelativeLocaleUrl(lang, '')}#projekt`} class="mobile-link hover:text-olea-olive transition-colors">{t('nav.projekt')}</a>
-    <a href={`${getRelativeLocaleUrl(lang, '')}#dnevnik`} class="mobile-link hover:text-olea-olive transition-colors">{t('nav.dnevnik')}</a>
+    <a href={getRelativeLocaleUrl(lang, routes[lang]['dnevnik-uzgoja'])} class="mobile-link hover:text-olea-olive transition-colors">{t('nav.dnevnik')}</a>
     
     <!-- Mobile Dropdown Rješenja -->
     <div class="w-full flex flex-col items-center">

@@ -9,6 +9,11 @@ import { useTranslations } from '../../i18n/ui';
 
 import botBg from '../../assets/images/olead-bot-plan.webp';
 import nodeBg from '../../assets/images/olead-otok-mapa.webp';
+import Slideshow from '../../components/Slideshow.astro';
+import img1 from '../../assets/images/olead-digitalis-astro-202603.webp';
+import img2 from '../../assets/images/olead-digitalis-astro-202604.webp';
+import img3 from '../../assets/images/olead-digitalis-astro-202602.webp';
+import img4 from '../../assets/images/olead-digitalis-astro-202601.webp';
 
 const lang = 'hr';
 const t = useTranslations(lang);
@@ -33,6 +38,15 @@ const t = useTranslations(lang);
           {t('sections.projekt.description')}
         </p>
       </div>
+    </section>
+
+    <section class="py-16 px-6 bg-white">
+      <Slideshow images={[
+        { src: img1, title: 'OleaDbot Nacrt 1', description: 'Detaljan prikaz prototipa OleaDbot sustava.' },
+        { src: img2, title: 'OleaDbot Nacrt 2', description: 'Arhitektura senzora i upravljanja.' },
+        { src: img3, title: 'OleaDbot Nacrt 3', description: 'Povezivanje s mikrokontrolerima.' },
+        { src: img4, title: 'OleaDbot Nacrt 4', description: 'Finalni dizajn i renderiranje.' }
+      ]} />
     </section>
 
     <!-- Nova sekcija: Dnevnik -->
