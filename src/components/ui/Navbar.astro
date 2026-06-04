@@ -1,0 +1,215 @@
+---
+import { Image } from 'astro:assets';
+import { Icon } from 'astro-icon/components';
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import logo from '../../assets/images/oleadigitalis_logo264.png';
+import { useTranslations } from '../../i18n/ui';
+import type { Lang } from '../../i18n/ui';
+import { routes } from '../../i18n/routes';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+// Generate dynamic language alternate URLs for the current page using the routes dictionary
+const pathname = Astro.url.pathname;
+const segments = pathname.split('/').filter(Boolean);
+
+let currentSlug = '';
+if (segments.length > 1) {
+  currentSlug = segments[1];
+}
+
+let routeKey: keyof typeof routes.hr | null = null;
+if (currentSlug) {
+  const currentLocale = lang;
+  const entries = Object.entries(routes[currentLocale]) as [keyof typeof routes.hr, string][];
+  const found = entries.find(([_, val]) => val === currentSlug);
+  if (found) {
+    routeKey = found[0];
+  }
+}
+
+let hrUrl = '/hr/';
+let enUrl = '/en/';
+
+if (routeKey) {
+  hrUrl = `/hr/${routes.hr[routeKey]}/`;
+  enUrl = `/en/${routes.en[routeKey]}/`;
+}
+---
+
+<header class="bg-olea-sand/90 backdrop-blur-md border-b border-olea-olive/10 py-4 px-6 lg:px-12 sticky top-0 z-50 transition-all duration-300">
+  <div class="max-w-7xl mx-auto flex justify-between items-center">
+    
+    <!-- Logo & Branding -->
+    <!-- Logo & Branding -->
+    <a href={getRelativeLocaleUrl(lang, '')} class="flex items-center gap-3 flex-shrink-0 transition-transform duration-300 hover:scale-105 cursor-pointer">
+      <Image src={logo} alt="Olea Digitalis Logo" width={110} class="h-10 w-auto" />
+      <span class="font-serif text-lg font-bold text-olea-earth">Olea Digitalis</span>
+    </a>
+
+    <!-- Desktop Navigation -->
+    <nav class="hidden md:flex items-center gap-8 font-serif text-lg">
+      <a href={getRelativeLocaleUrl(lang, '')} class="hover:text-olea-olive transition-colors duration-200">{t('nav.pocetna')}</a>
+      <a href={getRelativeLocaleUrl(lang, routes[lang]['o-projektu'])} class="hover:text-olea-olive transition-colors duration-200">{t('nav.oProjektu')}</a>
+      <a href={getRelativeLocaleUrl(lang, 'nft')} class="hover:text-olea-olive transition-colors duration-200">{t('nav.certifikati')}</a>
+      <a href={`${getRelativeLocaleUrl(lang, '')}#projekt`} class="hover:text-olea-olive transition-colors duration-200">{t('nav.projekt')}</a>
+      <a href={`${getRelativeLocaleUrl(lang, '')}#dnevnik`} class="hover:text-olea-olive transition-colors duration-200">{t('nav.dnevnik')}</a>
+      
+      <!-- Dropdown Rješenja -->
+      <div class="relative group">
+        <button 
+          id="desktop-dropdown-btn" 
+          class="flex items-center gap-1 hover:text-olea-olive transition-colors duration-200 cursor-pointer focus:outline-none"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          {t('nav.rjesenja')}
+          <Icon name="lucide:chevron-down" class="w-4 h-4 transition-transform duration-300 group-hover:rotate-180" />
+        </button>
+        <div class="absolute top-full left-0 pt-4 -mt-4 w-48 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-200 transform scale-95 group-hover:scale-100 origin-top-left z-50">
+          <div class="bg-white border border-olea-olive/10 rounded-xl shadow-xl py-2 mt-2">
+            <a href={getRelativeLocaleUrl(lang, 'oleadbot')} class="block px-4 py-2 text-sm text-olea-earth hover:bg-olea-sand hover:text-olea-olive transition-colors">
+              {t('nav.oleadbot')}
+            </a>
+            <a href={getRelativeLocaleUrl(lang, 'oleadenode')} class="block px-4 py-2 text-sm text-olea-earth hover:bg-olea-sand hover:text-olea-olive transition-colors">
+              {t('nav.oleadnode')}
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <a href={`${getRelativeLocaleUrl(lang, '')}#kontakt`} class="bg-olea-olive text-white px-6 py-2 rounded-full hover:bg-olea-earth transition-all duration-300 shadow-md hover:shadow-lg">
+        {t('nav.kontakt')}
+      </a>
+      
+      <!-- Language Switcher Desktop -->
+      <div class="flex items-center gap-2 text-sm border-l border-olea-olive/20 pl-6 font-mono">
+        <Icon name="lucide:globe" class="w-4 h-4 text-olea-olive/75" />
+        <a href={hrUrl} class={lang === 'hr' ? 'text-olea-olive font-bold' : 'hover:text-olea-olive transition-colors opacity-70'}>HR</a>
+        <span class="opacity-30">|</span>
+        <a href={enUrl} class={lang === 'en' ? 'text-olea-olive font-bold' : 'hover:text-olea-olive transition-colors opacity-70'}>EN</a>
+      </div>
+    </nav>
+
+    <!-- Mobile Controls (Hamburger only) -->
+    <div class="flex items-center gap-4 md:hidden">
+      <button 
+        id="menu-toggle-btn" 
+        class="text-olea-earth p-2 focus:outline-none cursor-pointer" 
+        aria-label="Otvori izbornik" 
+        aria-expanded="false"
+      >
+        <Icon id="icon-menu-open" name="lucide:menu" class="w-8 h-8" />
+        <Icon id="icon-menu-close" name="lucide:x" class="w-8 h-8 hidden" />
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div 
+    id="mobile-menu" 
+    class="hidden md:hidden absolute top-full left-0 w-full bg-olea-sand border-b border-olea-olive/10 shadow-xl py-6 flex-col items-center gap-5 font-serif text-xl z-40 transition-all duration-300"
+  >
+    <a href={getRelativeLocaleUrl(lang, '')} class="mobile-link hover:text-olea-olive transition-colors">{t('nav.pocetna')}</a>
+    <a href={getRelativeLocaleUrl(lang, routes[lang]['o-projektu'])} class="mobile-link hover:text-olea-olive transition-colors">{t('nav.oProjektu')}</a>
+    <a href={getRelativeLocaleUrl(lang, 'nft')} class="mobile-link hover:text-olea-olive transition-colors">{t('nav.certifikati')}</a>
+    <a href={`${getRelativeLocaleUrl(lang, '')}#projekt`} class="mobile-link hover:text-olea-olive transition-colors">{t('nav.projekt')}</a>
+    <a href={`${getRelativeLocaleUrl(lang, '')}#dnevnik`} class="mobile-link hover:text-olea-olive transition-colors">{t('nav.dnevnik')}</a>
+    
+    <!-- Mobile Dropdown Rješenja -->
+    <div class="w-full flex flex-col items-center">
+      <button 
+        id="mobile-dropdown-btn" 
+        class="flex items-center gap-1 hover:text-olea-olive transition-colors cursor-pointer focus:outline-none"
+        aria-expanded="false"
+      >
+        {t('nav.rjesenja')}
+        <Icon id="mobile-chevron" name="lucide:chevron-down" class="w-5 h-5 transition-transform duration-300" />
+      </button>
+      <div 
+        id="mobile-dropdown-content" 
+        class="hidden flex-col items-center bg-olea-olive/5 w-full py-3 mt-2 gap-3 text-lg border-y border-olea-olive/5"
+      >
+        <a href={getRelativeLocaleUrl(lang, 'oleadbot')} class="mobile-link text-olea-earth hover:text-olea-olive transition-colors">
+          {t('nav.oleadbot')}
+        </a>
+        <a href={getRelativeLocaleUrl(lang, 'oleadenode')} class="mobile-link text-olea-earth hover:text-olea-olive transition-colors">
+          {t('nav.oleadnode')}
+        </a>
+      </div>
+    </div>
+
+    <a href={`${getRelativeLocaleUrl(lang, '')}#kontakt`} class="mobile-link text-white bg-olea-olive px-8 py-2 rounded-full font-bold shadow-md">
+      {t('nav.kontakt')}
+    </a>
+
+    <!-- Mobile Language Switcher at the bottom for thumb reachability -->
+    <div class="flex items-center gap-2 text-base font-mono mt-4 pt-4 border-t border-olea-olive/20 w-3/4 justify-center">
+      <Icon class="inline w-5 h-5 mr-2" name="lucide:globe" />
+      <a href={hrUrl} class={`mobile-link ${lang === 'hr' ? 'text-olea-olive font-bold' : 'hover:text-olea-olive transition-colors opacity-70'}`}>HR</a>
+      <span class="opacity-30">|</span>
+      <a href={enUrl} class={`mobile-link ${lang === 'en' ? 'text-olea-olive font-bold' : 'hover:text-olea-olive transition-colors opacity-70'}`}>EN</a>
+    </div>
+  </div>
+</header>
+
+<script>
+  function setupNavbar() {
+    const menuBtn = document.getElementById('menu-toggle-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const iconMenuOpen = document.getElementById('icon-menu-open');
+    const iconMenuClose = document.getElementById('icon-menu-close');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+    
+    const mobileDropdownBtn = document.getElementById('mobile-dropdown-btn');
+    const mobileDropdownContent = document.getElementById('mobile-dropdown-content');
+    const mobileChevron = document.getElementById('mobile-chevron');
+
+    // Menu toggle logic
+    function toggleMenu() {
+      if (!mobileMenu || !menuBtn) return;
+      const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
+      
+      mobileMenu.classList.toggle('hidden');
+      mobileMenu.classList.toggle('flex');
+      iconMenuOpen?.classList.toggle('hidden');
+      iconMenuClose?.classList.toggle('hidden');
+      
+      menuBtn.setAttribute('aria-expanded', (!isExpanded).toString());
+    }
+
+    menuBtn?.addEventListener('click', toggleMenu);
+    
+    // Close menu when a link is clicked
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+          toggleMenu();
+        }
+      });
+    });
+
+    // Mobile dropdown toggle logic
+    mobileDropdownBtn?.addEventListener('click', () => {
+      if (!mobileDropdownContent || !mobileChevron || !mobileDropdownBtn) return;
+      const isExpanded = mobileDropdownBtn.getAttribute('aria-expanded') === 'true';
+      
+      mobileDropdownContent.classList.toggle('hidden');
+      mobileDropdownContent.classList.toggle('flex');
+      mobileChevron.classList.toggle('rotate-180');
+      
+      mobileDropdownBtn.setAttribute('aria-expanded', (!isExpanded).toString());
+    });
+  }
+
+  // Run on page load and on View Transitions page swap
+  document.addEventListener('astro:page-load', setupNavbar);
+  
+  // Fallback for first load if astro:page-load doesn't fire immediately
+  setupNavbar();
+</script>

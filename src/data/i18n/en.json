@@ -1,0 +1,114 @@
+{
+  "seo": {
+    "title": "Olea Digitalis | Smart Olive Grove & Digital Traceability",
+    "description": "App for olive growers and digital traceability platform. Precision olive growing with sensors (OleaDnode) and robotic assistants. Every bottle gets a digital ID document.",
+    "keywords": "olive growers app, digital olive grove, smart olive grove, precision agriculture, olive grove sensors, olive oil traceability, digital identification document, olive oil certificate, AgroTech Croatia, OPG Dalmatia, Vela Luka",
+    "oleadbotTitle": "OleaDbot | Physical Assistant",
+    "oleadnodeTitle": "OleaDnode | Sensor Network",
+    "oProjektuTitle": "About Project | Olea Digitalis"
+  },
+  "hero": {
+    "title": "Platform for Digital Traceability of Olive Oil.",
+    "subtitle": "From tree to bottle — with a digital certificate of authenticity.",
+    "cta": "Download Whitepaper",
+    "videoId": "NeDWefswS18",
+    "videoSectionTitle": "Olea Digitalis in Practice"
+  },
+  "nav": {
+    "pocetna": "Home",
+    "projekt": "Project",
+    "dnevnik": "Log",
+    "rjesenja": "Solutions",
+    "oleadbot": "OleaDbot",
+    "oleadnode": "OleaDnode",
+    "kontakt": "Contact",
+    "oProjektu": "About project",
+    "certifikati": "Certificates"
+  },
+  "sections": {
+    "projekt": {
+      "title": "OPG Digital Transformation",
+      "description": "We develop AgroTech innovations that enable complete production traceability. Every bottle receives its immutable digital identification document. Our solutions are 'Offline-First', tailored to operate in Dalmatian olive groves without cellular signal."
+    },
+    "dnevnik": {
+      "title": "Digital Cultivation Log",
+      "description": "A solution for bureaucracy that works even in the most remote olive grove. Enter activities without internet (Offline-First), while the system automatically pulls data from sensors. Generate reports for certificates and subsidies in one click."
+    },
+    "oleadbot": {
+      "title": "OleaDbot: Physical Assistant",
+      "description": "A robotic system designed to help with heavy physical work. It assists with carrying loads, transporting harvesting batteries, and serves as an irrigation system on demanding terrains."
+    },
+    "oleadnode": {
+      "title": "OleaDnode: Sensor Network",
+      "description": "Static sensor stations for real-time tracking of microclimatic conditions. They continuously read air temperature and humidity as well as soil moisture, providing key data for crop and irrigation optimization."
+    },
+    "saznajVise": "Learn more"
+  },
+  "footer": {
+    "email": "ivo@oleadigitalis.eu",
+    "location": "Vela Luka, Korčula, Croatia",
+    "rights": "All rights reserved.",
+    "social": {
+      "bluesky": "https://bsky.app/profile/oleadigitalis.bsky.social",
+      "youtube": "https://www.youtube.com/@OleaDigitalis",
+      "discord": "https://discord.com/channels/1426235736218407035/"
+    }
+  },
+  "o_projektu": {
+    "naslov": "How did Olea Digitalis start?",
+    "uvod": "A fusion of tradition, technology, and vision for the future of olive growing.",
+    "povijest": "My name is Ivo Cetinić, and for more than two decades, I have been developing websites and digital solutions. My internet story began in 1997 when I first came into contact with web design and graphic tools like Adobe Photoshop 5.5. Over the years, I gained experience working in the IT sector and building dozens of websites, following the evolution of the internet from Web1 through Web2 to today's Web3 era. At the same time, olive growing has always been a part of my family. I inherited my great-grandfather's olive grove, and my goal was to improve the tracking of its production and ensure accurate data for each individual olive tree — from planting to processing.",
+    "poc": "As a Proof of Concept (PoC), I created an ASA NFT (Algorand Standard Asset) for the first olive tree (VL01-T001), demonstrating that the idea is not only theoretically possible but also practical. This digital record serves as a permanent guarantee of the tree's location, variety, and ownership on the blockchain.",
+    "blockchain_rjesenje": "Olea Digitalis: Blockchain as a Service (BaaS) system for olive growers and mills that enables simple, transparent, and immutable certification and traceability of extra virgin olive oil. By scanning a QR code, consumers get the full story of the olive oil bottle — from the tree of harvest to the laboratory processing results.",
+    "primjeri_iz_svijeta": [
+      {
+        "ime": "Pig halves investment",
+        "opis": "Croatian digital agricultural platform enabling investments in pig halves with traceability and digital block registration.",
+        "link": "https://www.nacional.hr/ulazemo-u-svinjske-polovice-putem-digitalne-platforme/"
+      },
+      {
+        "ime": "Digital traceability in Spain",
+        "opis": "Implementation of blockchain technology in the Spanish olive oil industry to increase transparency and prevent counterfeiting.",
+        "link": "https://www.oliveoiltimes.com/hr/world/blockchain-technology-adds-transparency-to-spains-olive-oil-industry/66559"
+      },
+      {
+        "ime": "Terra Delyssa",
+        "opis": "One of the global pioneers in mass application of blockchain olive oil traceability from groves to store shelves.",
+        "link": "https://terradelyssa.com/collections/products-extra-virgin-olive-oil"
+      },
+      {
+        "ime": "Olive oil in digital form",
+        "opis": "Croatian portal Maslinar.com reports on new AgroTech technologies, digital harvest logging, and traceability advantages.",
+        "link": "https://www.maslinar.com/vijesti-iz-maslinarstva-maslinovo-ulje-u-digitalnom-obliku/"
+      },
+      {
+        "ime": "Italia Olivicola & Algorand",
+        "opis": "Italy's largest olive oil producer consortium partners with Euranet and adopts the sustainable Algorand blockchain for traceability.",
+        "link": "https://www.prnewswire.com/news-releases/italys-largest-consortium-of-olive-oil-producers-partners-with-euranet-and-adopts-the-secure-and-sustainable-algorand-blockchain-to-improve-supply-chain-transparency-and-efficiency-301392593.html"
+      }
+    ],
+    "vizija": "Vision of the future — Web3 and olive growers. We want to build a stable digital platform that will enable small family farms (OPGs) to prove the premium quality of their products using simple, accessible tools. Through automated data entry, field robotic assistants, and blockchain protection, we aim to position Croatian olive growing as a global leader in digital transparency.",
+    "sekcija_povijest": "History & Roots",
+    "sekcija_poc": "P.O.C. Olive Grove: Digital Location",
+    "sekcija_blockchain": "Blockchain as a Solution",
+    "sekcija_primjeri": "Global Examples",
+    "sekcija_vizija": "Vision of the Future",
+    "vanjski_izvor": "External source",
+    "posjeti": "Visit",
+    "cta_naslov": "Want to secure the traceability of your products?",
+    "cta_opis": "Join the Olea Digitalis platform and offer your customers irrefutable proof of quality and origin. Connect your production with modern digital standards.",
+    "cta_gumb": "Get in Touch"
+  },
+  "certifikati": {
+    "naslov": "Digital certificates",
+    "opis": "Traceability and proof of authenticity for each tree and olive oil batch on the blockchain.",
+    "prvi_nft": "First ASA NFT Certificate",
+    "registar_aktivnih": "Active Certificates Register",
+    "simulacija": "Real-time blockchain transactions simulation",
+    "mreza_aktivna": "NETWORK ACTIVE",
+    "opis_001": "First registered tree with digital ID card and biometric signature.",
+    "potvrdjeno": "VERIFIED",
+    "opis_002": "Registration of Drobnica variety olive tree, Vela Luka.",
+    "info_callout": "This section will display the history of digital certificates, search options for tree metadata, and direct scanning and generation of QR codes for extra virgin olive oil bottles."
+  }
+}

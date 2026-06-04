@@ -1,0 +1,80 @@
+---
+import { Image } from 'astro:assets';
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/ui/Navbar.astro';
+import Hero from '../../components/ui/Hero.astro';
+import VideoSection from '../../components/ui/VideoSection.astro';
+import Footer from '../../components/Footer.astro';
+import { useTranslations } from '../../i18n/ui';
+
+import botBg from '../../assets/images/olead-bot-plan.webp';
+import nodeBg from '../../assets/images/olead-otok-mapa.webp';
+
+const lang = 'hr';
+const t = useTranslations(lang);
+---
+
+<Layout 
+  title={t('seo.title')} 
+  description={t('seo.description')}
+  keywords={t('seo.keywords')}
+  lang={lang}
+>
+  <Navbar lang={lang} />
+  
+  <main>
+    <Hero lang={lang} />
+    <VideoSection lang={lang} />
+
+    <section id="projekt" class="py-32 px-6 bg-white border-t border-olea-olive/5">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-4xl font-serif text-olea-earth mb-8">{t('sections.projekt.title')}</h2>
+        <p class="text-xl text-olea-earth/80  leading-relaxed max-w-2xl mx-auto font-sans">
+          {t('sections.projekt.description')}
+        </p>
+      </div>
+    </section>
+
+    <!-- Nova sekcija: Dnevnik -->
+    <section id="dnevnik" class="py-32 px-6 bg-olea-sand border-t border-olea-olive/5">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-4xl font-serif text-olea-earth mb-8">{t('sections.dnevnik.title')}</h2>
+        <p class="text-xl text-olea-earth/80  leading-relaxed max-w-2xl mx-auto font-sans">
+          {t('sections.dnevnik.description')}
+        </p>
+      </div>
+    </section>
+
+    <section id="oleadbot" class="relative py-64 px-6 bg-white border-t border-olea-olive/5 overflow-hidden min-h-[70vh] flex items-center">
+      <div class="absolute inset-0 z-0 opacity-15 pointer-events-none">
+        <Image src={botBg} alt="" class="w-full h-full object-cover" />
+      </div>
+      
+      <div class="relative z-10 max-w-4xl mx-auto text-center flex flex-col items-center">
+        <h2 class="text-4xl md:text-5xl font-serif text-olea-earth mb-8">{t('sections.oleadbot.title')}</h2>
+        <p class="text-xl md:text-2xl text-olea-earth leading-relaxed max-w-2xl mx-auto font-sans bg-white/60 backdrop-blur-sm p-6 rounded-lg mb-8">
+          {t('sections.oleadbot.description')}
+        </p>
+        <a href={`/${lang}/oleadbot/`} class="bg-olea-olive text-white px-8 py-3 rounded-full hover:bg-olea-earth transition-all duration-300 font-sans font-semibold tracking-wider shadow-md hover:shadow-lg">
+          {t('sections.saznajVise')}
+        </a>
+      </div>
+    </section>
+
+    <section id="oleadnode" class="relative py-48 px-6 bg-olea-sand border-t border-olea-olive/5 overflow-hidden flex items-center">
+      <div class="absolute inset-0 z-0 opacity-10 pointer-events-none">
+        <Image src={nodeBg} alt="" class="w-full h-full object-cover" />
+      </div>
+
+      <div class="relative z-10 max-w-4xl mx-auto text-center text-olea-earth flex flex-col items-center">
+        <h2 class="text-4xl font-serif mb-8">{t('sections.oleadnode.title')}</h2>
+        <p class="text-xl bg-olea-sand/60 backdrop-blur-sm p-6 rounded-lg mb-8">{t('sections.oleadnode.description')}</p>
+        <a href={`/${lang}/oleadenode/`} class="bg-olea-olive text-white px-8 py-3 rounded-full hover:bg-olea-earth transition-all duration-300 font-sans font-semibold tracking-wider shadow-md hover:shadow-lg">
+          {t('sections.saznajVise')}
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <Footer lang={lang} />
+</Layout>

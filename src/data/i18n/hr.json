@@ -1,0 +1,114 @@
+{
+  "seo": {
+    "title": "Olea Digitalis | Pametni maslinik i digitalna sljedivost",
+    "description": "Aplikacija za maslinare i platforma za digitalnu sljedivost. Precizno maslinarstvo uz senzore (OleaDnode) i robotske asistente. Svaka boca dobiva digitalni identifikacijski dokument.",
+    "keywords": "aplikacija za maslinare, digitalni maslinik, pametni maslinik, precizna poljoprivreda, senzori za maslinik, sljedivost maslinovog ulja, digitalni identifikacijski dokument, certifikat maslinovo ulje, AgroTech Hrvatska, OPG Dalmacija, Vela Luka",
+    "oleadbotTitle": "OleaDbot | Fizički asistent",
+    "oleadnodeTitle": "OleaDnode | Senzorska mreža",
+    "oProjektuTitle": "O projektu | Olea Digitalis"
+  },
+  "hero": {
+    "title": "Platforma za digitalnu sljedivost maslinovog ulja.",
+    "subtitle": "Od stabla do boce — s digitalnim certifikatom autentičnosti.",
+    "cta": "Preuzmi Whitepaper",
+    "videoId": "CJiLi17CtyE",
+    "videoSectionTitle": "Olea Digitalis u praksi"
+  },
+  "nav": {
+    "pocetna": "Početna",
+    "projekt": "Projekt",
+    "dnevnik": "Dnevnik",
+    "rjesenja": "Rješenja",
+    "oleadbot": "OleaDbot",
+    "oleadnode": "OleaDnode",
+    "kontakt": "Kontakt",
+    "oProjektu": "O projektu",
+    "certifikati": "Certifikati"
+  },
+  "sections": {
+    "projekt": {
+      "title": "Digitalna Transformacija OPG-a",
+      "description": "Razvijamo AgroTech inovacije koje omogućuju potpunu sljedivost proizvodnje. Svaka boca dobiva svoj nepromjenjivi digitalni identifikacijski dokument. Naša rješenja su 'Offline-First', prilagođena radu u dalmatinskim maslinicima bez signala."
+    },
+    "dnevnik": {
+      "title": "Digitalni dnevnik uzgoja",
+      "description": "Rješenje za birokraciju koje radi i u najudaljenijem masliniku. Unosite radove bez interneta (Offline-First), dok sustav automatski povlači podatke sa senzora. Generirajte izvještaje za certifikate i poticaje u jednom kliku."
+    },
+    "oleadbot": {
+      "title": "OleaDbot: Fizički asistent",
+      "description": "Robotski sustav dizajniran za pomoć u teškim fizičkim radovima. Pomaže pri nošenju tereta, prijenosu baterija za berbu te služi kao sustav za navodnjavanje na zahtjevnim terenima."
+    },
+    "oleadnode": {
+      "title": "OleaDnode: Senzorska mreža",
+      "description": "Statične senzorske stanice za precizno praćenje mikroklimatskih uvjeta u realnom vremenu. Kontinuirano očitavaju temperaturu i vlagu zraka te vlažnost tla, pružajući ključne podatke za optimizaciju uzgoja i navodnjavanja."
+    },
+    "saznajVise": "Saznaj više"
+  },
+  "footer": {
+    "email": "ivo@oleadigitalis.eu",
+    "location": "Vela Luka, Korčula, Hrvatska",
+    "rights": "Sva prava pridržana.",
+    "social": {
+      "bluesky": "https://bsky.app/profile/oleadigitalis.bsky.social",
+      "youtube": "https://www.youtube.com/@OleaDigitalis",
+      "discord": "https://discord.com/channels/1426235736218407035/"
+    }
+  },
+  "o_projektu": {
+    "naslov": "Kako je nastao Olea Digitalis?",
+    "uvod": "Spoj tradicije, tehnologije i vizije za budućnost maslinarstva.",
+    "povijest": "Moje ime je Ivo Cetinić, i više od dva desetljeća bavim se razvojem web stranica i digitalnih rješenja. Moja priča s internetom počela je 1997. godine, kada sam prvi put došao u dodir s web dizajnom i grafičkim alatima poput Adobe Photoshopa 5.5. Tijekom godina stjecao sam iskustvo radeći u IT sektoru i izrađujući desetke web stranica, prateći evoluciju interneta od Web1 preko Web2 do današnje Web3 ere. Istovremeno, maslinarstvo je oduvijek bilo dio moje obitelji. Naslijedio sam maslinik svog pradjeda, a želja mi je bila unaprijediti način praćenja njegove proizvodnje i osigurati točne podatke o stablu svake masline — od sadnje do prerade.",
+    "poc": "Kao dokaz koncepta (Proof of Concept), izradio sam ASA NFT (Algorand Standard Asset) za prvu maslinu (VL01-T001), čime sam pokazao da je ideja ne samo teoretski moguća, već i izvediva u praksi. Ovaj digitalni zapis služi kao trajna garancija o lokaciji, sorti i vlasništvu stabla masline na blockchainu.",
+    "blockchain_rjesenje": "Olea Digitalis: Blockchain as a Service (BaaS) sustav za maslinare i uljare koji omogućuje jednostavnu, transparentnu i nepromjenjivu certifikaciju i sljedivost ekstra djevičanskog maslinovog ulja. Potrošači jednostavnim skeniranjem QR koda dobivaju potpunu priču o boci ulja — od stabla s kojeg je berba potekla do laboratorijskih rezultata prerade.",
+    "primjeri_iz_svijeta": [
+      {
+        "ime": "Investiranje u svinjske polovice",
+        "opis": "Hrvatska digitalna poljoprivredna platforma koja omogućuje investiranje u svinjske polovice uz praćenje sljedivosti i digitalnu registraciju svakog bloka.",
+        "link": "https://www.nacional.hr/ulazemo-u-svinjske-polovice-putem-digitalne-platforme/"
+      },
+      {
+        "ime": "Digitalna sljedivost u Španjolskoj",
+        "opis": "Uvođenje blockchain tehnologije u španjolsku industriju maslinovog ulja radi povećanja transparentnosti i sprečavanja patvorenja.",
+        "link": "https://www.oliveoiltimes.com/hr/world/blockchain-technology-adds-transparency-to-spains-olive-oil-industry/66559"
+      },
+      {
+        "ime": "Terra Delyssa",
+        "opis": "Jedan od globalnih pionira u masovnoj primjeni blockchain sljedivosti za maslinovo ulje, od polja do polica trgovina.",
+        "link": "https://terradelyssa.com/collections/products-extra-virgin-olive-oil"
+      },
+      {
+        "ime": "Maslinovo ulje u digitalnom obliku",
+        "opis": "Hrvatski portal Maslinar.com piše o novim AgroTech tehnologijama, digitalnom bilježenju berbe i prednostima sljedivosti.",
+        "link": "https://www.maslinar.com/vijesti-iz-maslinarstva-maslinovo-ulje-u-digitalnom-obliku/"
+      },
+      {
+        "ime": "Italia Olivicola & Algorand",
+        "opis": "Najveći talijanski konzorcij proizvođača maslinovog ulja koristi Algorand blockchain za sljedivost i sigurnost opskrbnog lanca.",
+        "link": "https://www.prnewswire.com/news-releases/italys-largest-consortium-of-olive-oil-producers-partners-with-euranet-and-adopts-the-secure-and-sustainable-algorand-blockchain-to-improve-supply-chain-transparency-and-efficiency-301392593.html"
+      }
+    ],
+    "vizija": "Vizija budućnosti — Web3 i maslinari. Želimo izgraditi stabilnu digitalnu platformu koja će omogućiti malim obiteljskim poljoprivrednim gospodarstvima (OPG) da jednostavnim i pristupačnim alatima dokažu vrhunsku kvalitetu svog proizvoda. Kroz automatizaciju unosa podataka, robotske asistente na terenu i blockchain zaštitu, želimo pozicionirati hrvatsko maslinarstvo kao globalnog lidera u digitalnoj transparentnosti.",
+    "sekcija_povijest": "Povijest i korijeni",
+    "sekcija_poc": "P.O.C. Maslinik: Digitalna lokacija",
+    "sekcija_blockchain": "Blockchain kao rješenje",
+    "sekcija_primjeri": "Primjeri iz svijeta",
+    "sekcija_vizija": "Vizija Budućnosti",
+    "vanjski_izvor": "Vanjski izvor",
+    "posjeti": "Posjeti",
+    "cta_naslov": "Želite osigurati sljedivost vaših proizvoda?",
+    "cta_opis": "Pridružite se Olea Digitalis platformi i ponudite svojim kupcima neoboriv dokaz kvalitete i podrijetla. Povežite svoju proizvodnju s modernim digitalnim standardima.",
+    "cta_gumb": "Započnimo suradnju"
+  },
+  "certifikati": {
+    "naslov": "Digitalni certifikati",
+    "opis": "Sljedivost i dokaz autentičnosti svakog stabla i serije maslinovog ulja na blockchainu.",
+    "prvi_nft": "Prvi ASA NFT Certifikat",
+    "registar_aktivnih": "Registar aktivnih certifikata",
+    "simulacija": "Simulacija blockchain transakcija u realnom vremenu",
+    "mreza_aktivna": "MREŽA AKTIVNA",
+    "opis_001": "Prvo registrirano stablo s digitalnom ID karticom i biometrijskim potpisom.",
+    "potvrdjeno": "POTVRĐENO",
+    "opis_002": "Registracija stabla masline sorte Drobnica, Vela Luka.",
+    "info_callout": "Ovdje će se prikazivati povijest digitalnih certifikata, mogućnost pretraživanja metapodataka stabala te izravno skeniranje i generiranje QR kodova za boce ekstra djevičanskog maslinovog ulja."
+  }
+}

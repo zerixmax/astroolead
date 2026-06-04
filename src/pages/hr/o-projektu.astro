@@ -1,0 +1,142 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/ui/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import { Image } from 'astro:assets';
+import { Icon } from 'astro-icon/components';
+import { ui, useTranslations } from '../../i18n/ui';
+
+import ivoImage from '../../assets/images/ivo-cetinic-2022.webp';
+import blockchainImage from '../../assets/images/blockchain-olea-digitalis.webp';
+
+const lang = 'hr';
+const t = useTranslations(lang);
+const content = ui[lang].o_projektu;
+---
+
+<Layout title={t('seo.oProjektuTitle')} lang={lang}>
+  <Navbar lang={lang} />
+  
+  <main class="min-h-screen bg-olea-sand text-olea-earth">
+    
+    <!-- Hero Header -->
+    <section class="max-w-4xl mx-auto pt-24 pb-12 px-6 text-center">
+      <h1 class="text-5xl md:text-6xl font-serif text-olea-olive font-extrabold tracking-wide mb-6">
+        {content.naslov}
+      </h1>
+      <p class="text-xl md:text-2xl font-serif italic text-olea-earth/80 max-w-2xl mx-auto leading-relaxed border-b border-olea-olive/15 pb-12">
+        {content.uvod}
+      </p>
+    </section>
+
+    <!-- Storytelling: History -->
+    <section class="max-w-3xl mx-auto py-12 px-6">
+      <div class="prose prose-lg font-sans text-olea-earth/95 leading-relaxed space-y-8">
+        <h2 class="text-3xl font-serif font-bold text-olea-olive tracking-wide mb-4">
+          {content.sekcija_povijest}
+        </h2>
+        <div class="flex flex-col md:flex-row gap-8 items-start">
+          <div class="flex-shrink-0 mx-auto md:mx-0 w-48 md:w-56">
+            <Image alt="Ivo Cetinić" class="rounded-lg shadow-lg w-full h-auto object-cover border border-olea-olive/10" src={ivoImage}/>
+          </div>
+          <p class="text-lg first-letter:text-5xl first-letter:font-serif first-letter:font-bold first-letter:text-olea-olive first-letter:mr-3 first-letter:float-left">
+            {content.povijest}
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Proof of Concept (PoC) -->
+    <section class="max-w-3xl mx-auto py-12 px-6">
+      <div class="bg-white/50 backdrop-blur-sm border border-olea-olive/10 rounded-2xl p-8 md:p-12 shadow-sm">
+        <h2 class="text-3xl font-serif font-bold text-olea-olive tracking-wide mb-4">
+          {content.sekcija_poc}
+        </h2>
+        <p class="font-sans text-lg text-olea-earth/90 leading-relaxed">
+          {content.poc}
+        </p>
+        <div class="w-full aspect-video rounded-xl overflow-hidden shadow-2xl border-4 border-olea-olive/30 my-8">
+          <iframe 
+            src="https://www.google.com/maps/d/embed?mid=1Pau0rAU9gzO-s90RI5p3UI5w2pRF2FM&ehbc=2E312F" 
+            class="w-full h-full"
+            loading="lazy" 
+            title="Olea Digitalis P.O.C. Lokacija">
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blockchain Solution -->
+    <section class="max-w-3xl mx-auto py-12 px-6">
+      <div class="prose prose-lg font-sans text-olea-earth/95 leading-relaxed space-y-4">
+        <h2 class="text-3xl font-serif font-bold text-olea-olive tracking-wide mb-4">
+          {content.sekcija_blockchain}
+        </h2>
+        <p class="text-lg">
+          {content.blockchain_rjesenje}
+        </p>
+        <div class="mt-8 flex justify-center border border-olea-olive/15 rounded-2xl p-4 bg-white/40 shadow-sm">
+          <Image alt="Blockchain Olea Digitalis" class="rounded-lg max-w-full h-auto" src={blockchainImage}/>
+        </div>
+      </div>
+    </section>
+
+    <!-- Primjeri iz svijeta (World Examples) -->
+    <section class="max-w-6xl mx-auto py-16 px-6">
+      <h2 class="text-3xl md:text-4xl font-serif font-bold text-olea-olive text-center tracking-wide mb-12">
+        {content.sekcija_primjeri}
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {content.primjeri_iz_svijeta.map((ex) => (
+          <div class="bg-white border-2 border-olea-olive/20 rounded-2xl p-6 hover:shadow-lg transition-shadow duration-300 flex flex-col justify-between">
+            <div>
+              <h3 class="text-xl font-serif font-bold text-olea-olive mb-3">{ex.ime}</h3>
+              <p class="font-sans text-sm text-olea-earth/80 leading-relaxed">{ex.opis}</p>
+            </div>
+            <div class="mt-6 flex items-center justify-between text-xs font-mono text-olea-olive uppercase tracking-widest pt-4 border-t border-olea-olive/10">
+              <span>{content.vanjski_izvor}</span>
+              <a href={ex.link} target="_blank" rel="noopener noreferrer" class="flex items-center gap-1 hover:underline text-olea-olive font-bold">
+                {content.posjeti} <Icon name="lucide:external-link" class="w-4 h-4" />
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Vision Section -->
+    <section class="max-w-3xl mx-auto py-12 pb-24 px-6">
+      <div class="prose prose-lg font-sans text-olea-earth/95 leading-relaxed space-y-4">
+        <h2 class="text-3xl font-serif font-bold text-olea-olive tracking-wide mb-4">
+          {content.sekcija_vizija}
+        </h2>
+        <p class="text-lg">
+          {content.vizija}
+        </p>
+      </div>
+    </section>
+
+    <!-- CTA Section: Blockchain as a Service -->
+    <section class="bg-olea-earth text-olea-sand py-20 px-6 text-center border-t border-white/5">
+      <div class="max-w-3xl mx-auto space-y-8">
+        <span class="text-xs font-mono uppercase tracking-widest text-olea-olive bg-olea-olive/10 px-4 py-1.5 rounded-full border border-olea-olive/20">
+          Blockchain as a Service (BaaS)
+        </span>
+        <h2 class="text-4xl md:text-5xl font-serif font-bold tracking-wide">
+          {content.cta_naslov}
+        </h2>
+        <p class="text-lg md:text-xl font-sans text-olea-sand/80 max-w-2xl mx-auto leading-relaxed">
+          {content.cta_opis}
+        </p>
+        <div class="pt-4">
+          <a href={`/${lang}/#kontakt`} class="inline-block bg-olea-olive text-white px-8 py-3.5 rounded-full font-sans text-lg font-semibold hover:bg-white hover:text-olea-earth transition-all duration-300 shadow-md hover:shadow-xl">
+            {content.cta_gumb}
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <Footer lang={lang} />
+</Layout>

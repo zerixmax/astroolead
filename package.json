@@ -12,9 +12,15 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/sitemap": "^3.7.3",
+    "@fontsource/inter": "^5.2.8",
+    "@fontsource/jetbrains-mono": "^5.2.8",
+    "@fontsource/playfair-display": "^5.2.8",
+    "@iconify-json/lucide": "^1.2.111",
     "@lucide/astro": "^1.8.0",
     "@tailwindcss/vite": "^4.2.2",
     "astro": "^6.1.8",
+    "astro-icon": "^1.1.5",
     "tailwindcss": "^4.2.2"
   }
 }

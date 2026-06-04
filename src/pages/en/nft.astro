@@ -1,0 +1,122 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/ui/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import { Image } from 'astro:assets';
+import { useTranslations, ui } from '../../i18n/ui';
+
+import qrImage from '../../assets/images/qr-nft-vl01-t001.webp';
+
+const lang = 'en';
+const t = useTranslations(lang);
+const content = ui[lang].certifikati;
+---
+
+<Layout title={`${t('nav.certifikati')} | Olea Digitalis`} lang={lang}>
+  <Navbar lang={lang} />
+  
+  <main class="min-h-screen bg-olea-sand text-olea-earth py-24 px-6 md:px-12">
+    <div class="max-w-5xl mx-auto space-y-16">
+      
+      <!-- Page Header -->
+      <div class="text-center max-w-3xl mx-auto space-y-6">
+        <h1 class="text-5xl font-serif font-extrabold text-olea-olive tracking-wide">
+          {content.naslov}
+        </h1>
+        <p class="text-xl font-sans text-olea-earth/80 leading-relaxed">
+          {content.opis}
+        </p>
+      </div>
+
+      <!-- Featured Proof of Concept QR -->
+      <div class="flex flex-col items-center justify-center text-center p-8 bg-white border border-olea-olive/15 rounded-3xl shadow-sm space-y-6 max-w-xl mx-auto">
+        <h2 class="text-2xl font-serif font-bold text-olea-olive">
+          {content.prvi_nft}
+        </h2>
+        <div class="p-2 bg-white border-4 border-olea-olive rounded-2xl shadow-md">
+          <Image src={qrImage} alt="QR Code VL01-T001" class="w-48 h-48" />
+        </div>
+        <p class="text-sm font-sans text-olea-earth/80 leading-relaxed">
+          {ui[lang].o_projektu.poc}
+        </p>
+        <span class="text-xs font-mono bg-olea-olive/10 text-olea-olive px-3 py-1 rounded-full border border-olea-olive/20">
+          Asset ID: #VL01-T001
+        </span>
+      </div>
+
+      <!-- Live Ledger/History Placeholder (Premium Card Layout) -->
+      <div class="bg-white border border-olea-olive/15 rounded-3xl p-8 md:p-12 shadow-sm space-y-8">
+        <div class="border-b border-olea-olive/10 pb-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+          <div>
+            <h2 class="text-2xl font-serif font-bold text-olea-olive">
+              {content.registar_aktivnih}
+            </h2>
+            <p class="text-sm font-sans text-olea-earth/70">
+              {content.simulacija}
+            </p>
+          </div>
+          <div class="flex items-center gap-2 bg-olea-olive/10 text-olea-olive font-mono text-xs px-3 py-1.5 rounded-full border border-olea-olive/20 animate-pulse">
+            <span class="w-2.5 h-2.5 bg-olea-olive rounded-full"></span>
+            <span>{content.mreza_aktivna}</span>
+          </div>
+        </div>
+
+        <!-- Simulated Certification Records -->
+        <div class="space-y-6">
+          <div class="border border-olea-olive/10 rounded-2xl p-6 hover:bg-olea-sand/30 transition-all">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+              <div class="space-y-2">
+                <div class="flex items-center gap-3">
+                  <span class="font-mono text-xs bg-olea-olive text-white px-2 py-0.5 rounded">Asset ID: #VL01-T001</span>
+                  <span class="font-sans text-xs text-olea-earth/60 font-semibold">Algorand Blockchain</span>
+                </div>
+                <h3 class="text-xl font-serif font-bold text-olea-olive">Maslina 001 (OPG Cetinić)</h3>
+                <p class="text-sm font-sans text-olea-earth/80">
+                  {content.opis_001}
+                </p>
+              </div>
+              <div class="flex flex-col md:items-end gap-2">
+                <span class="font-mono text-xs text-olea-earth/60">0x5958...38527</span>
+                <span class="text-xs font-mono font-bold text-olea-olive bg-olea-olive/5 border border-olea-olive/15 px-3 py-1 rounded">
+                  {content.potvrdjeno}
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="border border-olea-olive/10 rounded-2xl p-6 hover:bg-olea-sand/30 transition-all opacity-80">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+              <div class="space-y-2">
+                <div class="flex items-center gap-3">
+                  <span class="font-mono text-xs bg-olea-olive/40 text-olea-earth px-2 py-0.5 rounded">Asset ID: #VL01-T002</span>
+                  <span class="font-sans text-xs text-olea-earth/60 font-semibold">Algorand Blockchain</span>
+                </div>
+                <h3 class="text-xl font-serif font-bold text-olea-olive">Maslina 002 (OPG Cetinić)</h3>
+                <p class="text-sm font-sans text-olea-earth/80">
+                  {content.opis_002}
+                </p>
+              </div>
+              <div class="flex flex-col md:items-end gap-2">
+                <span class="font-mono text-xs text-olea-earth/60">0x5166...17877</span>
+                <span class="text-xs font-mono font-bold text-olea-olive bg-olea-olive/5 border border-olea-olive/15 px-3 py-1 rounded">
+                  {content.potvrdjeno}
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Info/Callout Box -->
+        <div class="bg-olea-olive/5 border border-olea-olive/10 rounded-2xl p-6 text-center space-y-3">
+          <p class="text-sm font-sans text-olea-earth/80 leading-relaxed max-w-2xl mx-auto">
+            {content.info_callout}
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <Footer lang={lang} />
+</Layout>

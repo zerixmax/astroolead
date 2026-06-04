@@ -1,0 +1,18 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/ui/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import { useTranslations } from '../../i18n/ui';
+
+const lang = 'en';
+const t = useTranslations(lang);
+---
+
+<Layout title={t('seo.oleadnodeTitle')} lang={lang}>
+  <Navbar lang={lang} />
+  <main class="max-w-4xl mx-auto py-24 px-6 min-h-[60vh] flex flex-col justify-center text-center">
+    <h1 class="text-5xl font-serif text-olea-earth mb-6">{t('sections.oleadnode.title')}</h1>
+    <p class="text-xl text-olea-earth/80 leading-relaxed font-sans">{t('sections.oleadnode.description')}</p>
+  </main>
+  <Footer lang={lang} />
+</Layout>
