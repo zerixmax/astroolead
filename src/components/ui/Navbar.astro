@@ -131,22 +131,22 @@ if (routeKey) {
             class="border-olea-olive/10 mt-2 rounded-xl border bg-white py-2 shadow-xl"
           >
             <a
-              href={getRelativeLocaleUrl(lang, 'oleadbot')}
+              href={getRelativeLocaleUrl(lang, routes[lang]['dnevnik-uzgoja'])}
               class="text-olea-earth hover:bg-olea-sand hover:text-olea-olive block px-4 py-2 text-sm transition-colors"
             >
-              {t('nav.oleadbot')}
+              {t('nav.dnevnik')}
             </a>
             <a
               href={getRelativeLocaleUrl(lang, 'oleadenode')}
               class="text-olea-earth hover:bg-olea-sand hover:text-olea-olive block px-4 py-2 text-sm transition-colors"
             >
-              {t('nav.oleadenode')}
+              {t('nav.oleadnode')}
             </a>
             <a
-              href={getRelativeLocaleUrl(lang, routes[lang]['dnevnik-uzgoja'])}
+              href={getRelativeLocaleUrl(lang, 'oleadbot')}
               class="text-olea-earth hover:bg-olea-sand hover:text-olea-olive block px-4 py-2 text-sm transition-colors"
             >
-              {t('nav.dnevnik')}
+              {t('nav.oleadbot')}
             </a>
           </div>
         </div>
@@ -257,22 +257,22 @@ if (routeKey) {
         class="bg-olea-olive/5 border-olea-olive/5 mt-2 hidden w-full flex-col items-center gap-3 border-y py-3 text-lg"
       >
         <a
-          href={getRelativeLocaleUrl(lang, 'oleadbot')}
+          href={getRelativeLocaleUrl(lang, routes[lang]['dnevnik-uzgoja'])}
           class="mobile-link text-olea-earth hover:text-olea-olive transition-colors"
         >
-          {t('nav.oleadbot')}
+          {t('nav.dnevnik')}
         </a>
         <a
           href={getRelativeLocaleUrl(lang, 'oleadenode')}
           class="mobile-link text-olea-earth hover:text-olea-olive transition-colors"
         >
-          {t('nav.oleadenode')}
+          {t('nav.oleadnode')}
         </a>
         <a
-          href={getRelativeLocaleUrl(lang, routes[lang]['dnevnik-uzgoja'])}
+          href={getRelativeLocaleUrl(lang, 'oleadbot')}
           class="mobile-link text-olea-earth hover:text-olea-olive transition-colors"
         >
-          {t('nav.dnevnik')}
+          {t('nav.oleadbot')}
         </a>
       </div>
     </div>

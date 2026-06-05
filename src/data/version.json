@@ -1,5 +1,5 @@
 {
-  "version": "0.3.4",
+  "version": "0.3.5",
   "buildDate": "2026-06-05",
-  "codename": "Quality Tools, Rust Compiler & Layout Refactoring"
+  "codename": "Reorder solutions in Navbar & add device nicknames"
 }
