@@ -16,30 +16,47 @@ const content = ui[lang].o_projektu;
 
 <Layout title={t('seo.oProjektuTitle')} lang={lang}>
   <Navbar lang={lang} />
-  
-  <main class="min-h-screen bg-olea-sand text-olea-earth">
-    
+
+  <main class="bg-olea-sand text-olea-earth min-h-screen">
     <!-- Hero Header -->
-    <section class="max-w-4xl mx-auto pt-24 pb-12 px-6 text-center">
-      <h1 class="text-5xl md:text-6xl font-serif text-olea-olive font-extrabold tracking-wide mb-6">
+    <section class="mx-auto max-w-4xl px-6 pt-24 pb-12 text-center">
+      <h1
+        class="text-olea-olive mb-6 font-serif text-5xl font-extrabold tracking-wide md:text-6xl"
+      >
         {content.naslov}
       </h1>
-      <p class="text-xl md:text-2xl font-serif italic text-olea-earth/80 max-w-2xl mx-auto leading-relaxed border-b border-olea-olive/15 pb-12">
+      <p
+        class="text-olea-earth/80 border-olea-olive/15 mx-auto max-w-2xl border-b pb-12 font-serif text-xl leading-relaxed italic md:text-2xl"
+      >
         {content.uvod}
       </p>
     </section>
 
     <!-- Storytelling: History -->
-    <section class="max-w-3xl mx-auto py-12 px-6">
-      <div class="prose prose-lg font-sans text-olea-earth/95 leading-relaxed space-y-8">
-        <h2 class="text-3xl font-serif font-bold text-olea-olive tracking-wide mb-4">
-          {content.sekcija_povijest}
-        </h2>
-        <div class="flex flex-col md:flex-row gap-8 items-start">
-          <div class="flex-shrink-0 mx-auto md:mx-0 w-48 md:w-56">
-            <Image alt="Ivo Cetinić" class="rounded-lg shadow-lg w-full h-auto object-cover border border-olea-olive/10" src={ivoImage}/>
+    <section class="mx-auto max-w-5xl px-6 py-12">
+      <h2
+        class="text-olea-olive mb-8 font-serif text-3xl font-bold tracking-wide md:text-4xl"
+      >
+        {content.sekcija_povijest}
+      </h2>
+      <div class="grid grid-cols-1 items-start gap-8 md:grid-cols-2">
+        <!-- Lijeva kolona: Fotografija -->
+        <div class="flex justify-center md:justify-start">
+          <div class="w-full max-w-sm">
+            <Image
+              alt="Ivo Cetinić"
+              class="border-olea-olive/10 h-auto w-full rounded-lg border object-cover shadow-lg"
+              src={ivoImage}
+            />
           </div>
-          <p class="text-lg first-letter:text-5xl first-letter:font-serif first-letter:font-bold first-letter:text-olea-olive first-letter:mr-3 first-letter:float-left">
+        </div>
+        <!-- Desna kolona: Tekstualni blok -->
+        <div
+          class="text-olea-earth/95 max-w-2xl font-sans text-lg leading-relaxed"
+        >
+          <p
+            class="first-letter:text-olea-olive first-letter:float-left first-letter:mr-3 first-letter:font-serif first-letter:text-5xl first-letter:font-bold"
+          >
             {content.povijest}
           </p>
         </div>
@@ -47,67 +64,102 @@ const content = ui[lang].o_projektu;
     </section>
 
     <!-- Proof of Concept (PoC) -->
-    <section class="max-w-3xl mx-auto py-12 px-6">
-      <div class="bg-white/50 backdrop-blur-sm border border-olea-olive/10 rounded-2xl p-8 md:p-12 shadow-sm">
-        <h2 class="text-3xl font-serif font-bold text-olea-olive tracking-wide mb-4">
+    <section class="mx-auto max-w-3xl px-6 py-12">
+      <div
+        class="border-olea-olive/10 rounded-2xl border bg-white/50 p-8 shadow-sm backdrop-blur-sm md:p-12"
+      >
+        <h2
+          class="text-olea-olive mb-4 font-serif text-3xl font-bold tracking-wide"
+        >
           {content.sekcija_poc}
         </h2>
-        <p class="font-sans text-lg text-olea-earth/90 leading-relaxed">
+        <p class="text-olea-earth/90 font-sans text-lg leading-relaxed">
           {content.poc}
         </p>
-        <div class="w-full aspect-video rounded-xl overflow-hidden shadow-2xl border-4 border-olea-olive/30 my-8">
-          <iframe 
-            src="https://www.google.com/maps/d/embed?mid=1Pau0rAU9gzO-s90RI5p3UI5w2pRF2FM&ehbc=2E312F" 
-            class="w-full h-full"
-            loading="lazy" 
-            title="Olea Digitalis P.O.C. Lokacija">
+        <div
+          class="border-olea-olive/30 my-8 aspect-video w-full overflow-hidden rounded-xl border-4 shadow-2xl"
+        >
+          <iframe
+            src="https://www.google.com/maps/d/embed?mid=1Pau0rAU9gzO-s90RI5p3UI5w2pRF2FM&ehbc=2E312F"
+            class="h-full w-full"
+            loading="lazy"
+            title="Olea Digitalis P.O.C. Lokacija"
+          >
           </iframe>
         </div>
       </div>
     </section>
 
     <!-- Blockchain Solution -->
-    <section class="max-w-3xl mx-auto py-12 px-6">
-      <div class="prose prose-lg font-sans text-olea-earth/95 leading-relaxed space-y-4">
-        <h2 class="text-3xl font-serif font-bold text-olea-olive tracking-wide mb-4">
+    <section class="mx-auto max-w-3xl px-6 py-12">
+      <div
+        class="prose prose-lg text-olea-earth/95 space-y-4 font-sans leading-relaxed"
+      >
+        <h2
+          class="text-olea-olive mb-4 font-serif text-3xl font-bold tracking-wide"
+        >
           {content.sekcija_blockchain}
         </h2>
         <p class="text-lg">
           {content.blockchain_rjesenje}
         </p>
-        <div class="mt-8 flex justify-center border border-olea-olive/15 rounded-2xl p-4 bg-white/40 shadow-sm">
-          <Image alt="Blockchain Olea Digitalis" class="rounded-lg max-w-full h-auto" src={blockchainImage}/>
+        <div
+          class="border-olea-olive/15 mt-8 flex justify-center rounded-2xl border bg-white/40 p-4 shadow-sm"
+        >
+          <Image
+            alt="Blockchain Olea Digitalis"
+            class="h-auto max-w-full rounded-lg"
+            src={blockchainImage}
+          />
         </div>
       </div>
     </section>
 
     <!-- Primjeri iz svijeta (World Examples) -->
-    <section class="max-w-6xl mx-auto py-16 px-6">
-      <h2 class="text-3xl md:text-4xl font-serif font-bold text-olea-olive text-center tracking-wide mb-12">
+    <section class="mx-auto max-w-6xl px-6 py-16">
+      <h2
+        class="text-olea-olive mb-12 text-center font-serif text-3xl font-bold tracking-wide md:text-4xl"
+      >
         {content.sekcija_primjeri}
       </h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {content.primjeri_iz_svijeta.map((ex) => (
-          <div class="bg-white border-2 border-olea-olive/20 rounded-2xl p-6 hover:shadow-lg transition-shadow duration-300 flex flex-col justify-between">
-            <div>
-              <h3 class="text-xl font-serif font-bold text-olea-olive mb-3">{ex.ime}</h3>
-              <p class="font-sans text-sm text-olea-earth/80 leading-relaxed">{ex.opis}</p>
+      <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+        {
+          content.primjeri_iz_svijeta.map((ex) => (
+            <div class="border-olea-olive/20 flex flex-col justify-between rounded-2xl border-2 bg-white p-6 transition-shadow duration-300 hover:shadow-lg">
+              <div>
+                <h3 class="text-olea-olive mb-3 font-serif text-xl font-bold">
+                  {ex.ime}
+                </h3>
+                <p class="text-olea-earth/80 font-sans text-sm leading-relaxed">
+                  {ex.opis}
+                </p>
+              </div>
+              <div class="text-olea-olive border-olea-olive/10 mt-6 flex items-center justify-between border-t pt-4 font-mono text-xs tracking-widest uppercase">
+                <span>{content.vanjski_izvor}</span>
+                <a
+                  href={ex.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-olea-olive flex items-center gap-1 font-bold hover:underline"
+                >
+                  {content.posjeti}{' '}
+                  <Icon name="lucide:external-link" class="h-4 w-4" />
+                </a>
+              </div>
             </div>
-            <div class="mt-6 flex items-center justify-between text-xs font-mono text-olea-olive uppercase tracking-widest pt-4 border-t border-olea-olive/10">
-              <span>{content.vanjski_izvor}</span>
-              <a href={ex.link} target="_blank" rel="noopener noreferrer" class="flex items-center gap-1 hover:underline text-olea-olive font-bold">
-                {content.posjeti} <Icon name="lucide:external-link" class="w-4 h-4" />
-              </a>
-            </div>
-          </div>
-        ))}
+          ))
+        }
       </div>
     </section>
 
     <!-- Vision Section -->
-    <section class="max-w-3xl mx-auto py-12 pb-24 px-6">
-      <div class="prose prose-lg font-sans text-olea-earth/95 leading-relaxed space-y-4">
-        <h2 class="text-3xl font-serif font-bold text-olea-olive tracking-wide mb-4">
+    <section class="mx-auto max-w-3xl px-6 py-12 pb-24">
+      <div
+        class="prose prose-lg text-olea-earth/95 space-y-4 font-sans leading-relaxed"
+      >
+        <h2
+          class="text-olea-olive mb-4 font-serif text-3xl font-bold tracking-wide"
+        >
           {content.sekcija_vizija}
         </h2>
         <p class="text-lg">
@@ -117,25 +169,33 @@ const content = ui[lang].o_projektu;
     </section>
 
     <!-- CTA Section: Blockchain as a Service -->
-    <section class="bg-olea-earth text-olea-sand py-20 px-6 text-center border-t border-white/5">
-      <div class="max-w-3xl mx-auto space-y-8">
-        <span class="text-xs font-mono uppercase tracking-widest text-olea-olive bg-olea-olive/10 px-4 py-1.5 rounded-full border border-olea-olive/20">
+    <section
+      class="bg-olea-earth text-olea-sand border-t border-white/5 px-6 py-20 text-center"
+    >
+      <div class="mx-auto max-w-3xl space-y-8">
+        <span
+          class="text-olea-olive bg-olea-olive/10 border-olea-olive/20 rounded-full border px-4 py-1.5 font-mono text-xs tracking-widest uppercase"
+        >
           Blockchain as a Service (BaaS)
         </span>
-        <h2 class="text-4xl md:text-5xl font-serif font-bold tracking-wide">
+        <h2 class="font-serif text-4xl font-bold tracking-wide md:text-5xl">
           {content.cta_naslov}
         </h2>
-        <p class="text-lg md:text-xl font-sans text-olea-sand/80 max-w-2xl mx-auto leading-relaxed">
+        <p
+          class="text-olea-sand/80 mx-auto max-w-2xl font-sans text-lg leading-relaxed md:text-xl"
+        >
           {content.cta_opis}
         </p>
         <div class="pt-4">
-          <a href={`/${lang}/#kontakt`} class="inline-block bg-olea-olive text-white px-8 py-3.5 rounded-full font-sans text-lg font-semibold hover:bg-white hover:text-olea-earth transition-all duration-300 shadow-md hover:shadow-xl">
+          <a
+            href={`/${lang}/#kontakt`}
+            class="bg-olea-olive hover:text-olea-earth inline-block rounded-full px-8 py-3.5 font-sans text-lg font-semibold text-white shadow-md transition-all duration-300 hover:bg-white hover:shadow-xl"
+          >
             {content.cta_gumb}
           </a>
         </div>
       </div>
     </section>
-
   </main>
 
   <Footer lang={lang} />

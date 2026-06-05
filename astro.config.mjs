@@ -14,15 +14,18 @@ export default defineConfig({
     locales: ['hr', 'en'],
     routing: {
       prefixDefaultLocale: true,
-      redirectToDefaultLocale: true
+      redirectToDefaultLocale: true,
     },
     translations: {
       en: {
-        'o-projektu': 'about-project'
-      }
-    }
+        'o-projektu': 'about-project',
+      },
+    },
+  },
+  experimental: {
+    rustCompiler: true,
   },
   vite: {
-    plugins: [tailwindcss()]
-  }
+    plugins: [tailwindcss()],
+  },
 });

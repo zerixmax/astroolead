@@ -15,15 +15,19 @@ export const ui = {
 
 export type Lang = keyof typeof ui;
 
-type Join<K, P> = K extends string | number ?
-    P extends string | number ?
-    `${K}${"" extends P ? "" : "."}${P}`
-    : never : never;
+type Join<K, P> = K extends string | number
+  ? P extends string | number
+    ? `${K}${'' extends P ? '' : '.'}${P}`
+    : never
+  : never;
 
 type Prev = [never, 0, 1, 2, 3, 4, ...Array<never>];
 
-type Leaves<T, D extends number = 5> = [D] extends [never] ? never : T extends object ?
-    { [K in keyof T]-?: Join<K, Leaves<T[K], Prev[D]>> }[keyof T] : "";
+type Leaves<T, D extends number = 5> = [D] extends [never]
+  ? never
+  : T extends object
+    ? { [K in keyof T]-?: Join<K, Leaves<T[K], Prev[D]>> }[keyof T]
+    : '';
 
 export type TranslationKey = Leaves<typeof hr>;
 
@@ -32,6 +36,7 @@ export function useTranslations(lang: Lang) {
 
   return function t(key: TranslationKey): string {
     const parts = key.split('.');
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     let current: any = translations;
     for (const part of parts) {
       if (current && typeof current === 'object' && part in current) {

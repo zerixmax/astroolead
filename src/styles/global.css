@@ -1,16 +1,16 @@
-@import "@fontsource/playfair-display";
-@import "@fontsource/inter";
-@import "@fontsource/jetbrains-mono";
-@import "tailwindcss";
+@import '@fontsource/playfair-display';
+@import '@fontsource/inter';
+@import '@fontsource/jetbrains-mono';
+@import 'tailwindcss';
 
 @theme {
-  --color-olea-sand: #F4F1EA;
-  --color-olea-olive: #556B2F;
-  --color-olea-earth: #3D2B1F;
+  --color-olea-sand: #f4f1ea;
+  --color-olea-olive: #556b2f;
+  --color-olea-earth: #3d2b1f;
 
-  --font-serif: "Playfair Display", serif;
-  --font-sans: "Inter", sans-serif;
-  --font-mono: "JetBrains Mono", monospace;
+  --font-serif: 'Playfair Display', serif;
+  --font-sans: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
 }
 
 @layer base {
@@ -20,16 +20,61 @@
     font-family: var(--font-sans);
   }
 
-  h1, h2, h3 {
+  h1,
+  h2,
+  h3 {
     font-family: var(--font-serif);
     letter-spacing: 0.025em; /* tracking-wide */
   }
 
-  h4, h5, h6, p, a, span {
+  h4,
+  h5,
+  h6,
+  p,
+  a,
+  span {
     font-family: var(--font-sans);
   }
 
-  code, kbd {
+  code,
+  kbd {
     font-family: var(--font-mono);
   }
+}
+
+/* fslightbox custom overrides to fix z-index and SVG rendering issues */
+.fslightbox-container {
+  z-index: 9999999 !important;
+}
+
+/* Ensure the navigation bar (which contains the close button) is on top of the images */
+.fslightbox-nav {
+  z-index: 99999999 !important;
+}
+
+/* Ensure the toolbar and buttons are on top of the images */
+.fslightbox-toolbar {
+  z-index: 99999999 !important;
+}
+
+.fslightbox-slide-btn-container {
+  z-index: 99999999 !important;
+}
+
+/* Fix SVG sizing and rendering issues caused by Tailwind preflight or custom resets */
+.fslightbox-svg {
+  width: 24px !important;
+  height: 24px !important;
+  display: block !important;
+}
+
+.fslightbox-svgp {
+  fill: #f4f1ea !important; /* olea-sand */
+  transition: fill 0.15s ease;
+}
+
+.fslightboxb:hover .fslightbox-svgp,
+.fslightboxb:focus .fslightbox-svgp,
+.fslightbox-slide-btn-container:hover .fslightbox-svgp {
+  fill: #ffffff !important;
 }

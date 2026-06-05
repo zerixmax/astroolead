@@ -19,71 +19,127 @@ const lang = 'hr';
 const t = useTranslations(lang);
 ---
 
-<Layout 
-  title={t('seo.title')} 
+<Layout
+  title={t('seo.title')}
   description={t('seo.description')}
   keywords={t('seo.keywords')}
   lang={lang}
 >
   <Navbar lang={lang} />
-  
+
   <main>
     <Hero lang={lang} />
     <VideoSection lang={lang} />
 
-    <section id="projekt" class="py-32 px-6 bg-white border-t border-olea-olive/5">
-      <div class="max-w-4xl mx-auto text-center">
-        <h2 class="text-4xl font-serif text-olea-earth mb-8">{t('sections.projekt.title')}</h2>
-        <p class="text-xl text-olea-earth/80  leading-relaxed max-w-2xl mx-auto font-sans">
+    <section
+      id="projekt"
+      class="border-olea-olive/5 border-t bg-white px-6 py-32"
+    >
+      <div class="mx-auto max-w-4xl text-center">
+        <h2 class="text-olea-earth mb-8 font-serif text-4xl">
+          {t('sections.projekt.title')}
+        </h2>
+        <p
+          class="text-olea-earth/80 mx-auto max-w-2xl font-sans text-xl leading-relaxed"
+        >
           {t('sections.projekt.description')}
         </p>
       </div>
     </section>
 
-    <section class="py-16 px-6 bg-white">
-      <Slideshow images={[
-        { src: img1, title: 'OleaDbot Nacrt 1', description: 'Detaljan prikaz prototipa OleaDbot sustava.' },
-        { src: img2, title: 'OleaDbot Nacrt 2', description: 'Arhitektura senzora i upravljanja.' },
-        { src: img3, title: 'OleaDbot Nacrt 3', description: 'Povezivanje s mikrokontrolerima.' },
-        { src: img4, title: 'OleaDbot Nacrt 4', description: 'Finalni dizajn i renderiranje.' }
-      ]} />
+    <section class="bg-white px-6 py-16">
+      <Slideshow
+        images={[
+          {
+            src: img1,
+            title: 'OleaDbot Nacrt 1',
+            description: 'Detaljan prikaz prototipa OleaDbot sustava.',
+          },
+          {
+            src: img2,
+            title: 'OleaDbot Nacrt 2',
+            description: 'Arhitektura senzora i upravljanja.',
+          },
+          {
+            src: img3,
+            title: 'OleaDbot Nacrt 3',
+            description: 'Povezivanje s mikrokontrolerima.',
+          },
+          {
+            src: img4,
+            title: 'OleaDbot Nacrt 4',
+            description: 'Finalni dizajn i renderiranje.',
+          },
+        ]}
+      />
     </section>
 
     <!-- Nova sekcija: Dnevnik -->
-    <section id="dnevnik" class="py-32 px-6 bg-olea-sand border-t border-olea-olive/5">
-      <div class="max-w-4xl mx-auto text-center">
-        <h2 class="text-4xl font-serif text-olea-earth mb-8">{t('sections.dnevnik.title')}</h2>
-        <p class="text-xl text-olea-earth/80  leading-relaxed max-w-2xl mx-auto font-sans">
+    <section
+      id="dnevnik"
+      class="bg-olea-sand border-olea-olive/5 border-t px-6 py-32"
+    >
+      <div class="mx-auto max-w-4xl text-center">
+        <h2 class="text-olea-earth mb-8 font-serif text-4xl">
+          {t('sections.dnevnik.title')}
+        </h2>
+        <p
+          class="text-olea-earth/80 mx-auto max-w-2xl font-sans text-xl leading-relaxed"
+        >
           {t('sections.dnevnik.description')}
         </p>
       </div>
     </section>
 
-    <section id="oleadbot" class="relative py-64 px-6 bg-white border-t border-olea-olive/5 overflow-hidden min-h-[70vh] flex items-center">
-      <div class="absolute inset-0 z-0 opacity-15 pointer-events-none">
-        <Image src={botBg} alt="" class="w-full h-full object-cover" />
+    <section
+      id="oleadbot"
+      class="border-olea-olive/5 relative flex min-h-[70vh] items-center overflow-hidden border-t bg-white px-6 py-64"
+    >
+      <div class="pointer-events-none absolute inset-0 z-0 opacity-15">
+        <Image src={botBg} alt="" class="h-full w-full object-cover" />
       </div>
-      
-      <div class="relative z-10 max-w-4xl mx-auto text-center flex flex-col items-center">
-        <h2 class="text-4xl md:text-5xl font-serif text-olea-earth mb-8">{t('sections.oleadbot.title')}</h2>
-        <p class="text-xl md:text-2xl text-olea-earth leading-relaxed max-w-2xl mx-auto font-sans bg-white/60 backdrop-blur-sm p-6 rounded-lg mb-8">
+
+      <div
+        class="relative z-10 mx-auto flex max-w-4xl flex-col items-center text-center"
+      >
+        <h2 class="text-olea-earth mb-8 font-serif text-4xl md:text-5xl">
+          {t('sections.oleadbot.title')}
+        </h2>
+        <p
+          class="text-olea-earth mx-auto mb-8 max-w-2xl rounded-lg bg-white/60 p-6 font-sans text-xl leading-relaxed backdrop-blur-sm md:text-2xl"
+        >
           {t('sections.oleadbot.description')}
         </p>
-        <a href={`/${lang}/oleadbot/`} class="bg-olea-olive text-white px-8 py-3 rounded-full hover:bg-olea-earth transition-all duration-300 font-sans font-semibold tracking-wider shadow-md hover:shadow-lg">
+        <a
+          href={`/${lang}/oleadbot/`}
+          class="bg-olea-olive hover:bg-olea-earth rounded-full px-8 py-3 font-sans font-semibold tracking-wider text-white shadow-md transition-all duration-300 hover:shadow-lg"
+        >
           {t('sections.saznajVise')}
         </a>
       </div>
     </section>
 
-    <section id="oleadnode" class="relative py-48 px-6 bg-olea-sand border-t border-olea-olive/5 overflow-hidden flex items-center">
-      <div class="absolute inset-0 z-0 opacity-10 pointer-events-none">
-        <Image src={nodeBg} alt="" class="w-full h-full object-cover" />
+    <section
+      id="oleadnode"
+      class="bg-olea-sand border-olea-olive/5 relative flex items-center overflow-hidden border-t px-6 py-48"
+    >
+      <div class="pointer-events-none absolute inset-0 z-0 opacity-10">
+        <Image src={nodeBg} alt="" class="h-full w-full object-cover" />
       </div>
 
-      <div class="relative z-10 max-w-4xl mx-auto text-center text-olea-earth flex flex-col items-center">
-        <h2 class="text-4xl font-serif mb-8">{t('sections.oleadnode.title')}</h2>
-        <p class="text-xl bg-olea-sand/60 backdrop-blur-sm p-6 rounded-lg mb-8">{t('sections.oleadnode.description')}</p>
-        <a href={`/${lang}/oleadenode/`} class="bg-olea-olive text-white px-8 py-3 rounded-full hover:bg-olea-earth transition-all duration-300 font-sans font-semibold tracking-wider shadow-md hover:shadow-lg">
+      <div
+        class="text-olea-earth relative z-10 mx-auto flex max-w-4xl flex-col items-center text-center"
+      >
+        <h2 class="mb-8 font-serif text-4xl">
+          {t('sections.oleadnode.title')}
+        </h2>
+        <p class="bg-olea-sand/60 mb-8 rounded-lg p-6 text-xl backdrop-blur-sm">
+          {t('sections.oleadnode.description')}
+        </p>
+        <a
+          href={`/${lang}/oleadenode/`}
+          class="bg-olea-olive hover:bg-olea-earth rounded-full px-8 py-3 font-sans font-semibold tracking-wider text-white shadow-md transition-all duration-300 hover:shadow-lg"
+        >
           {t('sections.saznajVise')}
         </a>
       </div>

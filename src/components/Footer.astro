@@ -14,41 +14,83 @@ const { lang } = Astro.props;
 const t = useTranslations(lang);
 ---
 
-<footer id="kontakt" class="bg-olea-earth text-olea-sand py-16 px-6 border-t-4 border-olea-olive">
-  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 items-center text-center md:text-left">
-    
-    <div class="flex flex-col items-center md:items-start gap-4">
-      <Image src={logo} alt="Olea Digitalis" width={160} class="h-auto brightness-0 invert opacity-90" />
-      <p class="text-sm opacity-70 italic font-serif">{t('hero.subtitle')}</p>
+<footer
+  id="kontakt"
+  class="bg-olea-earth text-olea-sand border-olea-olive border-t-4 px-6 py-16"
+>
+  <div
+    class="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 text-center md:grid-cols-3 md:text-left"
+  >
+    <div class="flex flex-col items-center gap-4 md:items-start">
+      <Image
+        src={logo}
+        alt="Olea Digitalis"
+        width={160}
+        class="h-auto opacity-90 brightness-0 invert"
+      />
+      <p class="font-serif text-sm italic opacity-70">{t('hero.subtitle')}</p>
     </div>
 
     <div class="space-y-2">
-      <h4 class="font-serif text-2xl font-bold text-olea-olive mb-4">{t('nav.kontakt')}</h4>
-      <p class="text-lg font-sans tracking-wide">{t('footer.email')}</p>
-      <p class="opacity-60 text-sm uppercase tracking-widest mt-2">{t('footer.location')}</p>
+      <h4 class="text-olea-olive mb-4 font-serif text-2xl font-bold">
+        {t('nav.kontakt')}
+      </h4>
+      <p class="font-sans text-lg tracking-wide">{t('footer.email')}</p>
+      <p class="mt-2 text-sm tracking-widest uppercase opacity-60">
+        {t('footer.location')}
+      </p>
     </div>
 
-    <div class="flex flex-col items-center md:items-end gap-4">
-      <h4 class="font-serif text-xl font-bold opacity-80 mb-2">{lang === 'hr' ? 'Mreže' : 'Socials'}</h4>
-      <div class="flex gap-6 items-center justify-center md:justify-end">
-        <a href={t('footer.social.bluesky')} target="_blank" aria-label="BlueSky" class="hover:text-olea-olive transition-transform hover:-translate-y-1">
-          <Icon name="lucide:cloud" class="w-8 h-8" />
+    <div class="flex flex-col items-center gap-4 md:items-end">
+      <h4 class="mb-2 font-serif text-xl font-bold opacity-80">
+        {lang === 'hr' ? 'Mreže' : 'Socials'}
+      </h4>
+      <div class="flex items-center justify-center gap-6 md:justify-end">
+        <a
+          href={t('footer.social.bluesky')}
+          target="_blank"
+          aria-label="BlueSky"
+          class="hover:text-olea-olive transition-transform hover:-translate-y-1"
+        >
+          <Icon name="lucide:cloud" class="h-8 w-8" />
         </a>
-        <a href={t('footer.social.youtube')} target="_blank" aria-label="YouTube" class="hover:text-olea-olive transition-transform hover:-translate-y-1">
-          <Icon name="lucide:youtube" class="w-8 h-8" />
+        <a
+          href={t('footer.social.youtube')}
+          target="_blank"
+          aria-label="YouTube"
+          class="hover:text-olea-olive transition-transform hover:-translate-y-1"
+        >
+          <Icon name="lucide:youtube" class="h-8 w-8" />
         </a>
-        <a href={t('footer.social.discord')} target="_blank" aria-label="Discord" class="hover:text-olea-olive transition-transform hover:-translate-y-1">
-          <Icon name="lucide:message-square" class="w-8 h-8" />
+        <a
+          href={t('footer.social.discord')}
+          target="_blank"
+          aria-label="Discord"
+          class="hover:text-olea-olive transition-transform hover:-translate-y-1"
+        >
+          <Icon name="lucide:message-square" class="h-8 w-8" />
         </a>
-        <a href="https://x.com/FCWLove" target="_blank" aria-label="Twitter" class="hover:text-olea-olive transition-transform hover:-translate-y-1">
-          <Icon name="lucide:twitter" class="w-8 h-8" />
+        <a
+          href="https://x.com/FCWLove"
+          target="_blank"
+          aria-label="Twitter"
+          class="hover:text-olea-olive transition-transform hover:-translate-y-1"
+        >
+          <Icon name="lucide:twitter" class="h-8 w-8" />
         </a>
       </div>
     </div>
   </div>
 
-  <div class="max-w-7xl mx-auto mt-16 pt-8 border-t border-olea-sand/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs opacity-50 font-sans tracking-wider">
-    <p>&copy; {new Date().getFullYear()} Olea Digitalis. {t('footer.rights')}</p>
-    <p>{lang === 'hr' ? 'Verzija' : 'Version'} {appData.version} | {appData.codename}</p>
+  <div
+    class="border-olea-sand/10 mx-auto mt-16 flex max-w-7xl flex-col items-center justify-between gap-4 border-t pt-8 font-sans text-xs tracking-wider opacity-50 md:flex-row"
+  >
+    <p>
+      &copy; {new Date().getFullYear()} Olea Digitalis. {t('footer.rights')}
+    </p>
+    <p>
+      {lang === 'hr' ? 'Verzija' : 'Version'}
+      {appData.version} | {appData.codename}
+    </p>
   </div>
 </footer>

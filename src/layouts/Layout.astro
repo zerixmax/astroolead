@@ -8,16 +8,19 @@ interface Props {
   lang?: string;
 }
 
-const { 
-  title, 
-  description = "Digitalna sljedivost maslinovog ulja.",
-  keywords = "maslinovo ulje, sljedivost, OPG",
-  lang = "hr"
+const {
+  title,
+  description = 'Digitalna sljedivost maslinovog ulja.',
+  keywords = 'maslinovo ulje, sljedivost, OPG',
+  lang = 'hr',
 } = Astro.props;
 
 import '../styles/global.css';
 
-const canonicalUrl = new URL(Astro.url.pathname, 'https://oleadigitalis.eu').toString();
+const canonicalUrl = new URL(
+  Astro.url.pathname,
+  'https://oleadigitalis.eu'
+).toString();
 
 // Generate dynamic language alternate URLs for the current page using the routes dictionary
 const pathname = Astro.url.pathname;
@@ -31,8 +34,11 @@ if (segments.length > 1) {
 let routeKey: keyof typeof routes.hr | null = null;
 if (currentSlug) {
   const currentLocale = lang as 'hr' | 'en';
-  const entries = Object.entries(routes[currentLocale]) as [keyof typeof routes.hr, string][];
-  const found = entries.find(([_, val]) => val === currentSlug);
+  const entries = Object.entries(routes[currentLocale]) as [
+    keyof typeof routes.hr,
+    string,
+  ][];
+  const found = entries.find((entry) => entry[1] === currentSlug);
   if (found) {
     routeKey = found[0];
   }
@@ -55,37 +61,42 @@ const enUrl = new URL(enPath, 'https://oleadigitalis.eu').toString();
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    
+
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="keywords" content={keywords} />
     <meta name="author" content="Olea Digitalis" />
     <link rel="canonical" href={canonicalUrl} />
-    
+
     <!-- Hreflang alternates for Multilingual SEO -->
     <link rel="alternate" hreflang="hr" href={hrUrl} />
     <link rel="alternate" hreflang="en" href={enUrl} />
     <link rel="alternate" hreflang="x-default" href={hrUrl} />
-    
+
     <!-- Open Graph / Facebook -->
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:site_name" content="Olea Digitalis" />
-    
+
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    
+
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body class="bg-olea-sand text-olea-earth font-sans antialiased min-h-screen flex flex-col">
+  <body
+    class="bg-olea-sand text-olea-earth flex min-h-screen flex-col font-sans antialiased"
+  >
     <slot />
   </body>
 </html>

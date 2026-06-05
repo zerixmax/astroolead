@@ -1,5 +1,5 @@
 {
-  "version": "0.3.1",
-  "buildDate": "2026-06-04",
-  "codename": "Bug Fixes and Documentation Update"
+  "version": "0.3.4",
+  "buildDate": "2026-06-05",
+  "codename": "Quality Tools, Rust Compiler & Layout Refactoring"
 }

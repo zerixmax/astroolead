@@ -11,17 +11,18 @@ const t = useTranslations(lang);
 const videoId = t('hero.videoId');
 ---
 
-<section class="bg-white py-24 px-6 border-b border-olea-olive/5">
-  <div class="max-w-4xl mx-auto flex flex-col items-center space-y-8">
-    
+<section class="border-olea-olive/5 border-b bg-white px-6 py-24">
+  <div class="mx-auto flex max-w-4xl flex-col items-center space-y-8">
     <!-- Responsive 16:9 Video Container -->
-    <div class="w-full aspect-video rounded-2xl shadow-2xl overflow-hidden border border-olea-olive/10 bg-black">
-      <iframe 
-        class="w-full h-full"
-        src={`https://www.youtube.com/embed/${videoId}?rel=0`} 
+    <div
+      class="border-olea-olive/10 aspect-video w-full overflow-hidden rounded-2xl border bg-black shadow-2xl"
+    >
+      <iframe
+        class="h-full w-full"
+        src={`https://www.youtube.com/embed/${videoId}?rel=0`}
         title={t('hero.videoSectionTitle')}
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowfullscreen
       >
       </iframe>
@@ -29,11 +30,10 @@ const videoId = t('hero.videoId');
 
     <!-- Video Title Below Player -->
     <div class="text-center">
-      <h2 class="text-3xl font-serif text-olea-earth tracking-wide">
+      <h2 class="text-olea-earth font-serif text-3xl tracking-wide">
         {t('hero.videoSectionTitle')}
       </h2>
-      <div class="h-0.5 w-16 bg-olea-olive/35 mx-auto mt-4"></div>
+      <div class="bg-olea-olive/35 mx-auto mt-4 h-0.5 w-16"></div>
     </div>
-
   </div>
 </section>
