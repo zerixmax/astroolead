@@ -36,7 +36,7 @@ jobs:
         with:
           server: ftp.oleadigitalis.eu
           username: astro@oleadigitalis.eu
-          password: ${{ ctlpE++KVG}@cxb; }}
+          password: {{ secrets.FTP_PASSWORD }}
           port: 21
           local-dir: ./dist/
           server-dir: ./
