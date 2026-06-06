@@ -15,11 +15,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # 2. Postavljanje Node.js okruženja
+      # 2. Postavljanje ispravne Node.js verzije za Astro v6
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
           cache: 'npm'
 
       # 3. Instalacija zavisnosti (dependencies)
