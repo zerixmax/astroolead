@@ -19,7 +19,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-node: 20
+          node-version: 20
           cache: 'npm'
 
       # 3. Instalacija zavisnosti (dependencies)
@@ -36,7 +36,7 @@ jobs:
         with:
           server: ftp.oleadigitalis.eu
           username: astro@oleadigitalis.eu
-          password: {{ secrets.FTP_PASSWORD }}
+          password: ${{ secrets.FTP_PASSWORD }}
           port: 21
           local-dir: ./dist/
           server-dir: ./

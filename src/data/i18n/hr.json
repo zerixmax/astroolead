@@ -9,8 +9,8 @@
     "dnevnikTitle": "Digitalni dnevnik uzgoja | Olea Digitalis"
   },
   "hero": {
-    "title": "Platforma za digitalnu sljedivost maslinovog ulja.",
-    "subtitle": "Od stabla do boce — s digitalnim certifikatom autentičnosti.",
+    "title": "OleaD: Digitalna sljedivost koja podiže vrijednost Vašeg maslinovog ulja",
+    "subtitle": "Pametno i jednostavno vođenje OPG-a uz tehnologiju koja radi unutar maslinika – potpuno bez mobilnog signala. Zaštitite autentičnost svake kapi i dokažite kupcima vrhunsku kvalitetu.",
     "cta": "Pridruži se projektu",
     "videoId": "CJiLi17CtyE",
     "videoSectionTitle": "Olea Digitalis u praksi"
@@ -24,24 +24,67 @@
     "oleadnode": "OleaD-Node (Gljiva)",
     "kontakt": "Kontakt",
     "oProjektu": "O projektu",
-    "certifikati": "Certifikati"
+    "certifikati": "Certifikati",
+    "blog": "Dnevnik razvoja"
   },
   "sections": {
     "projekt": {
-      "title": "Digitalna Transformacija OPG-a",
-      "description": "Razvijamo AgroTech inovacije koje omogućuju potpunu sljedivost proizvodnje. Svaka boca dobiva svoj nepromjenjivi digitalni identifikacijski dokument. Naša rješenja su 'Offline-First', prilagođena radu u dalmatinskim maslinicima bez signala."
+      "title": "Sustav izgrađen na zemlji, za ljude na zemlji",
+      "description": "Zaboravite na komplicirane tablice, bilježnice koje se gube i dugotrajno tipkanje na mobitelu usred berbe. OleaD je sustav koji tiho radi u pozadini dok ste vi u masliniku, pretvarajući vaš svakodnevni trud u neoboriv digitalni dokaz kvalitete koji kupci danas traže i cijene."
+    },
+    "pillars": {
+      "title": "Tri stupa OleaD sustava: Kako to radi u praksi?",
+      "p1": {
+        "title": "1. Jedan dodir na ulazu (Pametna PWA aplikacija)",
+        "desc": "Kada ujutro uđete u maslinik, dovoljno je samo jednom prisloniti mobitel na oznaku na ulazu. Zahvaljujući PWA (Progresivnoj web aplikaciji) tehnologiji, ne morate ništa preuzimati s Trgovine niti trošiti memoriju mobitela. Jednim dodirom otvara se digitalni karton vašeg imanja. Glavna prednost? Radi u potpunoj izolaciji, bez ijedne crtice internetskog signala. Sve što upišete, aplikacija sigurno pamti u džepu i šalje na server tek kada navečer dođete kući na kućni Wi-Fi."
+      },
+      "p2": {
+        "title": "2. Automatsko prepoznavanje stabla ispred Vas",
+        "desc": "Aplikacija koristi unutarnje senzore vašeg pametnog telefona (orijentaciju i kompas) kako bi prepoznala ispred koje masline točno stojite. Sustav se oslanja na ultra-precizni digitalni katastar koji je prethodno napravila naša terenska stanica. Na ekranu se pojavljuju predimenzionirani gumbi prilagođeni radu na otvorenom: aplikacija vas sama pita \"Bere li se Maslina #42?\". Jedan klik i podatak je spremljen. Korisničko trenje smanjeno je na nulu."
+      },
+      "p3": {
+        "title": "3. Digitalni certifikat na boci (Blockchain sljedivost)",
+        "desc": "Svi povijesni podaci o mikroklimi, datumima rezidbe, gnojenja i točnom satu berbe trajno se zapisuju u centralni digitalni sef i osiguravaju blockchain tehnologijom. To znači da su podaci nepromjenjivi i nitko ih ne može lažirati. Kada kupac u restoranu ili inozemstvu skenira QR kod na vašoj boci, on dobiva apsolutni dokaz o podrijetlu \"od polja do stola\"."
+      }
+    },
+    "roadmap": {
+      "title": "Tehnološka mapa puta (Roadmap)",
+      "v1": {
+        "tag": "Verzija 1.0",
+        "status": "Trenutno dostupno & Testirano",
+        "item1": "Izrada preciznog digitalnog katastra maslina pomoću naprednih terenskih stanica.",
+        "item2": "Offline-first PWA mobilna aplikacija koja radi bez mobilne mreže.",
+        "item3": "Automatsko prepoznavanje stabala pomoću kompasa i senzora pokreta na mobitelu.",
+        "item4": "Središnji cloud sustav za pohranu podataka i generiranje digitalnih certifikata."
+      },
+      "v2": {
+        "tag": "Verzija 2.0",
+        "status": "U razvoju",
+        "item1": "Autonomni terenski asistenti za automatizaciju prikupljanja podataka i olakšavanje fizičkog rada u masliniku."
+      }
     },
     "dnevnik": {
       "title": "Digitalni dnevnik uzgoja",
       "description": "Rješenje za birokraciju koje radi i u najudaljenijem masliniku. Unosite radove bez interneta (Offline-First), dok sustav automatski povlači podatke sa senzora. Generirajte izvještaje za certifikate i poticaje u jednom kliku."
     },
     "oleadbot": {
-      "title": "OleaDbot: Fizički asistent",
-      "description": "Robotski sustav dizajniran za pomoć u teškim fizičkim radovima. Pomaže pri nošenju tereta, prijenosu baterija za berbu te služi kao sustav za navodnjavanje na zahtjevnim terenima."
+      "title": "OleaDbot sustav: Od preciznog Popisivača do terenskog asistenta",
+      "description": "Robotika u maslinarstvu nije znanstvena fantastika, već nužnost za smanjenje ljudskog umora i stopostotnu točnost podataka. Naš robotski sustav razvijamo u dvije jasne faze:",
+      "f1_title": "FAZA 1: OleaDbot-POPISIVAČ (Spremno i testirano - TRL 6)",
+      "f1_desc": "Srce našeg terenskog sustava je već tu. Snažni Raspberry Pi 5 popisivač uspješno je testiran u realnom okruženju (TRL 6 stupanj spremnosti). On služi kao mobilna baza koja prolazi maslinikom, bežično budi senzore i usisava podatke bez potrebe za internetom. Kroz nekoliko dana integriramo RTK GPS modul koji će nam omogućiti mapiranje i izradu digitalnog katastra svake vaše masline s točnošću u samo nekoliko centimetara!",
+      "f2_title": "FAZA 2: Autonomni robotski asistent (Idejna faza)",
+      "f2_desc": "Kada softverska baza na VPS-u, mobilna aplikacija i senzori budu radili u savršenom sinkronicitetu, popisivač selimo na čvrstu, autonomnu konstrukciju na kotačima. Taj robot će služiti kao fizički asistent u polju – pomagat će vam u nošenju teških gajbi uzbrdo i automatskom patroliranju maslinikom."
     },
     "oleadnode": {
-      "title": "OleaDnode: Senzorska mreža",
-      "description": "Statične senzorske stanice za precizno praćenje mikroklimatskih uvjeta u realnom vremenu. Kontinuirano očitavaju temperaturu i vlagu zraka te vlažnost tla, pružajući ključne podatke za optimizaciju uzgoja i navodnjavanja."
+      "title": "OleaD-Nodes: Autonomne \"Gljive\" koje čuvaju mikroklimu krošnje",
+      "description": "Kako biste kupcu ili inspekciji dokazali idealne uvjete rasta i zdravlje ploda, više ne morate nagađati. Naše autonomne stanice u obliku gljiva prate svaki parametar izravno ispod stabla.",
+      "put_naslov": "Naš tehnološki razvojni put (Transparentno i iskreno):",
+      "t1_title": "Mozak sustava je spreman",
+      "t1_desc": "Prva testna elektronika temeljena na snažnom i štedljivom ESP32 mikrokontroleru već uspješno očitava podatke u našem testnom okruženju.",
+      "t2_title": "Otpornost na dalmatinske uvjete",
+      "t2_desc": "Kroz nekoliko dana, čim se odobre HZZ poticaji za zelenu i digitalnu tranziciju, pokrećemo proizvodnju kućišta na naprednim 3D printerima koristeći industrijski PETG materijal otporan na ekstremno sunce, UV zračenje i buru.",
+      "t3_title": "Pametno upravljanje resursima",
+      "t3_desc": "Nove verzije donose napredne senzore za vlagu tla i solarno napajanje koje sustav stavlja u mod dubokog sna – stanica se budi samo kada šalje podatke, trošeći nula energije iz mreže."
     },
     "saznajVise": "Saznaj više"
   },
@@ -113,14 +156,28 @@
     "info_callout": "Ovdje će se prikazivati povijest digitalnih certifikata, mogućnost pretraživanja metapodataka stabala te izravno skeniranje i generiranje QR kodova za boce ekstra djevičanskog maslinovog ulja."
   },
   "dnevnik": {
-    "naslov": "Digitalni dnevnik uzgoja",
-    "opis": "Praćenje poljoprivrednih aktivnosti nikada nije bilo jednostavnije. Aplikacija dizajnirana za rad bez internetske veze (Offline-First) izravno iz maslinika.",
-    "funkcionalnosti": "Funkcionalnosti",
-    "f1_title": "Offline unos",
-    "f1_desc": "Unesite podatke o rezidbi, gnojidbi i berbi bez obzira na signal.",
-    "f2_title": "Sinkronizacija",
-    "f2_desc": "Automatska sinkronizacija sa sustavom čim uhvatite signal.",
-    "f3_title": "Generiranje izvještaja",
-    "f3_desc": "Izvezite dnevnik u obliku spremnom za nadležne institucije."
+    "naslov": "Digitalni Dnevnik Uzgoja: Vaša povijesna knjiga OPG-a bez papira",
+    "opis": "Unos podataka na terenu često je muka, a papirnate bilježnice inspekcije više ne priznaju na isti način. Naša PWA mobilna aplikacija omogućuje vam da jednim klikom na ulazu u maslinik otvorite kompletan povijesni karton svog imanja – potpuno bez mobilnog signala.",
+    "funkcionalnosti": "Što nudimo i kako olakšavamo život:",
+    "f1_title": "Automatsko prepoznavanje lokacije",
+    "f1_desc": "Više ne morate ručno tražiti u kojoj ste parceli. Sustav sam prepoznaje gdje se nalazite i predlaže radnje.",
+    "f2_title": "Unos u tri sekunde",
+    "f2_desc": "Predimenzionirani gumbi prilagođeni radu na otvorenom omogućuju vam da jednim dodirom zabilježite rezidbu, gnojenje ili sat berbe.",
+    "f3_title": "Miran san pred EU inspekcijom",
+    "f3_desc": "Sustav automatski generira izvještaje koji u potpunosti zadovoljavaju stroge EU standarde o praćenju podrijetla.",
+    "status_naslov": "Spreman za produkciju",
+    "status_opis": "Naš softverski sustav je u završnoj fazi (90% završen) i upravo ga selimo na naprednu, izoliranu VPS serversku infrastrukturu kako bismo osigurali maksimalnu brzinu i 100% sigurnost vaših podataka, ostavljajući iza sebe spora i nesigurna rješenja klasičnih hostinga."
+  },
+  "dnevnik_uzgoja": {
+    "title": "Digitalni Dnevnik Uzgoja — Povijesna knjiga Vašeg OPG-a",
+    "description": "Softversko rješenje koje je 90% završeno i spremno za prelazak na naprednu VPS infrastrukturu radi maksimalne sigurnosti i brzine podataka. Omogućuje stopostotno offline bilježenje rezidbe, gnojenja i zaštite u skladu sa strogim EU zakonima o ekološkoj proizvodnji."
+  },
+  "oleadnode": {
+    "title": "OleaD-Nodes — Autonomne stanice za mikroklimu ispod krošnje",
+    "description": "Sustav u ranoj fazi razvoja. Naša prva testna elektronika temeljena na ESP32 mikrokontroleru je sklopljena i uspješno testirana. Po odobrenju HZZ poticaja za zelenu i digitalnu tranziciju, pokrećemo 3D print kućišta od industrijskog PETG materijala i integraciju naprednih senzora vlage tla."
+  },
+  "oleadbot": {
+    "title": "OleaDbot Sustav — Od TRL 6 Popisivača do terenskog asistenta",
+    "description": "Dok je fizički robot na kotačima u idejnoj fazi, naš OleaDbot-POPISIVAČ je u visokoj fazi spremnosti (TRL 6 operativni prototip). Baziran na Raspberry Pi 5 računalu, spreman je za izradu ultra-preciznog digitalnog katastra maslina čim integriramo RTK GPS modul iz poticaja."
   }
 }

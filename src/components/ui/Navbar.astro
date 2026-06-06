@@ -106,6 +106,12 @@ if (routeKey) {
             >
               {t('nav.certifikati')}
             </a>
+            <a
+              href={getRelativeLocaleUrl(lang, 'blog')}
+              class="text-olea-earth hover:bg-olea-sand hover:text-olea-olive block px-4 py-2 text-sm transition-colors"
+            >
+              {t('nav.blog')}
+            </a>
           </div>
         </div>
       </div>
@@ -234,6 +240,12 @@ if (routeKey) {
           class="mobile-link text-olea-earth hover:text-olea-olive transition-colors"
         >
           {t('nav.certifikati')}
+        </a>
+        <a
+          href={getRelativeLocaleUrl(lang, 'blog')}
+          class="mobile-link text-olea-earth hover:text-olea-olive transition-colors"
+        >
+          {t('nav.blog')}
         </a>
       </div>
     </div>

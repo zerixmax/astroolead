@@ -11,43 +11,222 @@ const t = useTranslations(lang);
 <Layout title={t('seo.dnevnikTitle')} lang={lang}>
   <Navbar lang={lang} />
 
-  <main
-    class="mx-auto flex min-h-[60vh] max-w-4xl flex-col justify-center px-6 py-24 text-center"
-  >
-    <h1 class="text-olea-earth mb-6 font-serif text-5xl">
-      {t('dnevnik.naslov')}
-    </h1>
-    <p class="text-olea-earth/80 mb-12 font-sans text-xl leading-relaxed">
-      {t('dnevnik.opis')}
-    </p>
+  <main class="mx-auto min-h-[80vh] max-w-5xl px-6 py-24">
+    <!-- Hero / Intro -->
+    <div
+      class="scroll-reveal animate-fade-in-up mx-auto mb-16 max-w-4xl text-center"
+    >
+      <span
+        class="bg-olea-olive/10 text-olea-olive border-olea-olive/20 mb-6 inline-block rounded-full border px-4 py-2 font-mono text-xs tracking-widest uppercase"
+      >
+        Offline-First PWA Solution
+      </span>
+      <h1
+        class="text-olea-earth mb-6 font-serif text-4xl leading-tight font-semibold md:text-5xl"
+      >
+        {t('dnevnik.naslov')}
+      </h1>
+      <p
+        class="text-olea-earth/80 font-sans text-lg leading-relaxed md:text-xl"
+      >
+        {t('dnevnik.opis')}
+      </p>
+    </div>
 
-    <h2 class="text-olea-earth mb-8 font-serif text-3xl">
-      {t('dnevnik.funkcionalnosti')}
-    </h2>
-    <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
-      <div
-        class="border-olea-olive/10 rounded-2xl border bg-white p-6 shadow-sm"
+    <!-- Features Section -->
+    <div class="scroll-reveal mb-20">
+      <h2
+        class="text-olea-earth mb-10 text-center font-serif text-2xl md:text-3xl"
       >
-        <h3 class="text-olea-earth mb-3 text-xl font-bold">
-          {t('dnevnik.f1_title')}
-        </h3>
-        <p class="text-olea-earth/70">{t('dnevnik.f1_desc')}</p>
+        {t('dnevnik.funkcionalnosti')}
+      </h2>
+      <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+        <!-- Feature 1 -->
+        <div
+          class="border-olea-olive/10 group rounded-2xl border bg-white/50 p-8 shadow-md backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+        >
+          <div
+            class="bg-olea-olive/10 text-olea-olive mb-6 flex h-12 w-12 items-center justify-center rounded-xl transition-transform group-hover:scale-110"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+              ></path>
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-olea-earth mb-3 font-serif text-xl font-bold">
+            {t('dnevnik.f1_title')}
+          </h3>
+          <p class="text-olea-earth/70 font-sans leading-relaxed">
+            {t('dnevnik.f1_desc')}
+          </p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div
+          class="border-olea-olive/10 group rounded-2xl border bg-white/50 p-8 shadow-md backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+        >
+          <div
+            class="bg-olea-olive/10 text-olea-olive mb-6 flex h-12 w-12 items-center justify-center rounded-xl transition-transform group-hover:scale-110"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-olea-earth mb-3 font-serif text-xl font-bold">
+            {t('dnevnik.f2_title')}
+          </h3>
+          <p class="text-olea-earth/70 font-sans leading-relaxed">
+            {t('dnevnik.f2_desc')}
+          </p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div
+          class="border-olea-olive/10 group rounded-2xl border bg-white/50 p-8 shadow-md backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+        >
+          <div
+            class="bg-olea-olive/10 text-olea-olive mb-6 flex h-12 w-12 items-center justify-center rounded-xl transition-transform group-hover:scale-110"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-olea-earth mb-3 font-serif text-xl font-bold">
+            {t('dnevnik.f3_title')}
+          </h3>
+          <p class="text-olea-earth/70 font-sans leading-relaxed">
+            {t('dnevnik.f3_desc')}
+          </p>
+        </div>
       </div>
-      <div
-        class="border-olea-olive/10 rounded-2xl border bg-white p-6 shadow-sm"
-      >
-        <h3 class="text-olea-earth mb-3 text-xl font-bold">
-          {t('dnevnik.f2_title')}
-        </h3>
-        <p class="text-olea-earth/70">{t('dnevnik.f2_desc')}</p>
+    </div>
+
+    <!-- Production Readiness Box -->
+    <div
+      class="from-olea-earth/95 to-olea-earth/80 border-olea-olive/20 scroll-reveal relative overflow-hidden rounded-3xl border bg-gradient-to-r p-8 text-white shadow-2xl md:p-12"
+    >
+      <!-- Background pattern -->
+      <div class="pointer-events-none absolute inset-0 opacity-5">
+        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern
+              id="grid"
+              width="40"
+              height="40"
+              patternUnits="userSpaceOnUse"
+            >
+              <path
+                d="M 40 0 L 0 0 0 40"
+                fill="none"
+                stroke="white"
+                stroke-width="1"></path>
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#grid)"></rect>
+        </svg>
       </div>
+
       <div
-        class="border-olea-olive/10 rounded-2xl border bg-white p-6 shadow-sm"
+        class="relative z-10 grid grid-cols-1 items-center gap-8 lg:grid-cols-3"
       >
-        <h3 class="text-olea-earth mb-3 text-xl font-bold">
-          {t('dnevnik.f3_title')}
-        </h3>
-        <p class="text-olea-earth/70">{t('dnevnik.f3_desc')}</p>
+        <div class="lg:col-span-2">
+          <div class="mb-4 flex items-center gap-3">
+            <span class="relative flex h-3 w-3">
+              <span
+                class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"
+              ></span>
+              <span
+                class="relative inline-flex h-3 w-3 rounded-full bg-emerald-500"
+              ></span>
+            </span>
+            <span
+              class="font-mono text-xs font-bold tracking-widest text-emerald-400 uppercase"
+            >
+              {t('dnevnik.status_naslov')}
+            </span>
+          </div>
+          <h3
+            class="text-olea-sand mb-4 font-serif text-2xl leading-tight md:text-3xl"
+          >
+            Migrating to a secure VPS server infrastructure
+          </h3>
+          <p
+            class="text-olea-sand/80 font-sans text-sm leading-relaxed md:text-base"
+          >
+            {t('dnevnik.status_opis')}
+          </p>
+        </div>
+
+        <div
+          class="flex flex-col items-center justify-center rounded-2xl border border-white/10 bg-white/10 p-6 text-center backdrop-blur-sm"
+        >
+          <div class="relative mb-3 flex h-28 w-28 items-center justify-center">
+            <!-- Progress Circle -->
+            <svg class="h-full w-full -rotate-90 transform" viewBox="0 0 36 36">
+              <path
+                class="text-white/10"
+                stroke-width="3"
+                stroke="currentColor"
+                fill="none"
+                d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+              ></path>
+              <path
+                class="text-emerald-400"
+                stroke-dasharray="90, 100"
+                stroke-width="3"
+                stroke-linecap="round"
+                stroke="currentColor"
+                fill="none"
+                d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+              ></path>
+            </svg>
+            <div class="absolute text-center">
+              <span class="font-mono text-2xl font-bold">90%</span>
+              <span
+                class="block font-mono text-[9px] tracking-wider uppercase opacity-60"
+                >Completed</span
+              >
+            </div>
+          </div>
+          <span class="text-olea-sand/70 font-mono text-xs"
+            >Version 1.0 (Beta)</span
+          >
+        </div>
       </div>
     </div>
   </main>

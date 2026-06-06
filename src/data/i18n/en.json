@@ -9,8 +9,8 @@
     "dnevnikTitle": "Digital Breeding Log | Olea Digitalis"
   },
   "hero": {
-    "title": "Platform for Digital Traceability of Olive Oil.",
-    "subtitle": "From tree to bottle — with a digital certificate of authenticity.",
+    "title": "OleaD: Digital Traceability that Raises the Value of Your Olive Oil",
+    "subtitle": "Smart and simple management of family farms (OPGs) with technology that works inside the olive grove – completely without a cellular signal. Protect the authenticity of every drop and prove premium quality to your customers.",
     "cta": "Download Whitepaper",
     "videoId": "NeDWefswS18",
     "videoSectionTitle": "Olea Digitalis in Practice"
@@ -24,24 +24,67 @@
     "oleadnode": "OleaD-Node (Mushroom)",
     "kontakt": "Contact",
     "oProjektu": "About project",
-    "certifikati": "Certificates"
+    "certifikati": "Certificates",
+    "blog": "Development Log"
   },
   "sections": {
     "projekt": {
-      "title": "OPG Digital Transformation",
-      "description": "We develop AgroTech innovations that enable complete production traceability. Every bottle receives its immutable digital identification document. Our solutions are 'Offline-First', tailored to operate in Dalmatian olive groves without cellular signal."
+      "title": "A System Built on the Ground, for People on the Ground",
+      "description": "Forget about complicated spreadsheets, lost notebooks, and tedious typing on your phone in the middle of a harvest. OleaD is a system that silently works in the background while you are in the olive grove, turning your daily efforts into irrefutable digital proof of quality that customers today seek and appreciate."
+    },
+    "pillars": {
+      "title": "Three Pillars of the OleaD System: How It Works in Practice?",
+      "p1": {
+        "title": "1. One Touch at the Entrance (Smart PWA Application)",
+        "desc": "When you enter the olive grove in the morning, just tap your phone once against the tag at the entrance. Thanks to PWA (Progressive Web App) technology, you don't need to download anything from the Store or waste phone storage. One touch opens the digital file of your estate. The main advantage? It works in complete isolation, without a single bar of cellular signal. Everything you write is safely stored on your device and sent to the server only when you return home to your Wi-Fi in the evening."
+      },
+      "p2": {
+        "title": "2. Automatic Recognition of the Tree in Front of You",
+        "desc": "The app uses your smartphone's internal sensors (orientation and compass) to detect exactly which olive tree you are standing in front of. The system relies on an ultra-precise digital cadastre previously created by our field station. Oversized buttons adapted for outdoor work appear on the screen: the app itself asks \"Is Olive #42 being harvested?\". One tap and the data is saved. User friction is reduced to zero."
+      },
+      "p3": {
+        "title": "3. Digital Certificate on the Bottle (Blockchain Traceability)",
+        "desc": "All historical data on microclimate, pruning dates, fertilization, and the exact hour of harvest is permanently recorded in a central digital vault and secured by blockchain technology. This means the data is immutable and cannot be falsified. When a customer in a restaurant or abroad scans the QR code on your bottle, they receive absolute proof of origin \"from field to table\"."
+      }
+    },
+    "roadmap": {
+      "title": "Technology Roadmap",
+      "v1": {
+        "tag": "Version 1.0",
+        "status": "Currently Available & Tested",
+        "item1": "Creation of a precise digital olive tree cadastre using advanced field stations.",
+        "item2": "Offline-first PWA mobile application that works without mobile network access.",
+        "item3": "Automatic recognition of trees using compass and motion sensors on the mobile phone.",
+        "item4": "Central cloud system for data storage and digital certificate generation."
+      },
+      "v2": {
+        "tag": "Version 2.0",
+        "status": "In Development",
+        "item1": "Autonomous field assistants to automate data collection and facilitate physical work in the olive grove."
+      }
     },
     "dnevnik": {
       "title": "Digital Cultivation Log",
       "description": "A solution for bureaucracy that works even in the most remote olive grove. Enter activities without internet (Offline-First), while the system automatically pulls data from sensors. Generate reports for certificates and subsidies in one click."
     },
     "oleadbot": {
-      "title": "OleaDbot: Physical Assistant",
-      "description": "A robotic system designed to help with heavy physical work. It assists with carrying loads, transporting harvesting batteries, and serves as an irrigation system on demanding terrains."
+      "title": "OleaDbot system: From precision Mapper to field assistant",
+      "description": "Robotics in olive growing is not science fiction, but a necessity to reduce human fatigue and ensure 100% data accuracy. We develop our robotic system in two clear phases:",
+      "f1_title": "PHASE 1: OleaDbot-MAPPER (Ready and tested - TRL 6)",
+      "f1_desc": "The heart of our field system is already here. The powerful Raspberry Pi 5 mapper has been successfully tested in a real environment (TRL 6 readiness level). It serves as a mobile base that passes through the olive grove, wirelessly wakes up sensors and vacuums data without the need for the internet. In a few days, we will integrate the RTK GPS module, which will allow us to map and create a digital cadastre of each of your olive trees with an accuracy of just a few centimeters!",
+      "f2_title": "PHASE 2: Autonomous robotic assistant (Conceptual phase)",
+      "f2_desc": "Once the software base on the VPS, the mobile application, and the sensors work in perfect synchronicity, we will migrate the mapper to a robust, autonomous wheeled structure. This robot will serve as a physical assistant in the field – helping you carry heavy crates uphill and automatically patrolling the olive grove."
     },
     "oleadnode": {
-      "title": "OleaDnode: Sensor Network",
-      "description": "Static sensor stations for real-time tracking of microclimatic conditions. They continuously read air temperature and humidity as well as soil moisture, providing key data for crop and irrigation optimization."
+      "title": "OleaD-Nodes: Autonomous \"Mushrooms\" protecting canopy microclimate",
+      "description": "To prove the ideal growing conditions and fruit health to buyers or inspectors, you no longer have to guess. Our autonomous mushroom-shaped stations track every parameter directly beneath the tree.",
+      "put_naslov": "Our technological development roadmap (Transparent and honest):",
+      "t1_title": "The system brain is ready",
+      "t1_desc": "The first test electronics based on the powerful and low-power ESP32 microcontroller already successfully read data in our test environment.",
+      "t2_title": "Resilience to Dalmatian conditions",
+      "t2_desc": "In a few days, as soon as HZZ green and digital transition incentives are approved, we will launch housing production on advanced 3D printers using industrial UV-resistant and storm-resistant PETG material.",
+      "t3_title": "Smart resource management",
+      "t3_desc": "New versions bring advanced soil moisture sensors and solar power which puts the system in deep sleep mode – the station wakes up only when sending data, consuming zero energy from the grid."
     },
     "saznajVise": "Learn more"
   },
@@ -113,14 +156,28 @@
     "info_callout": "This section will display the history of digital certificates, search options for tree metadata, and direct scanning and generation of QR codes for extra virgin olive oil bottles."
   },
   "dnevnik": {
-    "naslov": "Digital Breeding Log",
-    "opis": "Tracking agricultural activities has never been easier. Designed for offline-first operation directly from the olive grove.",
-    "funkcionalnosti": "Functionalities",
-    "f1_title": "Offline Entry",
-    "f1_desc": "Log pruning, fertilizing, and harvesting data regardless of signal.",
-    "f2_title": "Synchronization",
-    "f2_desc": "Automatic sync with the central system as soon as you get signal.",
-    "f3_title": "Report Generation",
-    "f3_desc": "Export logs in a format ready for relevant authorities."
+    "naslov": "Digital Cultivation Log: Your Paperless OPG History Book",
+    "opis": "Data entry in the field is often a chore, and paper logs are no longer accepted by inspections in the same way. Our PWA mobile app lets you open a complete historical card of your farm with a single click at the olive grove entrance – completely without mobile signal.",
+    "funkcionalnosti": "What we offer and how we make life easier:",
+    "f1_title": "Automatic location detection",
+    "f1_desc": "No need to manually search for which plot you're in. The system automatically detects your location and suggests actions.",
+    "f2_title": "Three-second entry",
+    "f2_desc": "Oversized buttons designed for outdoor work let you record pruning, fertilizing, or harvest hour with a single tap.",
+    "f3_title": "Peace of mind before EU inspections",
+    "f3_desc": "The system automatically generates reports that fully satisfy strict EU standards for origin tracking.",
+    "status_naslov": "Ready for Production",
+    "status_opis": "Our software system is in the final phase (90% complete) and we are currently migrating it to an advanced, isolated VPS server infrastructure to ensure maximum speed and 100% security of your data, leaving slow and insecure classic hosting solutions behind."
+  },
+  "dnevnik_uzgoja": {
+    "title": "Digital Cultivation Log — Your OPG History Book",
+    "description": "A software solution that is 90% completed and ready to migrate to advanced VPS infrastructure for maximum data security and speed. It enables 100% offline logging of pruning, fertilization, and crop protection in compliance with strict EU organic production laws."
+  },
+  "oleadnode": {
+    "title": "OleaD-Nodes — Autonomous canopy microclimate stations",
+    "description": "A system in the early stages of development. Our first test electronics based on the ESP32 microcontroller have been assembled and successfully tested. Upon approval of the HZZ green and digital transition incentives, we will launch 3D printing of housings from industrial PETG material and the integration of advanced soil moisture sensors."
+  },
+  "oleadbot": {
+    "title": "OleaDbot System — From TRL 6 Mapper to field assistant",
+    "description": "While the physical wheeled robot is in the conceptual phase, our OleaDbot-MAPPER is in a high stage of readiness (TRL 6 operational prototype). Based on the Raspberry Pi 5 computer, it is ready to create an ultra-precise digital olive cadastre as soon as we integrate the RTK GPS module from the incentives."
   }
 }

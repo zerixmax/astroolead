@@ -1,0 +1,86 @@
+---
+import { getCollection, render } from 'astro:content';
+import Layout from '../../../layouts/Layout.astro';
+import Navbar from '../../../components/ui/Navbar.astro';
+import Footer from '../../../components/Footer.astro';
+
+export async function getStaticPaths() {
+  const allPosts = await getCollection('blog');
+  const enPosts = allPosts.filter(
+    (post) =>
+      post.id.includes('poor-signal') ||
+      post.id.includes('how-to-prove') ||
+      post.id.includes('eu-regulations-and-traceability')
+  );
+  return enPosts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+const lang = 'en';
+---
+
+<Layout
+  title={`${post.data.title} | Olea Digitalis`}
+  description={post.data.description}
+  lang={lang}
+>
+  <Navbar lang={lang} />
+
+  <main class="bg-olea-sand text-olea-earth min-h-screen">
+    <article class="scroll-reveal mx-auto max-w-3xl px-6 pt-24 pb-20">
+      <!-- Back to blog link -->
+      <a
+        href="/en/blog/"
+        class="text-olea-olive hover:text-olea-earth mb-10 inline-flex items-center gap-2 font-sans font-semibold transition-colors duration-200"
+      >
+        <svg
+          class="h-4 w-4"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2.5"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M15 19l-7-7 7-7"></path>
+        </svg>
+        Back to blog
+      </a>
+
+      <!-- Date -->
+      <time
+        datetime={post.data.pubDate.toISOString()}
+        class="text-olea-olive mb-4 block font-mono text-sm"
+      >
+        {
+          post.data.pubDate.toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+          })
+        }
+      </time>
+
+      <!-- Title -->
+      <h1
+        class="text-olea-earth mb-8 font-serif text-4xl leading-tight font-extrabold md:text-5xl"
+      >
+        {post.data.title}
+      </h1>
+
+      <div class="bg-olea-olive/15 mb-10 h-px w-full"></div>
+
+      <!-- Content -->
+      <div class="blog-prose font-sans">
+        <Content />
+      </div>
+    </article>
+  </main>
+
+  <Footer lang={lang} />
+</Layout>

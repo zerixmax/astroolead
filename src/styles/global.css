@@ -78,3 +78,164 @@
 .fslightbox-slide-btn-container:hover .fslightbox-svgp {
   fill: #ffffff !important;
 }
+
+/* Page Load Entrance Animations */
+@keyframes slide-up-fade {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  opacity: 0;
+  animation: slide-up-fade 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.delay-1 {
+  animation-delay: 0.2s;
+}
+
+.delay-2 {
+  animation-delay: 0.4s;
+}
+
+.delay-3 {
+  animation-delay: 0.6s;
+}
+
+/* Scroll Reveal Animations */
+@media (prefers-reduced-motion: no-preference) {
+  /* JS Fallback styles (only active when JS adds the 'js' class to html) */
+  .js .scroll-reveal {
+    opacity: 0;
+    transform: translateY(40px) scale(0.98);
+    transition:
+      opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+      transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .js .scroll-reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  /* Native Scroll-driven Animations (when supported) */
+  @supports ((animation-timeline: view()) and (animation-range: entry)) {
+    @keyframes fade-in-up-scroll {
+      from {
+        opacity: 0;
+        transform: translateY(40px) scale(0.98);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .scroll-reveal {
+      opacity: 0;
+      transform: translateY(40px) scale(0.98);
+      transition: none !important;
+      animation: fade-in-up-scroll auto linear backwards;
+      animation-timeline: view();
+      animation-range: entry 10% entry 70%;
+    }
+  }
+}
+
+/* Back to Top Button Animations & Styles */
+@keyframes float-bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.animate-float {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: float-bounce 2.5s ease-in-out infinite;
+}
+
+#back-to-top:hover .animate-float {
+  animation-play-state: paused;
+}
+
+#back-to-top.show-btn {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Premium Blog Markdown Typography */
+.blog-prose {
+  font-size: 1.125rem;
+}
+
+.blog-prose h2,
+.blog-prose h3 {
+  color: var(--color-olea-earth);
+  font-family: var(--font-serif);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.blog-prose h2 {
+  font-size: 2rem;
+  border-bottom: 1px solid rgba(85, 107, 47, 0.15);
+  padding-bottom: 0.5rem;
+}
+
+.blog-prose h3 {
+  font-size: 1.5rem;
+}
+
+.blog-prose p {
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+  font-family: var(--font-sans);
+  color: rgba(61, 43, 31, 0.9);
+}
+
+.blog-prose ul {
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+  list-style-type: disc;
+}
+
+.blog-prose li {
+  margin-bottom: 0.5rem;
+  line-height: 1.7;
+  font-family: var(--font-sans);
+  color: rgba(61, 43, 31, 0.9);
+}
+
+.blog-prose strong {
+  font-weight: 650;
+  color: var(--color-olea-earth);
+}
+
+.blog-prose em {
+  font-style: italic;
+}
+
+.blog-prose a {
+  color: var(--color-olea-olive);
+  text-decoration: underline;
+  font-weight: 600;
+  transition: color 0.15s ease-in-out;
+}
+
+.blog-prose a:hover {
+  color: var(--color-olea-earth);
+}

@@ -1,0 +1,99 @@
+---
+// src/pages/en/blog/index.astro
+import Layout from '../../../layouts/Layout.astro';
+import Navbar from '../../../components/ui/Navbar.astro';
+import Footer from '../../../components/Footer.astro';
+import { getCollection } from 'astro:content';
+
+// Fetch all posts from 'blog' collection
+const allPosts = await getCollection('blog');
+
+// FILTER REPAIR: Get only English articles.
+const enPosts = allPosts.filter(
+  (post) =>
+    post.id.includes('poor-signal') ||
+    post.id.includes('how-to-prove') ||
+    post.id.includes('eu-regulations-and-traceability')
+);
+
+// Sort by date (newest first)
+const sortedPosts = enPosts.sort(
+  (a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime()
+);
+---
+
+<Layout
+  title="Development Log | OleaD"
+  description="Technical development log of the OleaD system for digital traceability of olive oil."
+  lang="en"
+>
+  <script type="application/ld+json" slot="head">
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "name": "OleaD Development Log",
+      "description": "Expert articles on olive oil digital traceability, blockchain in agriculture and offline-first IoT systems.",
+      "url": "https://oleadigitalis.eu/en/blog/",
+      "publisher": {
+        "@type": "Organization",
+        "name": "OleaD"
+      },
+      "keywords": [
+        "olive oil traceability",
+        "AgroTech Croatia",
+        "PWA agriculture",
+        "Blockchain traceability",
+        "Offline-first application"
+      ]
+    }
+  </script>
+
+  <Navbar lang="en" />
+
+  <main class="mx-auto min-h-screen max-w-4xl px-4 py-12">
+    <div class="mt-8 mb-12 text-center">
+      <h1 class="text-earth-dark mb-4 font-serif text-4xl">Development Log</h1>
+      <p class="text-gray-600">
+        Technical development log of the OleaD system. Follow how we digitalize
+        premium family farms (OPGs) and olive growers on the island of Korčula
+        and throughout Dalmatia using offline-first mobile applications, IoT
+        sensors, and blockchain traceability.
+      </p>
+    </div>
+
+    {
+      sortedPosts.length === 0 ? (
+        <p class="text-center font-mono text-gray-500">
+          Currently there are no published articles.
+        </p>
+      ) : (
+        <div class="grid gap-6">
+          {sortedPosts.map((post) => (
+            <article class="rounded-xl border bg-white/50 p-6 shadow-sm backdrop-blur">
+              <span class="text-sm text-gray-500">
+                {new Date(post.data.pubDate).toLocaleDateString('en-US')}
+              </span>
+              <h2 class="my-2 font-serif text-2xl">
+                <a
+                  href={`/en/blog/${post.id}/`}
+                  class="hover:text-accent transition-colors"
+                >
+                  {post.data.title}
+                </a>
+              </h2>
+              <p class="mb-4 text-gray-600">{post.data.description}</p>
+              <a
+                href={`/en/blog/${post.id}/`}
+                class="text-accent inline-flex items-center gap-1 text-sm font-semibold transition-all hover:gap-2"
+              >
+                Read more →
+              </a>
+            </article>
+          ))}
+        </div>
+      )
+    }
+  </main>
+
+  <Footer lang="en" />
+</Layout>

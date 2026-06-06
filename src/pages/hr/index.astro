@@ -33,7 +33,7 @@ const t = useTranslations(lang);
 
     <section
       id="projekt"
-      class="border-olea-olive/5 border-t bg-white px-6 py-32"
+      class="border-olea-olive/5 scroll-reveal border-t bg-white px-6 py-32"
     >
       <div class="mx-auto max-w-4xl text-center">
         <h2 class="text-olea-earth mb-8 font-serif text-4xl">
@@ -47,7 +47,7 @@ const t = useTranslations(lang);
       </div>
     </section>
 
-    <section class="bg-white px-6 py-16">
+    <section class="scroll-reveal bg-white px-6 py-16">
       <Slideshow
         images={[
           {
@@ -74,26 +74,83 @@ const t = useTranslations(lang);
       />
     </section>
 
-    <!-- Nova sekcija: Dnevnik -->
+    <!-- Sekcija: Tri stupa OleaD sustava -->
     <section
-      id="dnevnik"
-      class="bg-olea-sand border-olea-olive/5 border-t px-6 py-32"
+      id="stupi"
+      class="bg-olea-sand border-olea-olive/5 scroll-reveal border-t px-6 py-32"
     >
-      <div class="mx-auto max-w-4xl text-center">
-        <h2 class="text-olea-earth mb-8 font-serif text-4xl">
-          {t('sections.dnevnik.title')}
-        </h2>
-        <p
-          class="text-olea-earth/80 mx-auto max-w-2xl font-sans text-xl leading-relaxed"
-        >
-          {t('sections.dnevnik.description')}
-        </p>
+      <div class="mx-auto max-w-6xl">
+        <div class="mb-20 text-center">
+          <h2 class="text-olea-earth mb-4 font-serif text-4xl md:text-5xl">
+            {t('sections.pillars.title')}
+          </h2>
+          <div class="bg-olea-olive/35 mx-auto h-0.5 w-24"></div>
+        </div>
+
+        <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+          <!-- Stup 1 -->
+          <div
+            class="border-olea-olive/10 flex flex-col justify-between rounded-2xl border bg-white/60 p-8 shadow-sm backdrop-blur-sm transition-all duration-300 hover:shadow-md"
+          >
+            <div>
+              <div
+                class="text-olea-olive mb-6 font-serif text-5xl font-semibold opacity-70"
+              >
+                I
+              </div>
+              <h3 class="text-olea-earth mb-4 font-serif text-2xl leading-snug">
+                {t('sections.pillars.p1.title')}
+              </h3>
+              <p class="text-olea-earth/80 font-sans text-base leading-relaxed">
+                {t('sections.pillars.p1.desc')}
+              </p>
+            </div>
+          </div>
+
+          <!-- Stup 2 -->
+          <div
+            class="border-olea-olive/10 flex flex-col justify-between rounded-2xl border bg-white/60 p-8 shadow-sm backdrop-blur-sm transition-all duration-300 hover:shadow-md"
+          >
+            <div>
+              <div
+                class="text-olea-olive mb-6 font-serif text-5xl font-semibold opacity-70"
+              >
+                II
+              </div>
+              <h3 class="text-olea-earth mb-4 font-serif text-2xl leading-snug">
+                {t('sections.pillars.p2.title')}
+              </h3>
+              <p class="text-olea-earth/80 font-sans text-base leading-relaxed">
+                {t('sections.pillars.p2.desc')}
+              </p>
+            </div>
+          </div>
+
+          <!-- Stup 3 -->
+          <div
+            class="border-olea-olive/10 flex flex-col justify-between rounded-2xl border bg-white/60 p-8 shadow-sm backdrop-blur-sm transition-all duration-300 hover:shadow-md"
+          >
+            <div>
+              <div
+                class="text-olea-olive mb-6 font-serif text-5xl font-semibold opacity-70"
+              >
+                III
+              </div>
+              <h3 class="text-olea-earth mb-4 font-serif text-2xl leading-snug">
+                {t('sections.pillars.p3.title')}
+              </h3>
+              <p class="text-olea-earth/80 font-sans text-base leading-relaxed">
+                {t('sections.pillars.p3.desc')}
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
     <section
       id="oleadbot"
-      class="border-olea-olive/5 relative flex min-h-[70vh] items-center overflow-hidden border-t bg-white px-6 py-64"
+      class="border-olea-olive/5 scroll-reveal relative flex min-h-[70vh] items-center overflow-hidden border-t bg-white px-6 py-64"
     >
       <div class="pointer-events-none absolute inset-0 z-0 opacity-15">
         <Image src={botBg} alt="" class="h-full w-full object-cover" />
@@ -121,7 +178,7 @@ const t = useTranslations(lang);
 
     <section
       id="oleadnode"
-      class="bg-olea-sand border-olea-olive/5 relative flex items-center overflow-hidden border-t px-6 py-48"
+      class="bg-olea-sand border-olea-olive/5 scroll-reveal relative flex items-center overflow-hidden border-t px-6 py-48"
     >
       <div class="pointer-events-none absolute inset-0 z-0 opacity-10">
         <Image src={nodeBg} alt="" class="h-full w-full object-cover" />
@@ -142,6 +199,148 @@ const t = useTranslations(lang);
         >
           {t('sections.saznajVise')}
         </a>
+      </div>
+    </section>
+
+    <!-- Sekcija: Tehnološka mapa puta (Roadmap) -->
+    <section
+      id="roadmap"
+      class="border-olea-olive/5 scroll-reveal border-t bg-white px-6 py-32"
+    >
+      <div class="mx-auto max-w-5xl">
+        <div class="mb-20 text-center">
+          <h2 class="text-olea-earth mb-4 font-serif text-4xl md:text-5xl">
+            {t('sections.roadmap.title')}
+          </h2>
+          <div class="bg-olea-olive/35 mx-auto h-0.5 w-24"></div>
+        </div>
+
+        <div class="grid grid-cols-1 items-stretch gap-12 md:grid-cols-2">
+          <!-- Verzija 1.0 -->
+          <div
+            class="border-olea-olive/15 bg-olea-sand/30 relative flex flex-col justify-between rounded-2xl border p-8 shadow-sm"
+          >
+            <div>
+              <div class="mb-6 flex items-center justify-between">
+                <span class="text-olea-earth font-serif text-2xl font-bold"
+                  >{t('sections.roadmap.v1.tag')}</span
+                >
+                <span
+                  class="bg-olea-olive/15 text-olea-olive rounded-full px-3.5 py-1.5 font-sans text-xs font-semibold tracking-wider uppercase"
+                >
+                  {t('sections.roadmap.v1.status')}
+                </span>
+              </div>
+              <ul class="space-y-4">
+                <li
+                  class="text-olea-earth/95 flex items-start gap-3 font-sans leading-relaxed"
+                >
+                  <svg
+                    class="text-olea-olive mt-0.5 h-6 w-6 shrink-0"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span>{t('sections.roadmap.v1.item1')}</span>
+                </li>
+                <li
+                  class="text-olea-earth/95 flex items-start gap-3 font-sans leading-relaxed"
+                >
+                  <svg
+                    class="text-olea-olive mt-0.5 h-6 w-6 shrink-0"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span>{t('sections.roadmap.v1.item2')}</span>
+                </li>
+                <li
+                  class="text-olea-earth/95 flex items-start gap-3 font-sans leading-relaxed"
+                >
+                  <svg
+                    class="text-olea-olive mt-0.5 h-6 w-6 shrink-0"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span>{t('sections.roadmap.v1.item3')}</span>
+                </li>
+                <li
+                  class="text-olea-earth/95 flex items-start gap-3 font-sans leading-relaxed"
+                >
+                  <svg
+                    class="text-olea-olive mt-0.5 h-6 w-6 shrink-0"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span>{t('sections.roadmap.v1.item4')}</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Verzija 2.0 -->
+          <div
+            class="border-olea-olive/15 bg-olea-sand/30 relative flex flex-col justify-between rounded-2xl border p-8 shadow-sm"
+          >
+            <div>
+              <div class="mb-6 flex items-center justify-between">
+                <span class="text-olea-earth font-serif text-2xl font-bold"
+                  >{t('sections.roadmap.v2.tag')}</span
+                >
+                <span
+                  class="bg-olea-earth/10 text-olea-earth/80 rounded-full px-3.5 py-1.5 font-sans text-xs font-semibold tracking-wider uppercase"
+                >
+                  {t('sections.roadmap.v2.status')}
+                </span>
+              </div>
+              <ul class="space-y-4">
+                <li
+                  class="text-olea-earth/95 flex items-start gap-3 font-sans leading-relaxed"
+                >
+                  <svg
+                    class="text-olea-olive/60 mt-0.5 h-6 w-6 shrink-0"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>
+                  <span>{t('sections.roadmap.v2.item1')}</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   </main>

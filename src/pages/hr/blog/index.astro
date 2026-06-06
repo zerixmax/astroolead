@@ -1,0 +1,98 @@
+---
+// src/pages/hr/blog/index.astro
+import Layout from '../../../layouts/Layout.astro';
+import Navbar from '../../../components/ui/Navbar.astro';
+import Footer from '../../../components/Footer.astro';
+import { getCollection } from 'astro:content';
+
+// POPRAVAK FILTRIRANJA: Uzmi samo hrvatske članke koristeći includes (jer id može sadržavati ekstenziju .md ili kosi crtu)
+const allPosts = await getCollection('blog');
+const hrPosts = allPosts.filter(
+  (post) =>
+    post.id.includes('problem-signala') ||
+    post.id.includes('kako-dokazati-podrijetlo-maslinovog-ulja') ||
+    post.id.includes('eu-regulativa-i-sljedivost')
+);
+
+// Sortiraj po datumu (najnoviji prvi)
+const sortedPosts = hrPosts.sort(
+  (a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime()
+);
+---
+
+<Layout
+  title="Dnevnik razvoja | OleaD"
+  description="Tehnički dnevnik razvoja sustava OleaD za digitalnu sljedivost maslinovog ulja."
+  lang="hr"
+>
+  <script type="application/ld+json" slot="head">
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "name": "OleaD Razvojni Dnevnik",
+      "description": "Stručni članci o digitalnoj sljedivosti maslinovog ulja, blockchainu u poljoprivredi i offline-first IoT sustavima.",
+      "url": "https://oleadigitalis.eu/hr/blog/",
+      "publisher": {
+        "@type": "Organization",
+        "name": "OleaD"
+      },
+      "keywords": [
+        "sljedivost maslinovog ulja",
+        "AgroTech Hrvatska",
+        "PWA poljoprivreda",
+        "Blockchain sljedivost",
+        "Offline-first aplikacija"
+      ]
+    }
+  </script>
+
+  <!-- HITAN POPRAVAK: Vraćanje menija na vrh stranice -->
+  <Navbar lang="hr" />
+
+  <main class="mx-auto min-h-screen max-w-4xl px-4 py-12">
+    <div class="mt-8 mb-12 text-center">
+      <h1 class="text-earth-dark mb-4 font-serif text-4xl">Dnevnik razvoja</h1>
+      <p class="text-gray-600">
+        Tehnički dnevnik razvoja OleaD sustava. Pratite kako pomoću
+        offline-first mobilnih aplikacija, IoT senzora i blockchain sljedivosti
+        digitaliziramo premium OPG-ove i maslinare na otoku Korčuli i diljem
+        Dalmacije.
+      </p>
+    </div>
+
+    {
+      sortedPosts.length === 0 ? (
+        <p class="text-center font-mono text-gray-500">
+          Trenutno nema objavljenih članaka u bazi.
+        </p>
+      ) : (
+        <div class="grid gap-6">
+          {sortedPosts.map((post) => (
+            <article class="rounded-xl border bg-white/50 p-6 shadow-sm backdrop-blur">
+              <span class="text-sm text-gray-500">
+                {new Date(post.data.pubDate).toLocaleDateString('hr-HR')}
+              </span>
+              <h2 class="my-2 font-serif text-2xl">
+                <a
+                  href={`/hr/blog/${post.id}/`}
+                  class="hover:text-accent transition-colors"
+                >
+                  {post.data.title}
+                </a>
+              </h2>
+              <p class="mb-4 text-gray-600">{post.data.description}</p>
+              <a
+                href={`/hr/blog/${post.id}/`}
+                class="text-accent inline-flex items-center gap-1 text-sm font-semibold transition-all hover:gap-2"
+              >
+                Pročitaj više →
+              </a>
+            </article>
+          ))}
+        </div>
+      )
+    }
+  </main>
+
+  <Footer lang="hr" />
+</Layout>

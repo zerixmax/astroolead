@@ -5,6 +5,7 @@ export const routes = {
     oleadenode: 'oleadenode',
     nft: 'nft',
     'dnevnik-uzgoja': 'dnevnik-uzgoja',
+    blog: 'blog',
   },
   en: {
     'o-projektu': 'about-project', // Elegantno rješava različite nazive!
@@ -12,5 +13,6 @@ export const routes = {
     oleadenode: 'oleadenode',
     nft: 'nft',
     'dnevnik-uzgoja': 'digital-log',
+    blog: 'blog',
   },
 };

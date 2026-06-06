@@ -1,0 +1,58 @@
+---
+// src/pages/404.astro
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/ui/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import { Image } from 'astro:assets';
+import bgImage from '../assets/images/olea-digitalis-postine_1924.webp';
+---
+
+<Layout
+  title="404 - Stranica nije pronađena | OleaD"
+  description="Tražena stranica ne postoji. Vratite se na početnu stranicu OleaD sustava za sljedivost maslinovog ulja."
+  lang="hr"
+>
+  <Navbar lang="hr" />
+
+  <main
+    class="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-4 text-center"
+  >
+    <!-- Static Image Background -->
+    <div class="absolute inset-0 z-0 h-full w-full">
+      <Image
+        src={bgImage}
+        alt="Olea Digitalis Olive Grove"
+        class="h-full w-full object-cover"
+        loading="eager"
+      />
+    </div>
+
+    <!-- Tamni overlay sloj bez blura -->
+    <div class="absolute inset-0 z-10 bg-black/60"></div>
+
+    <!-- Sadržaj 404 sekcije (bijeli tekst bez pozadine) -->
+    <div class="relative z-20 flex max-w-2xl flex-col items-center p-8">
+      <span
+        class="text-olea-olive animate-bounce font-mono text-8xl drop-shadow-md md:text-9xl"
+        >404</span
+      >
+      <h1
+        class="mt-6 mb-4 font-serif text-3xl font-bold text-white italic drop-shadow-md md:text-5xl"
+      >
+        Izgubili ste se u masliniku?
+      </h1>
+      <p class="text-olea-sand mb-10 max-w-md text-lg leading-relaxed">
+        Stranica koju tražite ne postoji ili je premještena tijekom ažuriranja
+        sustava.
+      </p>
+      <a
+        href="/hr/"
+        class="bg-olea-olive hover:text-olea-olive rounded-full px-8 py-3.5 font-sans text-lg font-semibold tracking-wider text-white shadow-lg transition-all duration-300 hover:scale-105 hover:bg-white hover:shadow-xl active:scale-95"
+      >
+        Vrati se na početnu stranicu
+      </a>
+    </div>
+  </main>
+
+  <Footer lang="hr" />
+</Layout>
