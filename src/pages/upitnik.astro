@@ -1,0 +1,34 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/ui/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+const lang = 'hr';
+---
+
+<Layout title="Upitnik za izradu web stranice | Olea Digitalis" lang={lang}>
+  <Navbar lang={lang} />
+
+  <main class="bg-olea-sand text-olea-earth min-h-screen pt-24 pb-16">
+    <div class="mx-auto max-w-4xl px-6 text-center">
+      <h1 class="text-olea-olive mb-4 font-serif text-4xl font-extrabold tracking-wide md:text-5xl animate-fade-in-up">
+        Priprema tvog weba
+      </h1>
+      <p class="text-olea-earth/80 mx-auto max-w-xl mb-12 font-sans text-lg animate-fade-in-up delay-1">
+        Mario, odvoji 2 minute i klikni odgovore, a ja preuzimam tehniku.
+      </p>
+
+      <!-- Typeform Embed Container with Olea Digitalis Aesthetics -->
+      <div class="border-olea-olive/10 bg-white/50 overflow-hidden rounded-2xl border shadow-lg backdrop-blur-sm p-4 md:p-6 animate-fade-in-up delay-2">
+        <div style="width: 100%; min-height: 550px;" class="rounded-xl overflow-hidden">
+          <div data-tf-live="01KTH8498VGZBXR5XB3S1PVMAC"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <Footer lang={lang} />
+</Layout>
+
+<!-- Astro automatski optimizira skripte na kraju body-a -->
+<script is:inline src="//embed.typeform.com/next/embed.js"></script>
