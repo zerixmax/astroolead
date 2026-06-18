@@ -10,7 +10,8 @@ export async function getStaticPaths() {
     (post) =>
       post.id.includes('problem-signala') ||
       post.id.includes('kako-dokazati-podrijetlo') ||
-      post.id.includes('eu-regulativa-i-sljedivost')
+      post.id.includes('eu-regulativa-i-sljedivost') ||
+      post.id.includes('prava-digitalizacija-nije-samo-web')
   );
   return hrPosts.map((post) => ({
     params: { slug: post.id },
