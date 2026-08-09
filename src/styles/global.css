@@ -121,42 +121,55 @@
   animation-delay: 0.6s;
 }
 
-/* Scroll Reveal Animations */
+/* ==========================================================================
+   SCROLL REVEAL ANIMATIONS (MOBILE-FRIENDLY FIX)
+   ========================================================================== */
 @media (prefers-reduced-motion: no-preference) {
-  /* JS Fallback styles (only active when JS adds the 'js' class to html) */
-  .js .scroll-reveal {
-    opacity: 0;
-    transform: translateY(40px) scale(0.98);
-    transition:
-      opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1),
-      transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  .js .scroll-reveal.is-visible {
+  /* Mobile-first: na ekranima < 768px sadržaj je ODMah vidljiv (bez opacity: 0).
+     Sprječava bijele praznine pri skrolanju na Android Chrome-u. */
+  .js .scroll-reveal,
+  .scroll-reveal {
     opacity: 1;
-    transform: translateY(0) scale(1);
+    transform: translateY(0);
   }
 
-  /* Native Scroll-driven Animations (when supported) */
-  @supports ((animation-timeline: view()) and (animation-range: entry)) {
-    @keyframes fade-in-up-scroll {
-      from {
-        opacity: 0;
-        transform: translateY(40px) scale(0.98);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-      }
-    }
-
-    .scroll-reveal {
+  /* Scroll-Reveal primjenjuj SAMO na desktopu (>= 768px) */
+  @media (min-width: 768px) {
+    /* JS Fallback styles (only active when JS adds the 'js' class to html) */
+    .js .scroll-reveal {
       opacity: 0;
       transform: translateY(40px) scale(0.98);
-      transition: none !important;
-      animation: fade-in-up-scroll auto linear backwards;
-      animation-timeline: view();
-      animation-range: entry 10% entry 70%;
+      transition:
+        opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .js .scroll-reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    /* Native Scroll-driven Animations (when supported) */
+    @supports ((animation-timeline: view()) and (animation-range: entry)) {
+      @keyframes fade-in-up-scroll {
+        from {
+          opacity: 0;
+          transform: translateY(40px) scale(0.98);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+      }
+
+      .scroll-reveal {
+        opacity: 0;
+        transform: translateY(40px) scale(0.98);
+        transition: none !important;
+        animation: fade-in-up-scroll auto linear backwards;
+        animation-timeline: view();
+        animation-range: entry 10% entry 70%;
+      }
     }
   }
 }

@@ -1,5 +1,5 @@
 {
-  "version": "0.5.4",
+  "version": "0.5.5",
   "buildDate": "2026-08-09",
-  "codename": "remove root redirect, serve HR homepage at / + shared Home.astro"
+  "codename": "mobile-friendly scroll-reveal fix (no opacity:0 on <768px)"
 }
