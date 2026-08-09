@@ -3,6 +3,10 @@
 @import '@fontsource/jetbrains-mono';
 @import 'tailwindcss';
 
+/* Izuzmi dokumentaciju iz Tailwind automatskog skeniranja izvora kako se
+   klase spomenute u markdownu (npr. min-h-screen) ne bi emitirale u build */
+@source not "../../docs/**";
+
 @theme {
   --color-olea-sand: #f4f1ea;
   --color-olea-olive: #556b2f;

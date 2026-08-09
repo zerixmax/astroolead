@@ -27,7 +27,7 @@ src/
 │   │   ├── en.json                 # Engleski prijevod
 │   │   └── hr.json                 # Hrvatski prijevod
 │   ├── .env.example                # Predložak tajni za deployment
-│   └── version.json                # Verzija i buildDate (trenutno 0.5.2)
+│   └── version.json                # Verzija i buildDate (trenutno 0.5.3)
 ├── i18n/
 │   ├── routes.ts                   # Rječnik ruta za prevođenje slugova (npr. o-projektu ↔ about-project)
 │   └── ui.ts                       # Helper `useTranslations` za dot-notaciju
