@@ -14,7 +14,16 @@
 }
 
 @layer base {
+  html {
+    /* Podrška za mobilni Chrome i Safari */
+    height: -webkit-fill-available;
+  }
+
   body {
+    min-height: 100dvh;
+    min-height: -webkit-fill-available;
+    /* Prisilno osvježavanje slojeva pri skrolanju */
+    -webkit-overflow-scrolling: touch;
     background-color: var(--color-olea-sand);
     color: var(--color-olea-earth);
     font-family: var(--font-sans);
