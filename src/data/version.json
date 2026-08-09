@@ -1,5 +1,5 @@
 {
-  "version": "0.5.3",
+  "version": "0.5.4",
   "buildDate": "2026-08-09",
-  "codename": "dvh cleanup on page mains + post-mortem doc"
+  "codename": "remove root redirect, serve HR homepage at / + shared Home.astro"
 }

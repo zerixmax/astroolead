@@ -10,6 +10,7 @@ interface Props {
   lang?: string;
   hrUrlProp?: string;
   enUrlProp?: string;
+  canonicalPath?: string;
 }
 
 const {
@@ -19,6 +20,7 @@ const {
   lang = 'hr',
   hrUrlProp,
   enUrlProp,
+  canonicalPath,
 } = Astro.props;
 ---
 
@@ -39,6 +41,7 @@ const {
       lang={lang}
       hrUrl={hrUrlProp}
       enUrl={enUrlProp}
+      canonicalPath={canonicalPath}
     />
     <Schema type="Organization" lang={lang} />
     <Schema type="LocalBusiness" lang={lang} />

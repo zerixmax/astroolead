@@ -11,6 +11,7 @@ interface Props {
   ogImage?: string;
   hrUrl?: string;
   enUrl?: string;
+  canonicalPath?: string;
 }
 
 const {
@@ -22,10 +23,11 @@ const {
   ogImage = '/assets/images/og-default.jpg',
   hrUrl: hrUrlProp,
   enUrl: enUrlProp,
+  canonicalPath,
 } = Astro.props;
 
 const canonicalUrl = new URL(
-  Astro.url.pathname,
+  canonicalPath || Astro.url.pathname,
   'https://oleadigitalis.eu'
 ).toString();
 

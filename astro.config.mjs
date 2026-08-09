@@ -9,13 +9,18 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   site: 'https://oleadigitalis.eu',
   compressHTML: true,
-  integrations: [icon(), sitemap()],
+  integrations: [
+    icon(),
+    sitemap({
+      filter: (page) => page !== 'https://oleadigitalis.eu/',
+    }),
+  ],
   i18n: {
     defaultLocale: 'hr',
     locales: ['hr', 'en'],
     routing: {
       prefixDefaultLocale: true,
-      redirectToDefaultLocale: true,
+      redirectToDefaultLocale: false,
     },
     translations: {
       en: {

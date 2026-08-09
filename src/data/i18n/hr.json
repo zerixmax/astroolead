@@ -86,10 +86,28 @@
       "t3_title": "Pametno upravljanje resursima",
       "t3_desc": "Nove verzije donose napredne senzore za vlagu tla i solarno napajanje koje sustav stavlja u mod dubokog sna – stanica se budi samo kada šalje podatke, trošeći nula energije iz mreže."
     },
+    "slideshow": {
+      "s1": {
+        "title": "OleaDbot Nacrt 1",
+        "description": "Detaljan prikaz prototipa OleaDbot sustava."
+      },
+      "s2": {
+        "title": "OleaDbot Nacrt 2",
+        "description": "Arhitektura senzora i upravljanja."
+      },
+      "s3": {
+        "title": "OleaDbot Nacrt 3",
+        "description": "Povezivanje s mikrokontrolerima."
+      },
+      "s4": {
+        "title": "OleaDbot Nacrt 4",
+        "description": "Finalni dizajn i renderiranje."
+      }
+    },
     "saznajVise": "Saznaj više"
   },
   "footer": {
-    "email": "ivo@oleadigitalis.eu",
+    "email": "ivo@korcula.me",
     "location": "Vela Luka, Korčula, Hrvatska",
     "rights": "Sva prava pridržana.",
     "social": {

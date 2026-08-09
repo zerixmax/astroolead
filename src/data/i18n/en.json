@@ -86,10 +86,28 @@
       "t3_title": "Smart resource management",
       "t3_desc": "New versions bring advanced soil moisture sensors and solar power which puts the system in deep sleep mode – the station wakes up only when sending data, consuming zero energy from the grid."
     },
+    "slideshow": {
+      "s1": {
+        "title": "OleaDbot Blueprint 1",
+        "description": "Detailed view of the OleaDbot system prototype."
+      },
+      "s2": {
+        "title": "OleaDbot Blueprint 2",
+        "description": "Sensor and control architecture."
+      },
+      "s3": {
+        "title": "OleaDbot Blueprint 3",
+        "description": "Microcontroller interface connections."
+      },
+      "s4": {
+        "title": "OleaDbot Blueprint 4",
+        "description": "Final design and rendering."
+      }
+    },
     "saznajVise": "Learn more"
   },
   "footer": {
-    "email": "ivo@oleadigitalis.eu",
+    "email": "ivo@korcula.me",
     "location": "Vela Luka, Korčula, Croatia",
     "rights": "All rights reserved.",
     "social": {
