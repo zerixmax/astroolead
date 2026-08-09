@@ -68,10 +68,4 @@ const { images = [] } = Astro.props;
 
   // Run on page load and on Astro View Transitions swap
   document.addEventListener('astro:page-load', initLightbox);
-
-  // Also run on DOMContentLoaded just in case
-  document.addEventListener('DOMContentLoaded', initLightbox);
-
-  // Initial call
-  initLightbox();
 </script>

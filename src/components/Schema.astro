@@ -1,0 +1,163 @@
+---
+// src/components/Schema.astro
+interface Props {
+  type: 'Organization' | 'LocalBusiness' | 'Product' | 'Blog' | 'Article';
+  lang?: 'hr' | 'en';
+  title?: string;
+  description?: string;
+  url?: string;
+  image?: string;
+  datePublished?: string;
+  dateModified?: string;
+}
+
+const {
+  type,
+  lang = 'hr',
+  title,
+  description,
+  url,
+  image,
+  datePublished,
+  dateModified,
+} = Astro.props;
+
+const siteUrl = 'https://oleadigitalis.eu';
+const currentUrl = url || new URL(Astro.url.pathname, siteUrl).toString();
+
+// Base Organization Schema
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": `${siteUrl}/#organization`,
+  "name": "Olea Digitalis",
+  "url": siteUrl,
+  "logo": {
+    "@type": "ImageObject",
+    "@id": `${siteUrl}/#logo`,
+    "url": `${siteUrl}/assets/images/oleadigitalis_logo264.png`,
+    "caption": "Olea Digitalis"
+  },
+  "image": {
+    "@id": `${siteUrl}/#logo`
+  },
+  "sameAs": [
+    "https://github.com/zerixmax/astroolead"
+  ]
+};
+
+// Base LocalBusiness Schema (AgroTech specific)
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": `${siteUrl}/#localbusiness`,
+  "name": "Olea Digitalis",
+  "image": `${siteUrl}/assets/images/olea-digitalis-postine_1924.webp`,
+  "url": siteUrl,
+  "telephone": "",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Vela Luka",
+    "addressLocality": "Otok Korčula",
+    "addressRegion": "Dubrovačko-neretvanska",
+    "postalCode": "20270",
+    "addressCountry": "HR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "42.9628",
+    "longitude": "16.7216"
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday"
+    ],
+    "opens": "00:00",
+    "closes": "23:59"
+  },
+  "sameAs": [
+    "https://github.com/zerixmax/astroolead"
+  ]
+};
+
+// Base Product Schema (AgroTech specific)
+const productSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "@id": `${siteUrl}/#product`,
+  "name": lang === 'hr' ? 'Premium Ekstra Djevičansko Maslinovo Ulje' : 'Premium Extra Virgin Olive Oil',
+  "image": `${siteUrl}/assets/images/olea-digitalis-postine_1924.webp`,
+  "description": lang === 'hr' 
+    ? 'Maslinovo ulje s digitalnom sljedivošću, praćeno IoT senzorima i potvrđeno blockchain zapisom.' 
+    : 'Olive oil with digital traceability, tracked by IoT sensors and verified by blockchain records.',
+  "brand": {
+    "@type": "Brand",
+    "name": "Olea Digitalis"
+  },
+  "offers": {
+    "@type": "AggregateOffer",
+    "priceCurrency": "EUR",
+    "lowPrice": "20.00",
+    "highPrice": "50.00",
+    "offerCount": "2"
+  }
+};
+
+// Base Blog Schema
+const blogSchema = {
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "@id": `${currentUrl}/#blog`,
+  "name": lang === 'hr' ? 'OleaD Razvojni Dnevnik' : 'OleaD Development Log',
+  "description": lang === 'hr'
+    ? 'Stručni članci o digitalnoj sljedivosti maslinovog ulja, blockchainu u poljoprivredi i offline-first IoT sustavima.'
+    : 'Professional articles on digital olive oil traceability, blockchain in agriculture, and offline-first IoT systems.',
+  "url": currentUrl,
+  "publisher": {
+    "@id": `${siteUrl}/#organization`
+  }
+};
+
+// Base Article Schema
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "@id": `${currentUrl}/#article`,
+  "isPartOf": {
+    "@id": `${siteUrl}/hr/blog/#blog`
+  },
+  "headline": title || '',
+  "description": description || '',
+  "inLanguage": lang,
+  "mainEntityOfPage": currentUrl,
+  "datePublished": datePublished || new Date().toISOString(),
+  "dateModified": dateModified || new Date().toISOString(),
+  "publisher": {
+    "@id": `${siteUrl}/#organization`
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Olea Digitalis"
+  }
+};
+
+// Pick the correct schema based on type
+let schema: object = {};
+if (type === 'Organization') schema = organizationSchema;
+else if (type === 'LocalBusiness') schema = localBusinessSchema;
+else if (type === 'Product') schema = productSchema;
+else if (type === 'Blog') schema = blogSchema;
+else if (type === 'Article') schema = articleSchema;
+
+const jsonLd = JSON.stringify(schema, null, 2);
+---
+
+<script type="application/ld+json" set:html={jsonLd}></script>

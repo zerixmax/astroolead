@@ -20,5 +20,4 @@
 
 - [ ] Tailwind klase su poštovane (nema hardkodiranih boja).
 - [ ] Provjereno na Mobile i Desktop prikazu.
-- [ ] Nije prekršena struktura u `tailwind.config.mjs`.
 - [ ] Ažurirana je verzija u `src/data/version.json` u skladu s novim buildom.

@@ -1,34 +1,40 @@
 ---
-import { getCollection, render } from 'astro:content';
+import { getCollection } from 'astro:content';
+import { renderLexical } from '../../../utils/renderLexical';
 import Layout from '../../../layouts/Layout.astro';
-import Navbar from '../../../components/ui/Navbar.astro';
-import Footer from '../../../components/Footer.astro';
+import Navbar from '../../../components/layout/Navbar.astro';
+import Footer from '../../../components/layout/Footer.astro';
+import Schema from '../../../components/Schema.astro';
 
 export async function getStaticPaths() {
-  const allPosts = await getCollection('blog');
-  const hrPosts = allPosts.filter(
-    (post) =>
-      post.id.includes('problem-signala') ||
-      post.id.includes('kako-dokazati-podrijetlo') ||
-      post.id.includes('eu-regulativa-i-sljedivost') ||
-      post.id.includes('prava-digitalizacija-nije-samo-web')
-  );
-  return hrPosts.map((post) => ({
-    params: { slug: post.id },
+  const allPosts = await getCollection('blog-hr');
+  return allPosts.map((post: any) => ({
+    params: { slug: post.data.slug },
     props: { post },
   }));
 }
 
 const { post } = Astro.props;
-const { Content } = await render(post);
+const htmlContent = renderLexical(post.data.content?.root);
 const lang = 'hr';
 ---
 
 <Layout
   title={`${post.data.title} | Olea Digitalis`}
-  description={post.data.description}
+  description={post.data.seo?.metaDescription || ''}
   lang={lang}
+  hrUrlProp={new URL(`/hr/blog/${post.data.slug}/`, 'https://oleadigitalis.eu').toString()}
+  enUrlProp={new URL(`/en/blog/${post.data.slug}/`, 'https://oleadigitalis.eu').toString()}
 >
+  <Schema
+    type="Article"
+    lang={lang}
+    title={post.data.title}
+    description={post.data.seo?.metaDescription || ''}
+    datePublished={post.data.createdAt}
+    dateModified={post.data.updatedAt}
+    slot="head"
+  />
   <Navbar lang={lang} />
 
   <main class="bg-olea-sand text-olea-earth min-h-screen">
@@ -55,11 +61,11 @@ const lang = 'hr';
 
       <!-- Date -->
       <time
-        datetime={post.data.pubDate.toISOString()}
+        datetime={post.data.createdAt}
         class="text-olea-olive mb-4 block font-mono text-sm"
       >
         {
-          post.data.pubDate.toLocaleDateString('hr-HR', {
+          new Date(post.data.createdAt).toLocaleDateString('hr-HR', {
             year: 'numeric',
             month: 'long',
             day: 'numeric',
@@ -77,9 +83,7 @@ const lang = 'hr';
       <div class="bg-olea-olive/15 mb-10 h-px w-full"></div>
 
       <!-- Content -->
-      <div class="blog-prose font-sans">
-        <Content />
-      </div>
+      <div class="blog-prose font-sans" set:html={htmlContent}></div>
     </article>
   </main>
 

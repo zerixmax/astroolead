@@ -1,0 +1,88 @@
+---
+// src/components/SEO.astro
+import { routes } from '../i18n/routes';
+
+interface Props {
+  title: string;
+  description?: string;
+  keywords?: string;
+  lang?: string;
+  ogType?: string;
+  ogImage?: string;
+  hrUrl?: string;
+  enUrl?: string;
+}
+
+const {
+  title,
+  description = 'Digitalna sljedivost maslinovog ulja.',
+  keywords = 'maslinovo ulje, sljedivost, OPG',
+  lang = 'hr',
+  ogType = 'website',
+  ogImage = '/assets/images/og-default.jpg',
+  hrUrl: hrUrlProp,
+  enUrl: enUrlProp,
+} = Astro.props;
+
+const canonicalUrl = new URL(
+  Astro.url.pathname,
+  'https://oleadigitalis.eu'
+).toString();
+
+// Generate dynamic language alternate URLs for the current page using the routes dictionary
+const pathname = Astro.url.pathname;
+const segments = pathname.split('/').filter(Boolean);
+
+let currentSlug = '';
+if (segments.length > 1) {
+  currentSlug = segments[1];
+}
+
+let routeKey: keyof typeof routes.hr | null = null;
+if (currentSlug) {
+  const currentLocale = lang as 'hr' | 'en';
+  const entries = Object.entries(routes[currentLocale]) as [
+    keyof typeof routes.hr,
+    string,
+  ][];
+  const found = entries.find((entry) => entry[1] === currentSlug);
+  if (found) {
+    routeKey = found[0];
+  }
+}
+
+let hrPath = '/hr/';
+let enPath = '/en/';
+
+if (routeKey) {
+  hrPath = `/hr/${routes.hr[routeKey]}/`;
+  enPath = `/en/${routes.en[routeKey]}/`;
+}
+
+const finalHrUrl = hrUrlProp || new URL(hrPath, 'https://oleadigitalis.eu').toString();
+const finalEnUrl = enUrlProp || new URL(enPath, 'https://oleadigitalis.eu').toString();
+---
+
+<meta name="description" content={description} />
+<meta name="keywords" content={keywords} />
+<meta name="author" content="Olea Digitalis" />
+<link rel="canonical" href={canonicalUrl} />
+
+<!-- Hreflang alternates for Multilingual SEO -->
+<link rel="alternate" hreflang="hr" href={finalHrUrl} />
+<link rel="alternate" hreflang="en" href={finalEnUrl} />
+<link rel="alternate" hreflang="x-default" href={finalHrUrl} />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:type" content={ogType} />
+<meta property="og:url" content={canonicalUrl} />
+<meta property="og:site_name" content="Olea Digitalis" />
+{ogImage && <meta property="og:image" content={new URL(ogImage, Astro.site || 'https://oleadigitalis.eu').toString()} />}
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+{ogImage && <meta name="twitter:image" content={new URL(ogImage, Astro.site || 'https://oleadigitalis.eu').toString()} />}

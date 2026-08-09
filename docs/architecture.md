@@ -1,44 +1,63 @@
 # Arhitektura Projekta | Olea Digitalis
 
-Ovaj dokument definira tehničke standarde i strukturu koda. Svako odstupanje zahtijeva odobrenje Seniora.
+Ovaj dokument definira tehničke standarde, strukturu koda i smjernice za razvoj sukladno **OleaD Astro SOP v6**. Svako odstupanje zahtijeva odobrenje Seniora.
 
-## 1. Komponente
+---
 
-Smještaj: `src/components/` (zajedničke) i `src/components/ui/` (specifične).
+## 1. Arhitektura Komponenti
 
-- **Modularnost:** Svaka komponenta mora biti samostalna.
-- **Stilovi:** Isključivo Tailwind CSS. Bez `<style>` tagova s običnim CSS-om unutar Astro komponenti.
-- **Props:** TypeScript `interface Props { ... }` za sve props-e.
-- **i18n:** Komponente primaju `lang: Lang` prop i koriste `useTranslations(lang)` za tekstove.
+Smještaj: `src/components/layout/` (komponente izgleda/okvira poput `Navbar` i `Footer`) te `src/components/ui/` ili `src/components/` (samostalni UI elementi).
 
-## 2. Stilovi i Dizajn Tokeni
+- **Modularnost:** Svaka komponenta mora biti izolirana i samostalna.
+- **Props:** Obavezna stroga TypeScript tipizacija za sve props parametre putem `interface Props { ... }`.
+- **Internacionalizacija (i18n):** Sve komponente primaju `lang: Lang` prop i koriste helper `useTranslations(lang)` za lokalizirani sadržaj.
 
-- **Tailwind v4 `@theme`:** Dizajn tokeni (boje, fontovi) definirani su u `@theme` bloku u `src/styles/global.css`. Ovo je jedini izvor istine — `tailwind.config.mjs` je prazan (ili ga nema).
-- **Global CSS:** `src/styles/global.css` uključuje `@import "tailwindcss"`, `@theme` blok s tokenima, i `@layer base` s baznim stilovima (body, headings).
-- **Fontovi:** Self-hostani putem `@fontsource` paketa (Playfair Display, Inter, JetBrains Mono), uvezeni na vrhu `global.css`.
+---
 
-## 3. Slike i Resursi
+## 2. CSS i Dizajn Tokeni (Tailwind v4)
 
-- **`src/assets/`** — slike koje zahtijevaju optimizaciju (Astro `<Image />`).
-- **`public/`** — statički resursi (favicon, robots.txt).
-- **Alt tagovi:** Svaka `<Image />` obavezno ima smislen `alt` tekst.
+- **Jedinstven izvor istine:** Svi dizajn tokeni (poput `--color-olea-sand` i `--color-olea-olive`) moraju biti definirani isključivo unutar `@theme` bloka u glavnoj datoteci [global.css](file:///home/z3r1x/Dokumenti/astroolead/src/styles/global.css).
+- **Zabrana konfiguracijskih datoteka:** Datoteka `tailwind.config.mjs` ili slične JS/MJS konfiguracije su strogo zabranjene i izbrisane iz projekta. Tailwind v4 automatski skenira kod i povlači postavke iz CSS-a.
+- **Fontovi:** Uvoze se iz `@fontsource` paketa na vrhu `global.css` (Playfair Display, Inter, JetBrains Mono) radi lokalnog hostanja.
 
-## 4. Rutiranje i Internacionalizacija (i18n)
+---
 
-- **Struktura:** Eksplicitne mape po jeziku: `src/pages/hr/` i `src/pages/en/`.
-- **Konfiguracija:** Astro i18n u `astro.config.mjs` — `defaultLocale: 'hr'`, `locales: ['hr', 'en']`, `prefixDefaultLocale: true`, `redirectToDefaultLocale: true`.
-- **Rječnik putanja:** `src/i18n/routes.ts` mapira slugove između jezika (npr. `hr.o-projektu` ↔ `en.about-project`). Koristi se u Navbaru i Layoutu za generiranje hreflang alternates i jezičnog preklopnika.
-- **Tradukcije:** `src/i18n/ui.ts` učitava JSON datoteke (`src/data/i18n/hr.json`, `en.json`) i nudi `useTranslations(lang)` funkciju s dot-notacijom (npr. `t('nav.pocetna')`).
-- **Preusmjeravanje:** `/` → `/hr/` automatski putem Astro i18n configa.
+## 3. SEO i Strukturirani Podaci (GEO)
 
-## 5. SEO i Sitemap
+- **SEO Inženjering:** Za sve metapodatke, OpenGraph tagove i kanonske poveznice zadužena je komponenta [SEO.astro](file:///home/z3r1x/Dokumenti/astroolead/src/components/SEO.astro).
+- **GEO Inženjering:** strukturirani JSON-LD podaci ubacuju se isključivo preko komponente [Schema.astro](file:///home/z3r1x/Dokumenti/astroolead/src/components/Schema.astro) izravno u `<head>` predloška.
+- **AgroTech Specifikacija:** Svaka stranica mora po zadanom imati injektiranu shemu za **Organization**, **LocalBusiness** i **Product** (definirano na razini `Layout.astro`), dok blog stranice dinamički dodaju **Blog** i **TechArticle** sheme.
 
-- **Kanonske adrese:** Layout (`src/layouts/Layout.astro`) automatski generira `canonical` URL i `hreflang` alternates za `hr`, `en`, i `x-default` koristeći `Astro.url.pathname` i `routes.ts`.
-- **Sitemap:** `@astrojs/sitemap` generira `sitemap-index.xml` u `dist/` pri svakom buildu.
-- **Meta tagovi:** Svaka stranica definira `title`, `description`, i opcionalno `keywords` kroz Layout props.
+---
 
-## 6. Workflow
+## 4. Sigurnost Klijentske Logike (Astro View Transitions)
 
-1. **Lokalni razvoj:** `npm run dev` (port 4321).
-2. **Build:** `npm run build` — provjeri da nema grešaka.
-3. **Dokumentacija:** Prije pusha ažuriraj `docs/dev-logs/` i `src/data/version.json`.
+Zbog korištenja Astro View Transitions, tradicionalne metode poput `DOMContentLoaded` ili direktno pozivanje funkcija na dnu `<script>` tagova stvaraju duplikaciju koda i memorijsko curenje.
+
+- **Pravilo 1:** Svi klijentski event listeneri i inicijalizacije funkcija moraju se registrirati *isključivo* putem:
+  ```javascript
+  document.addEventListener('astro:page-load', inicijalizacijaFunkcije);
+  ```
+- **Pravilo 2:** Zabranjeno je bilo kakvo samostalno (direktno) izvršavanje funkcija na dnu skripti izvan `astro:page-load` callbacka.
+
+---
+
+## 5. Rukovanje Greškama (Error Pages)
+
+- **404 Stranica:** [404.astro](file:///home/z3r1x/Dokumenti/astroolead/src/pages/404.astro) prikazuje brendiranu, lokaliziranu stranicu s brzim povratkom na početnu u slučaju nepostojećih ruta.
+- **500 Stranica:** [500.astro](file:///home/z3r1x/Dokumenti/astroolead/src/pages/500.astro) elegantno prikazuje serversku grešku (ili build-time grešku) s tehničkim ispisom pod haubom umjesto sirovog server dumpa.
+
+---
+
+## 6. Upravljanje Tajnama (Environment Variables)
+
+- **Predložak za deployment:** U mapi [src/data/](file:///home/z3r1x/Dokumenti/astroolead/src/data/) kreirana je datoteka [.env.example](file:///home/z3r1x/Dokumenti/astroolead/src/data/.env.example) koja služi kao predložak za postavljanje varijabli poput `CMS_URL` bez izlaganja stvarnih vrijednosti.
+
+---
+
+## 7. Razvojni Workflow
+
+1. **Pokretanje Payload CMS-a:** Unutar `/cms` pokrenuti `npm run dev` (port 3005).
+2. **Pokretanje Astro Frontenda:** Unutar korijena pokrenuti `npm run dev` (port 4321).
+3. **Build aplikacije:** `npm run build` za validaciju tipova i produkcijsku provjeru.
+4. **Senior Check:** Prije pusha ukloniti sve `tailwind.config.*` reference i ažurirati [version.json](file:///home/z3r1x/Dokumenti/astroolead/src/data/version.json) te razvojni dnevnik u `docs/dev-logs/`.

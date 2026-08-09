@@ -11,33 +11,37 @@ src/
 ├── assets/
 │   └── images/                     # Slike i nacrti (eager/lazy optimizirani)
 ├── components/
+│   ├── layout/
+│   │   ├── Footer.astro            # Podnožje s društvenim mrežama, kontaktom i verzijom
+│   │   └── Navbar.astro            # Višejezična navigacija s padajućim izbornicima (astro:page-load)
 │   ├── ui/
 │   │   ├── Hero.astro              # Hero sekcija s animacijom učitavanja (staggered delay)
-│   │   ├── Navbar.astro            # Višejezična navigacija s padajućim izbornicima
+│   │   ├── Slideshow.astro         # Carousel s nacrtima i FSlightbox integracijom (astro:page-load)
 │   │   └── VideoSection.astro      # YouTube video player (učitavanje u omjeru 16:9)
-│   ├── Footer.astro                # Podnožje s društvenim mrežama, kontaktom i verzijom
-│   └── Slideshow.astro             # Carousel s nacrtima i FSlightbox integracijom
+│   ├── SEO.astro                   # Modularna SEO komponenta (meta, hreflang, OG)
+│   └── Schema.astro                # GEO structured JSON-LD data component (AgroTech spec)
 ├── content/
-│   ├── blog/
-│   │   ├── poor-signal-problem.md  # Blog post na engleskom (lang: en)
-│   │   └── problem-signala.md      # Blog post na hrvatskom (lang: hr)
-│   └── config.ts                   # Astro v6 Content Collections konfiguracija (glob loader)
+│   └── config.ts                   # Astro v6 Content Collections konfiguracija (Loader za Payload API)
 ├── data/
 │   ├── i18n/
 │   │   ├── en.json                 # Engleski prijevod
-│   │   └── hr.json                 # Hrvatski prijevod (sadrži tekstove za 3 stupa i roadmap)
-│   └── version.json                # Verzija i codename projekta (trenutno 0.3.6)
+│   │   └── hr.json                 # Hrvatski prijevod
+│   ├── .env.example                # Predložak tajni za deployment
+│   └── version.json                # Verzija i buildDate (trenutno 0.5.1)
 ├── i18n/
 │   ├── routes.ts                   # Rječnik ruta za prevođenje slugova (npr. o-projektu ↔ about-project)
 │   └── ui.ts                       # Helper `useTranslations` za dot-notaciju
 ├── layouts/
 │   └── Layout.astro                # Glavni HTML predložak, progressive enhancement (.js klasa),
-│                                   # IntersectionObserver fallback i Back-to-Top gumb.
+│                                   # integrirani SEO/Schema i Back-to-Top gumb (astro:page-load).
 ├── pages/
+│   ├── 404.astro                   # Branded 404 stranica (Stranica nije pronađena)
+│   ├── 500.astro                   # Branded 500 stranica (Serverska pogreška)
+│   ├── upitnik.astro               # Upitnik s Typeform integracijom
 │   ├── en/
 │   │   ├── blog/
-│   │   │   ├── [slug].astro        # Prikaz pojedinačnog članka (engleski)
-│   │   │   └── index.astro         # Popis svih članaka (engleski)
+│   │   │   ├── [slug].astro        # Prikaz pojedinačnog članka s CMS-a (engleski)
+│   │   │   └── index.astro         # Popis svih članaka s CMS-a (engleski)
 │   │   ├── about-project.astro     # Stranica O projektu
 │   │   ├── digital-log.astro       # Dnevnik uzgoja (engleski)
 │   │   ├── index.astro             # Engleska početna stranica
@@ -46,8 +50,8 @@ src/
 │   │   └── oleadenode.astro        # OleaD-Node senzorska mreža
 │   ├── hr/
 │   │   ├── blog/
-│   │   │   ├── [slug].astro        # Prikaz pojedinačnog članka (hrvatski)
-│   │   │   └── index.astro         # Popis svih članaka (hrvatski)
+│   │   │   ├── [slug].astro        # Prikaz pojedinačnog članka s CMS-a (hrvatski)
+│   │   │   └── index.astro         # Popis svih članaka s CMS-a (hrvatski)
 │   │   ├── dnevnik-uzgoja.astro    # Dnevnik uzgoja (hrvatski)
 │   │   ├── index.astro             # Hrvatska početna stranica
 │   │   ├── nft.astro               # Certifikati

@@ -1,25 +1,16 @@
 ---
 // src/pages/en/blog/index.astro
 import Layout from '../../../layouts/Layout.astro';
-import Navbar from '../../../components/ui/Navbar.astro';
-import Footer from '../../../components/Footer.astro';
+import Navbar from '../../../components/layout/Navbar.astro';
+import Footer from '../../../components/layout/Footer.astro';
+import Schema from '../../../components/Schema.astro';
 import { getCollection } from 'astro:content';
 
-// Fetch all posts from 'blog' collection
-const allPosts = await getCollection('blog');
-
-// FILTER REPAIR: Get only English articles.
-const enPosts = allPosts.filter(
-  (post) =>
-    post.id.includes('poor-signal') ||
-    post.id.includes('how-to-prove') ||
-    post.id.includes('eu-regulations-and-traceability') ||
-    post.id.includes('real-digitalization-is-not-just-a-website')
-);
+const allPosts = await getCollection('blog-en');
 
 // Sort by date (newest first)
-const sortedPosts = enPosts.sort(
-  (a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime()
+const sortedPosts = allPosts.sort(
+  (a: any, b: any) => new Date(b.data.createdAt).getTime() - new Date(a.data.createdAt).getTime()
 );
 ---
 
@@ -28,26 +19,7 @@ const sortedPosts = enPosts.sort(
   description="Technical development log of the OleaD system for digital traceability of olive oil."
   lang="en"
 >
-  <script type="application/ld+json" slot="head">
-    {
-      "@context": "https://schema.org",
-      "@type": "Blog",
-      "name": "OleaD Development Log",
-      "description": "Expert articles on olive oil digital traceability, blockchain in agriculture and offline-first IoT systems.",
-      "url": "https://oleadigitalis.eu/en/blog/",
-      "publisher": {
-        "@type": "Organization",
-        "name": "OleaD"
-      },
-      "keywords": [
-        "olive oil traceability",
-        "AgroTech Croatia",
-        "PWA agriculture",
-        "Blockchain traceability",
-        "Offline-first application"
-      ]
-    }
-  </script>
+  <Schema type="Blog" lang="en" slot="head" />
 
   <Navbar lang="en" />
 
@@ -72,19 +44,19 @@ const sortedPosts = enPosts.sort(
           {sortedPosts.map((post) => (
             <article class="rounded-xl border bg-white/50 p-6 shadow-sm backdrop-blur">
               <span class="text-sm text-gray-500">
-                {new Date(post.data.pubDate).toLocaleDateString('en-US')}
+                {new Date(post.data.createdAt).toLocaleDateString('en-US')}
               </span>
               <h2 class="my-2 font-serif text-2xl">
                 <a
-                  href={`/en/blog/${post.id}/`}
+                  href={`/en/blog/${post.data.slug}/`}
                   class="hover:text-accent transition-colors"
                 >
                   {post.data.title}
                 </a>
               </h2>
-              <p class="mb-4 text-gray-600">{post.data.description}</p>
+              <p class="mb-4 text-gray-600">{post.data.seo?.metaDescription || ''}</p>
               <a
-                href={`/en/blog/${post.id}/`}
+                href={`/en/blog/${post.data.slug}/`}
                 class="text-accent inline-flex items-center gap-1 text-sm font-semibold transition-all hover:gap-2"
               >
                 Read more →

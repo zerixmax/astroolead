@@ -8,6 +8,7 @@ import sitemap from '@astrojs/sitemap';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://oleadigitalis.eu',
+  compressHTML: true,
   integrations: [icon(), sitemap()],
   i18n: {
     defaultLocale: 'hr',
