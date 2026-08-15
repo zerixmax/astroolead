@@ -1,5 +1,5 @@
 {
-  "version": "0.5.5",
-  "buildDate": "2026-08-09",
-  "codename": "mobile-friendly scroll-reveal fix (no opacity:0 on <768px)"
+  "version": "0.5.6",
+  "buildDate": "2026-08-15",
+  "codename": "mobile navbar burger event bubbling and duplicate listener fix"
 }

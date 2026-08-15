@@ -46,7 +46,7 @@ if (routeKey) {
 ---
 
 <header
-  class="bg-olea-sand/90 border-olea-olive/10 sticky top-0 z-50 border-b px-6 py-4 backdrop-blur-md transform-gpu transition-all duration-300 lg:px-12"
+  class="bg-olea-sand/90 border-olea-olive/10 sticky top-0 z-50 transform-gpu border-b px-6 py-4 backdrop-blur-md transition-all duration-300 lg:px-12"
 >
   <div class="mx-auto flex max-w-7xl items-center justify-between">
     <!-- Logo & Branding -->
@@ -324,38 +324,59 @@ if (routeKey) {
     const iconMenuClose = document.getElementById('icon-menu-close');
     const mobileLinks = document.querySelectorAll('.mobile-link');
 
-    // Menu toggle logic
-    function toggleMenu() {
-      if (!mobileMenu || !menuBtn) return;
+    if (!mobileMenu || !menuBtn || menuBtn.dataset.init === 'true') return;
+    menuBtn.dataset.init = 'true';
+
+    function toggleMenu(forceClose = false) {
       const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
+
+      if (forceClose) {
+        mobileMenu.classList.add('hidden');
+        mobileMenu.classList.remove('flex');
+        if (iconMenuOpen) iconMenuOpen.classList.remove('hidden');
+        if (iconMenuClose) iconMenuClose.classList.add('hidden');
+        menuBtn.setAttribute('aria-expanded', 'false');
+        return;
+      }
 
       mobileMenu.classList.toggle('hidden');
       mobileMenu.classList.toggle('flex');
-      iconMenuOpen?.classList.toggle('hidden');
-      iconMenuClose?.classList.toggle('hidden');
-
+      if (iconMenuOpen) iconMenuOpen.classList.toggle('hidden');
+      if (iconMenuClose) iconMenuClose.classList.toggle('hidden');
       menuBtn.setAttribute('aria-expanded', (!isExpanded).toString());
     }
 
-    menuBtn?.addEventListener('click', toggleMenu);
-
-    // Close menu when a link is clicked
-    mobileLinks.forEach((link) => {
-      link.addEventListener('click', () => {
-        if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
-          toggleMenu();
-        }
-      });
+    menuBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleMenu();
     });
 
-    // Mobile dropdown toggle helper
+    mobileLinks.forEach((link) => {
+      link.addEventListener('click', () => toggleMenu(true));
+    });
+
+    document.addEventListener('click', (e) => {
+      if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+        // Vanilla JS bez "as Node"
+        const isClickInside =
+          mobileMenu.contains(e.target) || menuBtn.contains(e.target);
+        if (!isClickInside) {
+          toggleMenu(true);
+        }
+      }
+    });
+
+    // Helper funkcija bez TypeScript anotacija
     function setupMobileDropdown(btnId, contentId, chevronId) {
       const btn = document.getElementById(btnId);
       const content = document.getElementById(contentId);
       const chevron = document.getElementById(chevronId);
 
-      btn?.addEventListener('click', () => {
-        if (!content || !chevron) return;
+      if (!btn || !content || !chevron || btn.dataset.init === 'true') return;
+      btn.dataset.init = 'true';
+
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
         const isExpanded = btn.getAttribute('aria-expanded') === 'true';
 
         content.classList.toggle('hidden');
@@ -378,6 +399,7 @@ if (routeKey) {
     );
   }
 
-  // Run on page load and on View Transitions page swap
+  // Osiguravamo da se pokrene pri prvom učitavanju i pri svakoj navigaciji
+  setupNavbar();
   document.addEventListener('astro:page-load', setupNavbar);
 </script>
