@@ -85,16 +85,13 @@ const {
 
     <script>
       function initScrollReveal() {
-        // Native check: if browser supports CSS scroll-driven animations, exit and let CSS handle it.
-        if (
-          CSS.supports(
-            '(animation-timeline: view()) and (animation-range: entry)'
-          )
-        ) {
+        if (!('IntersectionObserver' in window)) {
+          document.querySelectorAll('.scroll-reveal').forEach((el) => {
+            el.classList.add('is-visible');
+          });
           return;
         }
 
-        // JS Fallback for other browsers (like Firefox or older versions)
         const observer = new IntersectionObserver(
           (entries) => {
             entries.forEach((entry) => {
@@ -157,11 +154,19 @@ const {
         }
       }
 
-      // Run on page load and on Astro View Transitions navigation
-      document.addEventListener('astro:page-load', () => {
+      function initLayout() {
         initScrollReveal();
         initBackToTop();
-      });
+      }
+
+      // Run on immediate/DOMContentLoaded and on Astro View Transitions navigation
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initLayout);
+      } else {
+        initLayout();
+      }
+
+      document.addEventListener('astro:page-load', initLayout);
     </script>
   </body>
 </html>

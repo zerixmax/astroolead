@@ -399,7 +399,10 @@ if (routeKey) {
     );
   }
 
-  // Osiguravamo da se pokrene pri prvom učitavanju i pri svakoj navigaciji
-  setupNavbar();
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupNavbar);
+  } else {
+    setupNavbar();
+  }
   document.addEventListener('astro:page-load', setupNavbar);
 </script>

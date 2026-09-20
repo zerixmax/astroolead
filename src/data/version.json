@@ -1,5 +1,5 @@
 {
-  "version": "0.5.6",
-  "buildDate": "2026-08-15",
-  "codename": "mobile navbar burger event bubbling and duplicate listener fix"
+  "version": "0.5.7",
+  "buildDate": "2026-09-20",
+  "codename": "desktop scroll-reveal and client initialization fix"
 }

@@ -5,7 +5,7 @@
 
 /* Izuzmi dokumentaciju iz Tailwind automatskog skeniranja izvora kako se
    klase spomenute u markdownu (npr. min-h-screen) ne bi emitirale u build */
-@source not "../../docs/**";
+@source not '../../docs/**';
 
 @theme {
   --color-olea-sand: #f4f1ea;
@@ -122,10 +122,10 @@
 }
 
 /* ==========================================================================
-   SCROLL REVEAL ANIMATIONS (MOBILE-FRIENDLY FIX)
+   SCROLL REVEAL ANIMATIONS
    ========================================================================== */
 @media (prefers-reduced-motion: no-preference) {
-  /* Mobile-first: na ekranima < 768px sadržaj je ODMah vidljiv (bez opacity: 0).
+  /* Mobile-first: na ekranima < 768px sadržaj je odmah vidljiv (bez opacity: 0).
      Sprječava bijele praznine pri skrolanju na Android Chrome-u. */
   .js .scroll-reveal,
   .scroll-reveal {
@@ -133,43 +133,20 @@
     transform: translateY(0);
   }
 
-  /* Scroll-Reveal primjenjuj SAMO na desktopu (>= 768px) */
+  /* Scroll-Reveal primjenjuj SAMO na desktopu (>= 768px) kada je aktivan JS */
   @media (min-width: 768px) {
-    /* JS Fallback styles (only active when JS adds the 'js' class to html) */
     .js .scroll-reveal {
       opacity: 0;
-      transform: translateY(40px) scale(0.98);
+      transform: translateY(30px);
       transition:
-        opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1),
-        transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+        opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
     }
 
     .js .scroll-reveal.is-visible {
       opacity: 1;
-      transform: translateY(0) scale(1);
-    }
-
-    /* Native Scroll-driven Animations (when supported) */
-    @supports ((animation-timeline: view()) and (animation-range: entry)) {
-      @keyframes fade-in-up-scroll {
-        from {
-          opacity: 0;
-          transform: translateY(40px) scale(0.98);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0) scale(1);
-        }
-      }
-
-      .scroll-reveal {
-        opacity: 0;
-        transform: translateY(40px) scale(0.98);
-        transition: none !important;
-        animation: fade-in-up-scroll auto linear backwards;
-        animation-timeline: view();
-        animation-range: entry 10% entry 70%;
-      }
+      transform: translateY(0);
     }
   }
 }
